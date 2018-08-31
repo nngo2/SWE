@@ -36,11 +36,13 @@ class DbClassProduct implements IDbClass {
 	private IProductFromDb product;
 	private IProductFromGui prodFromGui;
 	private List<IProductFromDb> productList;
-	Integer catalogId;
-	Integer productId;
+	private Integer catalogId;
+	private Integer productId;
+	private String productName;
 
 	private final String LOAD_PROD_TABLE = "LoadProdTable";
 	private final String READ_PRODUCT = "ReadProduct";
+	private final String READ_PRODUCT_BY_NAME = "ReadProductByName";
 	private final String READ_PROD_LIST = "ReadProdList";
 
 	public void buildQuery() {
@@ -48,6 +50,8 @@ class DbClassProduct implements IDbClass {
 			buildProdTableQuery();
 		} else if (queryType.equals(READ_PRODUCT)) {
 			buildReadProductQuery();
+		} else if (queryType.equals(READ_PRODUCT_BY_NAME)) {
+			buildReadProductByNameQuery();
 		} else if (queryType.equals(READ_PROD_LIST)) {
 			buildProdListQuery();
 		}
@@ -64,6 +68,10 @@ class DbClassProduct implements IDbClass {
 
 	private void buildReadProductQuery() {
 		query = "SELECT * FROM Product WHERE productid = " + productId;
+	}
+	
+	private void buildReadProductByNameQuery() {
+		query = "SELECT * FROM Product WHERE productname = \"" + productName + "\"";
 	}
 
 	public TwoKeyHashMap<Integer, String, IProductFromDb> readProductTable()
@@ -113,6 +121,16 @@ class DbClassProduct implements IDbClass {
 		dataAccessSS.read();
 		return product;
 	}
+	
+	public IProductFromDb readProductByName(String productName)
+		throws DatabaseException {
+		queryType = READ_PRODUCT_BY_NAME;
+		this.productName = productName;
+		dataAccessSS.createConnection(this);
+		dataAccessSS.read();
+		return product;
+	}
+
 
 	/**
 	 * Database columns: productid, productname, totalquantity, priceperunit,
@@ -127,6 +145,8 @@ class DbClassProduct implements IDbClass {
 		if (queryType.equals(LOAD_PROD_TABLE)) {
 			populateProdTable(resultSet);
 		} else if (queryType.equals(READ_PRODUCT)) {
+			populateProduct(resultSet);
+		} else if (queryType.equals(READ_PRODUCT_BY_NAME)) {
 			populateProduct(resultSet);
 		} else if (queryType.equals(READ_PROD_LIST)) {
 			populateProdList(resultSet);
@@ -170,7 +190,22 @@ class DbClassProduct implements IDbClass {
 	}
 
 	private void populateProduct(ResultSet rs) throws DatabaseException {
-		product = new Product(1, "", "", "", "", 1, "");
+		try {
+			product = null;
+			if (rs.next()) {
+				Integer prodId = rs.getInt("productid");
+				String productName = rs.getString("productname");
+				String quantityAvail = makeString(rs.getInt("totalquantity"));
+				String unitPrice = makeString(rs.getDouble("priceperunit"));
+				String mfgDate = rs.getString("mfgdate");
+				Integer catalogId = rs.getInt("catalogid");
+				String description = rs.getString("description");
+				product = new Product(prodId, productName, quantityAvail,
+						unitPrice, mfgDate, catalogId, description);
+			}
+		} catch (SQLException e) {
+			throw new DatabaseException(e);
+		}
 	}
 
 	public String getDbUrl() {

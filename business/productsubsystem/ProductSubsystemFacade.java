@@ -25,7 +25,6 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 			throws DatabaseException {
 		DbClassProduct dbClass = new DbClassProduct();
 		return dbClass.readProductTable();
-
 	}
 
 	public TwoKeyHashMap<Integer, String, IProductFromDb> refreshProductTable()
@@ -39,9 +38,7 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 	// you can remove comments from body of ComboListener.
 	public List<IProductFromDb> getProductList(String catType)
 			throws DatabaseException {
-		DbClassProduct dbClass = new DbClassProduct();
-		int catId = getCatalogIdFromType(catType);
-		return dbClass.readProductList(catId);
+		return refreshProductList(catType);
 	}
 
 	public Integer getCatalogIdFromType(String catType)
@@ -92,12 +89,9 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 	@Override
 	public List<IProductFromDb> refreshProductList(String catType)
 			throws DatabaseException {
-		IProductFromDb prod = new Product(1, "coat", "100", "15.50", "10-12-2016", 1, "Coat for men");
-		IProductFromDb prod2 = new Product(1, "book", "100", "5.50", "11-11-2016", 2, "Book for kids");		
-		List<IProductFromDb> list = new ArrayList<IProductFromDb>();
-		list.add(prod);
-		list.add(prod2);
-		return list;
+		DbClassProduct dbClass = new DbClassProduct();
+		int catId = getCatalogIdFromType(catType);
+		return dbClass.readProductList(catId);
 	}
 
 	@Override
@@ -121,7 +115,8 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 
 	@Override
 	public IProductFromDb getProduct(String prodName) throws DatabaseException {
-		return new  Product(1, "coat", "100", "15.50", "10-12-2016", 1, "Coat for men");
+		DbClassProduct dbClass = new DbClassProduct();
+		return dbClass.readProductByName(prodName);
 	}
 
 	@Override
