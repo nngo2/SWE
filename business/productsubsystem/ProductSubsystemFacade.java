@@ -120,9 +120,9 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 	}
 
 	@Override
-	public IProductFromDb getProductFromId(Integer prodId)
-			throws DatabaseException {
-		return new  Product(1, "coat", "100", "15.50", "10-12-2016", 1, "Coat for men");
+	public IProductFromDb getProductFromId(Integer prodId) throws DatabaseException  {
+		DbClassProduct dbClass = new DbClassProduct();
+		return dbClass.readProduct(prodId);
 	}
 
 	@Override
