@@ -180,7 +180,6 @@ public class BrowseAndSelectController implements CleanupControl {
 	}
 
 	class QuantityOkListener implements ActionListener {
-
 		public void actionPerformed(ActionEvent evt) {
 			//insert rules
 			//gather quantity data 
@@ -192,16 +191,38 @@ public class BrowseAndSelectController implements CleanupControl {
 			//              to populate the value quantityAvail
 			//              in Quantity
 			//
-			//IRules rules = new RulesQuantity(quantity);
-			//rules.runRules();
-
+			
+			boolean rulesOk = true;
+			
+			Quantity quantity = new Quantity(quantityWindow.getQuantityDesired());
+			String prodName = productDetailsWindow.getItem();
+			readAvailableQuality(quantityWindow, prodName, quantity);
+			
+			try {
+				IRules rules = new RulesQuantity(quantity);
+				rules.runRules();
+			} catch (RuleException e) {
+				rulesOk = false;
+				System.out.println(e.getMessage());
+				JOptionPane.showMessageDialog(quantityWindow, e
+						.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+			} catch (EBazaarException e) {
+				rulesOk = false;
+				JOptionPane.showMessageDialog(quantityWindow,
+								"An error has occurred that prevents further processing",
+								"Error", JOptionPane.ERROR_MESSAGE);
+			}
+			
 			// quantity rule ok, proceed adding item to cart
-			addItemToCart(quantityWindow);
+			// load into shopping cart and set up payment window
+			if (rulesOk) {
+				addItemToCart(quantityWindow);
 
-			cartItemsWindow = new CartItemsWindow();
-			EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);
-			loadCartItems(cartItemsWindow);
-			cartItemsWindow.setVisible(true);
+				cartItemsWindow = new CartItemsWindow();
+				EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);
+				loadCartItems(cartItemsWindow);
+				cartItemsWindow.setVisible(true);
+			}						
 		}
 	}
 
@@ -441,8 +462,12 @@ public class BrowseAndSelectController implements CleanupControl {
 	private void addItemToCart(QuantityWindow quantityWin) {
 		try {
 			IShoppingCartSubsystem cartSystem = ShoppingCartSubsystemFacade.getInstance();
-			//TODO: add cart item from quality window
-			cartSystem.addCartItem("harry potter", "2", "35.50", null);
+
+			String prodName = productDetailsWindow.getItem();
+			double itemPrice = productDetailsWindow.getPrice();
+			String desiredQuality = quantityWindow.getQuantityDesired();
+			String totalPrice = "" + (new Integer(desiredQuality).intValue() * itemPrice);
+			cartSystem.addCartItem(prodName, desiredQuality, totalPrice, null);
 			quantityWin.dispose();
 		} catch (DatabaseException e) {
 			JOptionPane.showMessageDialog(quantityWin,
@@ -457,5 +482,17 @@ public class BrowseAndSelectController implements CleanupControl {
 		List<ICartItem> cartItems = cartSystem.getLiveCartItems();
 		List<String[]> items = ShoppingCartUtil.cartItemsToStringArrays(cartItems);
 		cartsWindow.updateModel(items);
+	}
+	
+	private void readAvailableQuality(QuantityWindow quantityWin, String prodName, Quantity quantity) {
+		try {
+			IProductSubsystem  prodSystem = new ProductSubsystemFacade();
+			prodSystem.readQuantityAvailable(prodName, quantity);
+		} catch (DatabaseException e) {
+			JOptionPane.showMessageDialog(quantityWin,
+					"Unable to read quality", "Error",
+					JOptionPane.ERROR_MESSAGE);
+
+		}
 	}
 }
