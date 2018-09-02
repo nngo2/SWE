@@ -26,5 +26,4 @@ public class Catalog implements ICatalog {
 		this.name = name;
 		
 	}
-
 }

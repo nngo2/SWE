@@ -43,12 +43,9 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 
 	public Integer getCatalogIdFromType(String catType)
 			throws DatabaseException {
-		if (catType.equals("Books"))
-			return 1;
-		else if (catType.equals("Clothing"))
-			return 2;
-		else
-			return 3;
+		DbClassCatalogTypes dbClass = new DbClassCatalogTypes();
+		types = dbClass.getCatalogTypes();
+		return types.getCatalogId(catType);
 
 	}
 
@@ -74,11 +71,9 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 
 	@Override
 	public List<String[]> getCatalogNames() throws DatabaseException {
-		List<String[]> list = new ArrayList<String[]>();
-		list.add(new String[] { "Books" });
-		list.add(new String[] { "Clothing" });
-		return list;
-
+		DbClassCatalogTypes dbClass = new DbClassCatalogTypes();
+		types = dbClass.getCatalogTypes();
+		return types.getCatalogNames();
 	}
 
 	@Override

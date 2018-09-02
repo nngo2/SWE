@@ -1,8 +1,12 @@
 package business.productsubsystem;
 
+import static business.util.StringParse.makeString;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
+import business.externalinterfaces.IProductFromDb;
 
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
@@ -17,43 +21,50 @@ import middleware.externalinterfaces.DbConfigKey;
  * Class Description: 
  */
 public class DbClassCatalogTypes implements IDbClass {
+	private IDataAccessSubsystem dataAccessSS = new DataAccessSubsystemFacade();
+	private String query;
+	private String queryType;
+	final String GET_TYPES = "GetTypes";
+	private CatalogTypes types;
 
-    private String query;
-    private String queryType;
-    final String GET_TYPES = "GetTypes";
-    private CatalogTypes types;
-    
-    public CatalogTypes getCatalogTypes() throws DatabaseException {
-    	//IMPLEMENT
-        return new CatalogTypes();       
-    }
-    
-    public void buildQuery() {
-        if(queryType.equals(GET_TYPES)){
-            buildGetTypesQuery();
-        }
-    }
+	public void buildQuery() {
+		if (queryType.equals(GET_TYPES)) {
+			buildGetTypesQuery();
+		}
+	}
 
-    void buildGetTypesQuery() {
-        query = "SELECT * FROM CatalogType";       
-    }
-    /**
-     * This is activated when getting all catalog types.
-     */
-    public void populateEntity(ResultSet resultSet) throws DatabaseException {
-        types = new CatalogTypes();
-        //IMPLEMENT
-        
-    }
+	void buildGetTypesQuery() {
+		query = "SELECT * FROM CatalogType";
+	}
 
-    public String getDbUrl() {
-    	DbConfigProperties props = new DbConfigProperties();	
-    	return props.getProperty(DbConfigKey.PRODUCT_DB_URL.getVal());
-    }
+	/**
+	 * This is activated when getting all catalog types.
+	 */
+	public void populateEntity(ResultSet rs) throws DatabaseException {
+		types = new CatalogTypes();
+		try {
+			while (rs.next()) {
+				types.addCatalog(rs.getInt("catalogid"), rs.getString("catalogname"));
+			}
+		} catch (SQLException e) {
+			throw new DatabaseException(e);
+		}
+	}
 
-    public String getQuery() {
+	public String getDbUrl() {
+		DbConfigProperties props = new DbConfigProperties();
+		return props.getProperty(DbConfigKey.PRODUCT_DB_URL.getVal());
+	}
 
-        return query;
-    }
+	public String getQuery() {
+		return query;
+	}
+	
+
+	public CatalogTypes getCatalogTypes() throws DatabaseException {
+		queryType = GET_TYPES;
+		dataAccessSS.atomicRead(this);
+		return types;
+	}
 
 }
