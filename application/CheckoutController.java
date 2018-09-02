@@ -202,8 +202,8 @@ public class CheckoutController implements CleanupControl {
 				}
 				IAddress shipAddr = cust.createAddress(s[0], s[1], s[2], s[3]);
 				IAddress billAddr = cust.createAddress(b[0], b[1], b[2], b[3]);
-				// cust.setBillingAddressInCart(billAddr);
-				// cust.setShippingAddressInCart(shipAddr);
+				cust.setBillingAddressInCart(billAddr);
+				cust.setShippingAddressInCart(shipAddr);
 
 				setupPaymentWindow();
 			}
@@ -282,13 +282,29 @@ public class CheckoutController implements CleanupControl {
 
 		public void actionPerformed(ActionEvent evt) {
 			paymentWindow.setVisible(false);
+			boolean rulesOk = true;
 
-			// check rules
-			if (false) {
-				// display error message
+			try {
+				IAddress billedAddr = cust.getShoppingCart().getLiveCart().getBillingAddress();
+				String[] cardInfo = paymentWindow.getPaymentFields();
+				ICreditCard card = cust.createCreditCard(cardInfo[0], cardInfo[1], cardInfo[2], cardInfo[3]);
+				cust.runPaymentRules(billedAddr, card);
+			} catch (RuleException e) {
+				rulesOk = false;
+				System.out.println(e.getMessage());
+				JOptionPane.showMessageDialog(paymentWindow, e
+						.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+				paymentWindow.setVisible(true);
+			} catch (EBazaarException e) {
+				rulesOk = false;
+				JOptionPane.showMessageDialog(paymentWindow,
+								"An error has occurred that prevents further processing",
+								"Error", JOptionPane.ERROR_MESSAGE);
+				paymentWindow.setVisible(true);
 			}
+			
 			// rules passed, proceed
-			else {
+			if (rulesOk) {
 				// create a credit card instance and set in shopping cart
 				termsWindow = new TermsWindow();
 				try {

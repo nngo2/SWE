@@ -57,8 +57,9 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 	}
 
 	void loadCustomerProfile(Integer custId) throws DatabaseException {
-		//IMPLEMENT
-		customerProfile = new CustomerProfile(1,"stub","stub");
+		DbClassCustomerProfile dbclass = new DbClassCustomerProfile();
+		dbclass.readCustomerProfile(custId);
+		customerProfile = dbclass.getCustomerProfile();
 	}
 
 	void loadDefaultShipAddress() throws DatabaseException {
