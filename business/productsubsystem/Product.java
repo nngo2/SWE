@@ -3,6 +3,8 @@ package business.productsubsystem;
 
 import business.externalinterfaces.IProductFromDb;
 import business.externalinterfaces.IProductFromGui;
+import java.util.Collection;
+import java.util.Iterator;
 
 
 class Product implements IProductFromDb, IProductFromGui {
@@ -71,4 +73,27 @@ class Product implements IProductFromDb, IProductFromGui {
     public String getDescription() {
         return description;
     }
+	/** 
+	 * @uml.property name="catalog"
+	 * @uml.associationEnd inverse="product:business.productsubsystem.Catalog"
+	 * @uml.association name="has"
+	 */
+	private Catalog catalog;
+
+	/** 
+	 * Getter of the property <tt>catalog</tt>
+	 * @return  Returns the catalog.
+	 * @uml.property  name="catalog"
+	 */
+	public Catalog getCatalog() {
+		return catalog;
+	}
+	/** 
+	 * Setter of the property <tt>catalog</tt>
+	 * @param catalog  The catalog to set.
+	 * @uml.property  name="catalog"
+	 */
+	public void setCatalog(Catalog catalog) {
+		this.catalog = catalog;
+	}
 }

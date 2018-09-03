@@ -10,6 +10,9 @@ import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
 import middleware.externalinterfaces.DbConfigKey;
 
+/**
+ * @uml.dependency   supplier="business.productsubsystem.Catalog"
+ */
 public class DbClassCatalog implements IDbClass {
 	
 	private String query;

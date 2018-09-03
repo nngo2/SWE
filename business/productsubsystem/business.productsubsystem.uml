@@ -1,0 +1,1695 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmi:id="_FbVU4K_KEeiuMpekVN9sNQ" name="productsubsystem">
+  <packagedElement xmi:type="uml:Class" xmi:id="_l9zpAK8DEeiuMpekVN9sNQ" name="DbClassCatalog" clientDependency="_l98y8K8DEeiuMpekVN9sNQ _l9-BEa8DEeiuMpekVN9sNQ _l9-BE68DEeiuMpekVN9sNQ _l9_PMq8DEeiuMpekVN9sNQ _ZLx2AK_JEeiuMpekVN9sNQ">
+    <generalization xmi:id="_l903IK8DEeiuMpekVN9sNQ">
+      <general xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVaAgK78EeiuMpekVN9sNQ"/>
+    </generalization>
+    <ownedAttribute xmi:id="_l936cK8DEeiuMpekVN9sNQ" name="query" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l97k0q8DEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l97k0a8DEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_l94hgK8DEeiuMpekVN9sNQ" name="sAVE" visibility="private" isLeaf="true" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l98L4a8DEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l98L4K8DEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_l94hga8DEeiuMpekVN9sNQ" name="queryType" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l98L468DEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l98L4q8DEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_l94hgq8DEeiuMpekVN9sNQ" name="populateEntity" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_l95voK8DEeiuMpekVN9sNQ" name="resultSet" type="_HVsUYa78EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l96WsK8DEeiuMpekVN9sNQ" name="saveNewCatalog" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_l96Wsa8DEeiuMpekVN9sNQ" name="name" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l96Wsq8DEeiuMpekVN9sNQ" name="buildQuery" visibility="public" concurrency="concurrent">
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l969wK8DEeiuMpekVN9sNQ" name="getQuery" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_l969wa8DEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l969wq8DEeiuMpekVN9sNQ" name="getDbUrl" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_l969w68DEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l97k0K8DEeiuMpekVN9sNQ" name="buildSaveQuery" visibility="package" concurrency="concurrent">
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1TZl4K72EeiuMpekVN9sNQ" name="CatalogTypes" clientDependency="__UwR4K79EeiuMpekVN9sNQ __UxgAa79EeiuMpekVN9sNQ __UyHEa79EeiuMpekVN9sNQ __UzVMq79EeiuMpekVN9sNQ __Uz8Qq79EeiuMpekVN9sNQ __U1KYa79EeiuMpekVN9sNQ __U1xcq79EeiuMpekVN9sNQ">
+    <generalization xmi:id="__UdW8K79EeiuMpekVN9sNQ">
+      <general xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#__Ucv4K79EeiuMpekVN9sNQ"/>
+    </generalization>
+    <ownedAttribute xmi:id="__UnH8K79EeiuMpekVN9sNQ" name="catalogIdToName" visibility="package" type="__UnvAK79EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__UrZYa79EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__UrZYK79EeiuMpekVN9sNQ"/>
+      <association href="platform:/resource/MainProjectSoln/.repository.uml2#__UsngK79EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__UnvAa79EeiuMpekVN9sNQ" name="catalogNameToId" visibility="package" type="__UnvAK79EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__UsAca79EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__UsAcK79EeiuMpekVN9sNQ"/>
+      <association href="platform:/resource/MainProjectSoln/.repository.uml2#__UucsK79EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="__UoWEK79EeiuMpekVN9sNQ" name="getCatalogId" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="__UoWEa79EeiuMpekVN9sNQ" name="name" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="__Uo9IK79EeiuMpekVN9sNQ" type="_1TdQQq72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="__Uo9Ia79EeiuMpekVN9sNQ" name="getCatalogNames" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="__UpkMK79EeiuMpekVN9sNQ" type="_1TlzIK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="__UpkMa79EeiuMpekVN9sNQ" name="getCatalogName" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="__UqLQK79EeiuMpekVN9sNQ" name="id" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="__UqLQa79EeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="__UqLQq79EeiuMpekVN9sNQ" name="addCatalog" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="__UqyUK79EeiuMpekVN9sNQ" name="id" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="__UqyUa79EeiuMpekVN9sNQ" name="name" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_l-RjEK8DEeiuMpekVN9sNQ" name="Catalog" clientDependency="_l-V0gK8DEeiuMpekVN9sNQ _dRhgMK_FEeiuMpekVN9sNQ _Xrey0K_HEeiuMpekVN9sNQ _Xs5vIK_HEeiuMpekVN9sNQ _i8IAoK_HEeiuMpekVN9sNQ _i8Insq_HEeiuMpekVN9sNQ">
+    <generalization xmi:id="_l-SxMK8DEeiuMpekVN9sNQ">
+      <general xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_l-SKIK8DEeiuMpekVN9sNQ"/>
+    </generalization>
+    <ownedAttribute xmi:id="_l-T_UK8DEeiuMpekVN9sNQ" name="catId" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l-VNcq8DEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l-VNca8DEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_l-T_Ua8DEeiuMpekVN9sNQ" name="name" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l-VNdK8DEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l-VNc68DEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_l-T_Uq8DEeiuMpekVN9sNQ" name="Catalog" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8E9Uq_HEeiuMpekVN9sNQ" name="id" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_i8E9U6_HEeiuMpekVN9sNQ" name="name" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l-UmYa8DEeiuMpekVN9sNQ" name="setId" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8EWQq_HEeiuMpekVN9sNQ" name="id" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l-UmY68DEeiuMpekVN9sNQ" name="getName" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8E9VK_HEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l-UmZa8DEeiuMpekVN9sNQ" name="setName" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8FkY6_HEeiuMpekVN9sNQ" name="name" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_l-UmZ68DEeiuMpekVN9sNQ" name="getId" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8FkYq_HEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fP405a_GEeiuMpekVN9sNQ" name="getProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8EWQa_HEeiuMpekVN9sNQ" type="__Uvq0K79EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fP4056_GEeiuMpekVN9sNQ" name="productIterator" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8GygK_HEeiuMpekVN9sNQ" type="_dRec4K_FEeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL3Woa_HEeiuMpekVN9sNQ" name="productToArray" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8GLca_HEeiuMpekVN9sNQ" type="_5NppYK8AEeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL3Wpa_HEeiuMpekVN9sNQ" name="productSize" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8EWQK_HEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL3Wp6_HEeiuMpekVN9sNQ" name="isProductEmpty" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8GLcK_HEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL39sa_HEeiuMpekVN9sNQ" name="productToArray" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8Gyg6_HEeiuMpekVN9sNQ" name="product" type="_5NppYK8AEeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_i8HZkK_HEeiuMpekVN9sNQ" type="_5NppYK8AEeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL39t6_HEeiuMpekVN9sNQ" name="setProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8GLc6_HEeiuMpekVN9sNQ" name="product" type="__Uvq0K79EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL4kwK_HEeiuMpekVN9sNQ" name="containsProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8FkZK_HEeiuMpekVN9sNQ" name="product" type="_5NppYK8AEeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_i8FkZa_HEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL4kw6_HEeiuMpekVN9sNQ" name="containsAllProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8FkYK_HEeiuMpekVN9sNQ" name="product" type="__Uvq0K79EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_i8FkYa_HEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL4kxq_HEeiuMpekVN9sNQ" name="addProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8Gyga_HEeiuMpekVN9sNQ" name="product" type="_5NppYK8AEeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_i8Gygq_HEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_eL4kya_HEeiuMpekVN9sNQ" name="clearProduct" visibility="public" concurrency="concurrent"/>
+    <ownedOperation xmi:id="_eL5L0K_HEeiuMpekVN9sNQ" name="removeProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_i8E9UK_HEeiuMpekVN9sNQ" name="product" type="_5NppYK8AEeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_i8E9Ua_HEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1UHXkK72EeiuMpekVN9sNQ" name="DbClassProduct" visibility="package" clientDependency="_qBMiwa7_EeiuMpekVN9sNQ _qBNJ0q7_EeiuMpekVN9sNQ _qBNJ1a7_EeiuMpekVN9sNQ _qBOX8a7_EeiuMpekVN9sNQ _qBO_Aa7_EeiuMpekVN9sNQ _qBO_A67_EeiuMpekVN9sNQ _qBPmEq7_EeiuMpekVN9sNQ _qBQNIa7_EeiuMpekVN9sNQ _qBQNI67_EeiuMpekVN9sNQ _qBQ0Mq7_EeiuMpekVN9sNQ _qBRbQa7_EeiuMpekVN9sNQ _qBSCUq7_EeiuMpekVN9sNQ _qBSCVa7_EeiuMpekVN9sNQ _qBSpYq7_EeiuMpekVN9sNQ _qBTQcq7_EeiuMpekVN9sNQ _qBTQda7_EeiuMpekVN9sNQ _qBT3gq7_EeiuMpekVN9sNQ _qBUekq7_EeiuMpekVN9sNQ _qBVFoq7_EeiuMpekVN9sNQ _qBVFpa7_EeiuMpekVN9sNQ _qBVssq7_EeiuMpekVN9sNQ _qBWTwa7_EeiuMpekVN9sNQ _5jFxAK_IEeiuMpekVN9sNQ">
+    <generalization xmi:id="_qAcU0K7_EeiuMpekVN9sNQ">
+      <general xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVaAgK78EeiuMpekVN9sNQ"/>
+    </generalization>
+    <ownedAttribute xmi:id="_qAy6IK7_EeiuMpekVN9sNQ" name="dataAccessSS" visibility="private">
+      <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8EEq7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8EEa7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qAzhMa7_EeiuMpekVN9sNQ" name="product" visibility="private">
+      <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8EFK7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8EE67_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA0IQK7_EeiuMpekVN9sNQ" name="productId" visibility="private" type="_1TdQQq72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8rIa7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8rIK7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA0IQa7_EeiuMpekVN9sNQ" name="lOG" visibility="private" isLeaf="true" isStatic="true" type="_qA0vUK7_EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8rI67_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8rIq7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA0vUa7_EeiuMpekVN9sNQ" name="query" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8rJa7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8rJK7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA0vUq7_EeiuMpekVN9sNQ" name="productTable" visibility="private" isStatic="true">
+      <type xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8rJ67_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8rJq7_EeiuMpekVN9sNQ"/>
+      <association href="platform:/resource/MainProjectSoln/.repository.uml2#_qA_HYK7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA1WYK7_EeiuMpekVN9sNQ" name="lOAD_PROD_TABLE" visibility="private" isLeaf="true" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8rKa7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8rKK7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA1WYa7_EeiuMpekVN9sNQ" name="productName" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8rK67_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8rKq7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA1WYq7_EeiuMpekVN9sNQ" name="queryType" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA8rLa7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA8rLK7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA1WY67_EeiuMpekVN9sNQ" name="catalogId" visibility="private" type="_1TdQQq72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA9SMa7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA9SMK7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA1WZK7_EeiuMpekVN9sNQ" name="rEAD_PRODUCT_BY_NAME" visibility="private" isLeaf="true" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA9SM67_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA9SMq7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA19cK7_EeiuMpekVN9sNQ" name="prodFromGui" visibility="private">
+      <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA9SNa7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA9SNK7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA19ca7_EeiuMpekVN9sNQ" name="rEAD_PRODUCT" visibility="private" isLeaf="true" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA9SN67_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA9SNq7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA19cq7_EeiuMpekVN9sNQ" name="rEAD_PROD_LIST" visibility="private" isLeaf="true" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA9SOa7_EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA9SOK7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_qA19c67_EeiuMpekVN9sNQ" name="productList" visibility="private">
+      <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_qA9SO67_EeiuMpekVN9sNQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_qA9SOq7_EeiuMpekVN9sNQ"/>
+      <association href="platform:/resource/MainProjectSoln/.repository.uml2#_qBKGga7_EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_qA19dK7_EeiuMpekVN9sNQ" name="refreshProductTable" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA2kgK7_EeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA3LkK7_EeiuMpekVN9sNQ" name="readProductList" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA3Lka7_EeiuMpekVN9sNQ" name="catalogId" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_qA3Lkq7_EeiuMpekVN9sNQ" type="_1TlzIK72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA3Lk67_EeiuMpekVN9sNQ" name="refreshProductList" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA3yoK7_EeiuMpekVN9sNQ" name="catalogId" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_qA3yoa7_EeiuMpekVN9sNQ" type="_1TlzIK72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA3yoq7_EeiuMpekVN9sNQ" name="readProductByName" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA3yo67_EeiuMpekVN9sNQ" name="productName" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_qA3ypK7_EeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA3ypa7_EeiuMpekVN9sNQ" name="populateProduct" visibility="private" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA4ZsK7_EeiuMpekVN9sNQ" name="rs" type="_HVsUYa78EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA5AwK7_EeiuMpekVN9sNQ" name="getQuery" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA5Awa7_EeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA5Awq7_EeiuMpekVN9sNQ" name="getDbUrl" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA5Aw67_EeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA5AxK7_EeiuMpekVN9sNQ" name="buildProdTableQuery" visibility="private" concurrency="concurrent"/>
+    <ownedOperation xmi:id="_qA5n0K7_EeiuMpekVN9sNQ" name="buildReadProductByNameQuery" visibility="private" concurrency="concurrent"/>
+    <ownedOperation xmi:id="_qA5n0a7_EeiuMpekVN9sNQ" name="buildReadProductQuery" visibility="private" concurrency="concurrent"/>
+    <ownedOperation xmi:id="_qA6O4K7_EeiuMpekVN9sNQ" name="populateEntity" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA6O4a7_EeiuMpekVN9sNQ" name="resultSet" type="_HVsUYa78EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA6O4q7_EeiuMpekVN9sNQ" name="populateProdList" visibility="private" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA6O467_EeiuMpekVN9sNQ" name="rs" type="_HVsUYa78EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA618K7_EeiuMpekVN9sNQ" name="buildProdListQuery" visibility="private" concurrency="concurrent"/>
+    <ownedOperation xmi:id="_qA618a7_EeiuMpekVN9sNQ" name="readProductTable" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA618q7_EeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA61867_EeiuMpekVN9sNQ" name="buildQuery" visibility="public" concurrency="concurrent"/>
+    <ownedOperation xmi:id="_qA7dAK7_EeiuMpekVN9sNQ" name="saveNewProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA7dAa7_EeiuMpekVN9sNQ" name="product">
+        <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_qA7dAq7_EeiuMpekVN9sNQ" name="catalogid" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_qA7dA67_EeiuMpekVN9sNQ" name="description" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA7dBK7_EeiuMpekVN9sNQ" name="readProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA7dBa7_EeiuMpekVN9sNQ" name="productId" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_qA7dBq7_EeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_qA7dB67_EeiuMpekVN9sNQ" name="populateProdTable" visibility="private" concurrency="concurrent">
+      <ownedParameter xmi:id="_qA8EEK7_EeiuMpekVN9sNQ" name="rs" type="_HVsUYa78EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5JvzEK77EeiuMpekVN9sNQ" name="DbClassCatalogTypes" clientDependency="_HVybAK78EeiuMpekVN9sNQ _HVzCEa78EeiuMpekVN9sNQ _HVzCFK78EeiuMpekVN9sNQ _HVzpIq78EeiuMpekVN9sNQ _HV0QMa78EeiuMpekVN9sNQ _HV03Qq78EeiuMpekVN9sNQ _HV1eUa78EeiuMpekVN9sNQ _HV2sca78EeiuMpekVN9sNQ _HV3Tga78EeiuMpekVN9sNQ _HV3ThK78EeiuMpekVN9sNQ _HV36kq78EeiuMpekVN9sNQ _HV4hoq78EeiuMpekVN9sNQ _HV5Isq78EeiuMpekVN9sNQ">
+    <generalization xmi:id="_HVankK78EeiuMpekVN9sNQ">
+      <general xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVaAgK78EeiuMpekVN9sNQ"/>
+    </generalization>
+    <ownedAttribute xmi:id="_HVnb4K78EeiuMpekVN9sNQ" name="dataAccessSS" visibility="private">
+      <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HVvXsa78EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HVvXsK78EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HVoqAK78EeiuMpekVN9sNQ" name="types" visibility="private" type="_1TZl4K72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HVv-wa78EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HVv-wK78EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HVpREK78EeiuMpekVN9sNQ" name="query" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HVv-w678EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HVv-wq78EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HVp4IK78EeiuMpekVN9sNQ" name="gET_TYPES" visibility="package" isLeaf="true" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HVv-xa78EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HVv-xK78EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_HVp4Ia78EeiuMpekVN9sNQ" name="queryType" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HVv-x678EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HVv-xq78EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_HVqfMK78EeiuMpekVN9sNQ" name="buildQuery" visibility="public" concurrency="concurrent"/>
+    <ownedOperation xmi:id="_HVqfMa78EeiuMpekVN9sNQ" name="populateEntity" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_HVs7cK78EeiuMpekVN9sNQ" name="rs" type="_HVsUYa78EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HVtigK78EeiuMpekVN9sNQ" name="getQuery" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_HVuJkK78EeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HVuJka78EeiuMpekVN9sNQ" name="buildGetTypesQuery" visibility="package" concurrency="concurrent"/>
+    <ownedOperation xmi:id="_HVuwoK78EeiuMpekVN9sNQ" name="getCatalogTypes" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_HVuwoa78EeiuMpekVN9sNQ" type="_1TZl4K72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_HVuwoq78EeiuMpekVN9sNQ" name="getDbUrl" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_HVuwo678EeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5NppYK8AEeiuMpekVN9sNQ" name="Product" visibility="package" clientDependency="_8uyN0K8AEeiuMpekVN9sNQ _8uy04q8AEeiuMpekVN9sNQ _dRnm0K_FEeiuMpekVN9sNQ _dRnm06_FEeiuMpekVN9sNQ _IfkewK_GEeiuMpekVN9sNQ _Ig1qEK_GEeiuMpekVN9sNQ">
+    <generalization xmi:id="_8ufS4K8AEeiuMpekVN9sNQ">
+      <general xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+    </generalization>
+    <generalization xmi:id="_8uf58K8AEeiuMpekVN9sNQ">
+      <general xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+    </generalization>
+    <ownedAttribute xmi:id="_8uoc0K8AEeiuMpekVN9sNQ" name="unitPrice" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uvKg68AEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uvKgq8AEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_8uoc0a8AEeiuMpekVN9sNQ" name="catalogId" visibility="private" type="_1TdQQq72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uvKha8AEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uvKhK8AEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_8upq8K8AEeiuMpekVN9sNQ" name="productId" visibility="private" type="_1TdQQq72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uvKh68AEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uvKhq8AEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_8upq8a8AEeiuMpekVN9sNQ" name="quantityAvail" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uvxka8AEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uvxkK8AEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_8upq8q8AEeiuMpekVN9sNQ" name="description" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uvxk68AEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uvxkq8AEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_8upq868AEeiuMpekVN9sNQ" name="mfgDate" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uvxla8AEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uvxlK8AEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_8uqSAK8AEeiuMpekVN9sNQ" name="productName" visibility="private" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8uwYoa8AEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8uwYoK8AEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_DKEPJK_FEeiuMpekVN9sNQ" name="catalog" visibility="private" type="_l-RjEK8DEeiuMpekVN9sNQ" association="_DKEPIK_FEeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DKEPJa_FEeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DKEPJq_FEeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_8uq5EK8AEeiuMpekVN9sNQ" name="Product" visibility="package" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvk21a_HEeiuMpekVN9sNQ" name="name" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvk21q_HEeiuMpekVN9sNQ" name="date" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvk216_HEeiuMpekVN9sNQ" name="numAvail" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvk22K_HEeiuMpekVN9sNQ" name="price" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8urgIa8AEeiuMpekVN9sNQ" name="getMfgDate" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvjosq_HEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8urgI68AEeiuMpekVN9sNQ" name="getProductName" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvjosK_HEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8usuQa8AEeiuMpekVN9sNQ" name="getQuantityAvail" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvjosa_HEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8usuQ68AEeiuMpekVN9sNQ" name="getUnitPrice" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvkPwa_HEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8usuRa8AEeiuMpekVN9sNQ" name="getDescription" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvkPw6_HEeiuMpekVN9sNQ" type="_1Ta0AK72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8utVUa8AEeiuMpekVN9sNQ" name="getProductId" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvk21K_HEeiuMpekVN9sNQ" type="_1TdQQq72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8utVU68AEeiuMpekVN9sNQ" name="Product" visibility="package" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvkPxK_HEeiuMpekVN9sNQ" name="pi" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvkPxa_HEeiuMpekVN9sNQ" name="pn" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvkPxq_HEeiuMpekVN9sNQ" name="qa" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvk20K_HEeiuMpekVN9sNQ" name="up" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvk20a_HEeiuMpekVN9sNQ" name="md" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvk20q_HEeiuMpekVN9sNQ" name="ci" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_jvk206_HEeiuMpekVN9sNQ" name="d" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_8uvKgK8AEeiuMpekVN9sNQ" name="getCatalogId" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvjos6_HEeiuMpekVN9sNQ" type="_1TdQQq72EeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_sRYKsa_FEeiuMpekVN9sNQ" name="getCatalog" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvkPwq_HEeiuMpekVN9sNQ" type="_l-RjEK8DEeiuMpekVN9sNQ" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_fOcDaK_GEeiuMpekVN9sNQ" name="setCatalog" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_jvkPwK_HEeiuMpekVN9sNQ" name="catalog" type="_l-RjEK8DEeiuMpekVN9sNQ"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1H_nIK72EeiuMpekVN9sNQ" name="ProductSubsystemFacade" clientDependency="_1UIlsK72EeiuMpekVN9sNQ _1UM3Ia72EeiuMpekVN9sNQ _1UOsUq72EeiuMpekVN9sNQ _1URvoa72EeiuMpekVN9sNQ _1US9wq72EeiuMpekVN9sNQ _1UUy8a72EeiuMpekVN9sNQ _1UWBEq72EeiuMpekVN9sNQ _1UX2Qa72EeiuMpekVN9sNQ _1UZrca72EeiuMpekVN9sNQ _1Ua5kq72EeiuMpekVN9sNQ _1UcHsq72EeiuMpekVN9sNQ _1UdV0q72EeiuMpekVN9sNQ _1UfLAq72EeiuMpekVN9sNQ _1UhAMa72EeiuMpekVN9sNQ _1UiOUa72EeiuMpekVN9sNQ _1Ujccq72EeiuMpekVN9sNQ _5JwaIK77EeiuMpekVN9sNQ _5JxoQa77EeiuMpekVN9sNQ _5JyPUq77EeiuMpekVN9sNQ _5Jy2Ya77EeiuMpekVN9sNQ _5Jzdca77EeiuMpekVN9sNQ _5J0Ega77EeiuMpekVN9sNQ _riVhMK8GEeiuMpekVN9sNQ _riWIQa8GEeiuMpekVN9sNQ _riWIQ68GEeiuMpekVN9sNQ _riWvUa8GEeiuMpekVN9sNQ _riXWYa8GEeiuMpekVN9sNQ _PusQgK_JEeiuMpekVN9sNQ">
+    <generalization xmi:id="_1S-vIK72EeiuMpekVN9sNQ">
+      <general xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+    </generalization>
+    <ownedAttribute xmi:id="_1TY-0K72EeiuMpekVN9sNQ" name="types" visibility="package" type="_1TZl4K72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1TwyQK72EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1TwLMK72EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_1TaM8K72EeiuMpekVN9sNQ" name="dEFAULT_PROD_DESCRIPTION" visibility="package" isLeaf="true" type="_1Ta0AK72EeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1Tz1ka72EeiuMpekVN9sNQ" value="1"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1Tz1kK72EeiuMpekVN9sNQ"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_1TbbEK72EeiuMpekVN9sNQ" name="createProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riTE9a8GEeiuMpekVN9sNQ" name="name" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riTsAK8GEeiuMpekVN9sNQ" name="date" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riTsAa8GEeiuMpekVN9sNQ" name="numAvail" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riTsAq8GEeiuMpekVN9sNQ" name="unitPrice" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riTsA68GEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TdQQK72EeiuMpekVN9sNQ" name="getCatalogIdFromType" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riR20q8GEeiuMpekVN9sNQ" name="catType" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riR2068GEeiuMpekVN9sNQ" type="_1TdQQq72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TgTkK72EeiuMpekVN9sNQ" name="readQuantityAvailable" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riR21K8GEeiuMpekVN9sNQ" name="prodName" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riSd4K8GEeiuMpekVN9sNQ" name="quantity">
+        <type xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TiIwK72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TjW4K72EeiuMpekVN9sNQ" name="getProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riRPwK8GEeiuMpekVN9sNQ" name="prodName" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riRPwa8GEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TklAK72EeiuMpekVN9sNQ" name="getProductIdFromName" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riQosK8GEeiuMpekVN9sNQ" name="prodName" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riQosa8GEeiuMpekVN9sNQ" type="_1TdQQq72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TlMEK72EeiuMpekVN9sNQ" name="getCatalogNames" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riTsBq8GEeiuMpekVN9sNQ" type="_1TlzIK72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TnBQa72EeiuMpekVN9sNQ" name="getProductList" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riRPwq8GEeiuMpekVN9sNQ" name="catType" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riRPw68GEeiuMpekVN9sNQ" type="_1TlzIK72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TnoUa72EeiuMpekVN9sNQ" name="refreshProductList" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riTE8K8GEeiuMpekVN9sNQ" name="catType" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riTE8a8GEeiuMpekVN9sNQ" type="_1TlzIK72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1ToPYK72EeiuMpekVN9sNQ" name="saveNewCatalogName" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riR20K8GEeiuMpekVN9sNQ" name="name" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1To2cK72EeiuMpekVN9sNQ" name="getProductTable" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riTE8q8GEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TqEkq72EeiuMpekVN9sNQ" name="refreshCatalogNames" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riUTEK8GEeiuMpekVN9sNQ" type="_1TlzIK72EeiuMpekVN9sNQ" direction="return"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TrSsK72EeiuMpekVN9sNQ" name="getProductFromId" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riTE868GEeiuMpekVN9sNQ" name="prodId" type="_1TdQQq72EeiuMpekVN9sNQ"/>
+      <ownedParameter xmi:id="_riTE9K8GEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1TrSs672EeiuMpekVN9sNQ" name="refreshProductTable" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riR20a8GEeiuMpekVN9sNQ" direction="return">
+        <type xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_1Tr5wa72EeiuMpekVN9sNQ" name="saveNewProduct" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:id="_riTsBK8GEeiuMpekVN9sNQ" name="product">
+        <type xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+      </ownedParameter>
+      <ownedParameter xmi:id="_riTsBa8GEeiuMpekVN9sNQ" name="catalogType" type="_1Ta0AK72EeiuMpekVN9sNQ"/>
+      <raisedException xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_DKEPIK_FEeiuMpekVN9sNQ" name="has" memberEnd="_DKEPIa_FEeiuMpekVN9sNQ _DKEPJK_FEeiuMpekVN9sNQ">
+    <ownedEnd xmi:id="_DKEPIa_FEeiuMpekVN9sNQ" name="product" visibility="private" type="_5NppYK8AEeiuMpekVN9sNQ" association="_DKEPIK_FEeiuMpekVN9sNQ">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DKEPIq_FEeiuMpekVN9sNQ" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DKEPI6_FEeiuMpekVN9sNQ"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1TaM8a72EeiuMpekVN9sNQ" name="java.lang">
+    <packagedElement xmi:type="uml:Class" xmi:id="_1Ta0AK72EeiuMpekVN9sNQ" name="String" isLeaf="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1TdQQq72EeiuMpekVN9sNQ" name="Integer" isLeaf="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_sq_dQK8EEeiuMpekVN9sNQ" name="Object"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_1TlMEa72EeiuMpekVN9sNQ" name="java.util">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_1TlzIK72EeiuMpekVN9sNQ" name="List" isAbstract="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1UH-oK72EeiuMpekVN9sNQ" name="ArrayList"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="__UnvAK79EeiuMpekVN9sNQ" name="HashMap"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="__Uvq0K79EeiuMpekVN9sNQ" name="Collection" isAbstract="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qBL7sa7_EeiuMpekVN9sNQ" name="LinkedList"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qBMiwK7_EeiuMpekVN9sNQ" name="Collections"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_dRec4K_FEeiuMpekVN9sNQ" name="Iterator" isAbstract="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HVsUYK78EeiuMpekVN9sNQ" name="java.sql">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_HVsUYa78EeiuMpekVN9sNQ" name="ResultSet" isAbstract="true"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_HVxz8K78EeiuMpekVN9sNQ" name="SQLException"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_qA0IQq7_EeiuMpekVN9sNQ" name="java.util.logging">
+    <packagedElement xmi:type="uml:Class" xmi:id="_qA0vUK7_EeiuMpekVN9sNQ" name="Logger"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UIlsK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UM3Ia72EeiuMpekVN9sNQ" supplier="_1TZl4K72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UOsUq72EeiuMpekVN9sNQ" supplier="_1UH-oK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1URvoa72EeiuMpekVN9sNQ" supplier="_1TlzIK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1US9wq72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UUy8a72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UWBEq72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UGJcK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UX2Qa72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UGJcK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UZrca72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TiIwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1Ua5kq72EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UcHsq72EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UdV0q72EeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UfLAq72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UhAMa72EeiuMpekVN9sNQ" supplier="_1UHXkK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UiOUa72EeiuMpekVN9sNQ" supplier="_1UHXkK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1Ujccq72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UubkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1Uvpsa72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1Uxe4K72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1UytAK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1Uz7Iq72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1U1JQa72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Ut0gK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1U2XYq72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Ut0gK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1U3lgq72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1U4zoa72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1U6Bwq72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1U7P4q72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_1U9FEa72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4Fi9YK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TiIwK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4Fkykq72EeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4FmnwK72EeiuMpekVN9sNQ" supplier="_1TlzIK72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4FnO0q72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4Foc8q72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4FqSIq72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4FrgQa72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4FsuYq72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4Ft8ga72EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S-IEK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4F6JwK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4F7X4a72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4F8mAK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4F9NEa72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_4F_CQa72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5JwaIK77EeiuMpekVN9sNQ" supplier="_5JvzEK77EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5JxoQa77EeiuMpekVN9sNQ" supplier="_5JvzEK77EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5JyPUq77EeiuMpekVN9sNQ" supplier="_1UH-oK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5Jy2Ya77EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5Jzdca77EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UGJcK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5J0Ega77EeiuMpekVN9sNQ" supplier="_1UHXkK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5J3u4K77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5J49Aa77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5J5kEa77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5J6LIa77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5J6yMa77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HVybAK78EeiuMpekVN9sNQ" supplier="_1TZl4K72EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HVzCEa78EeiuMpekVN9sNQ" supplier="_1TZl4K72EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HVzCFK78EeiuMpekVN9sNQ" supplier="_HVsUYa78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HVzpIq78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV0QMa78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV03Qq78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVxz8q78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV1eUa78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVxz8a78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV2sca78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVxz8a78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV3Tga78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV3ThK78EeiuMpekVN9sNQ" supplier="_HVxz8K78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV36kq78EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Enumeration" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVxM4K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV4hoq78EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV5Isq78EeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ" client="_5JvzEK77EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV8MAK78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV8zEa78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV9aIa78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV-BMa78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HV-oQa78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HWDgwK78EeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVaAgK78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HWEH0q78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVaAgK78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HWEu4a78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVaAgK78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HWEu5K78EeiuMpekVN9sNQ" supplier="_HVsUYa78EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVaAgK78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HWHLIK78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Ut0gK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HWHyMK78EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Ut0gK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_HWHyM678EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Ut0gK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_lBOTsK79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_lBO6wa79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_lBPh0K79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVaAgK78EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_lBQI4q79EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_lBQv8q79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_lBKpUK79EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_lBTMMK79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Ut0gK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__UwR4K79EeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ" client="_1TZl4K72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__UxgAa79EeiuMpekVN9sNQ" supplier="_1UH-oK72EeiuMpekVN9sNQ" client="_1TZl4K72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__UyHEa79EeiuMpekVN9sNQ" supplier="__Uvq0K79EeiuMpekVN9sNQ" client="_1TZl4K72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__UzVMq79EeiuMpekVN9sNQ" supplier="_1TlzIK72EeiuMpekVN9sNQ" client="_1TZl4K72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__Uz8Qq79EeiuMpekVN9sNQ" supplier="__UnvAK79EeiuMpekVN9sNQ" client="_1TZl4K72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U1KYa79EeiuMpekVN9sNQ" supplier="__UnvAK79EeiuMpekVN9sNQ" client="_1TZl4K72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U1xcq79EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ" client="_1TZl4K72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U6C4K79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U6p8a79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U6p8679EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U7RAa79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U74Ea79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U-7YK79EeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#__Ucv4K79EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__U_icq79EeiuMpekVN9sNQ" supplier="_1TlzIK72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#__Ucv4K79EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__VAJgq79EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#__Ucv4K79EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__VEa8K79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="__VFCAa79EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBCxwK7_EeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBD_4K7_EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBI4YK7_EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBJfca7_EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBMiwa7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Tj98a72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBNJ0q7_EeiuMpekVN9sNQ" supplier="_qBMiwK7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBNJ1a7_EeiuMpekVN9sNQ" supplier="_HVsUYa78EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBOX8a7_EeiuMpekVN9sNQ" supplier="_1TlzIK72EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBO_Aa7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBO_A67_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBPmEq7_EeiuMpekVN9sNQ" supplier="_qBL7sa7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBQNIa7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVxz8q78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBQNI67_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_qBL7sK7_EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBQ0Mq7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVxz8a78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBRbQa7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVxz8a78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBSCUq7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVoC8K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBSCVa7_EeiuMpekVN9sNQ" supplier="_qA0vUK7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBSpYq7_EeiuMpekVN9sNQ" supplier="_qA0vUK7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBTQcq7_EeiuMpekVN9sNQ" supplier="_HVxz8K78EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBTQda7_EeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBT3gq7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Enumeration" href="platform:/resource/MainProjectSoln/.repository.uml2#_HVxM4K78EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBUekq7_EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBVFoq7_EeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBVFpa7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBVssq7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBWTwa7_EeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TqEkK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBZXEK7_EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBZ-Ia7_EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBZ-I67_EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBalMa7_EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_qBbMQa7_EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8uyN0K8AEeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ" client="_5NppYK8AEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8uy04q8AEeiuMpekVN9sNQ" supplier="_1TdQQq72EeiuMpekVN9sNQ" client="_5NppYK8AEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8u3GUK8AEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8u4Uca8AEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8u5ikK8AEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8u6JoK8AEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8u6Joq8AEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8u90AK8AEeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TcpMq72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8vCFcK8AEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8vCsga8AEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l98y8K8DEeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ" client="_l9zpAK8DEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l9-BEa8DEeiuMpekVN9sNQ" client="_l9zpAK8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l9-BE68DEeiuMpekVN9sNQ" client="_l9zpAK8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l9_PMq8DEeiuMpekVN9sNQ" supplier="_HVsUYa78EeiuMpekVN9sNQ" client="_l9zpAK8DEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-BrcK8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-CSga8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-C5ka8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-Dgoa8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-Dgo68DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-V0gK8DEeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ" client="_l-RjEK8DEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-Y30K8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-Y30q8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-Ze4a8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-aF8a8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l-atAa8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l_6h0K8DEeiuMpekVN9sNQ" supplier="_1Ta0AK72EeiuMpekVN9sNQ">
+    <client xmi:type="uml:Interface" href="platform:/resource/MainProjectSoln/.repository.uml2#_l-SKIK8DEeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l_-zQK8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_l__aUa8DEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1S7EwK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_rhgawK8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_rhhB0a8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_rhho4a8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_rhiP8a8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_rhiP868GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riFpkK8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riGQoa8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riGQo68GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riG3sa8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riHewa8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riVhMK8GEeiuMpekVN9sNQ" supplier="_5JvzEK77EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riWIQa8GEeiuMpekVN9sNQ" supplier="_1UH-oK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riWIQ68GEeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TfsgK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riWvUa8GEeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Class" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UGJcK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riXWYa8GEeiuMpekVN9sNQ" supplier="_1UHXkK72EeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riaZsK8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_riaZsq8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_ribAwa8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_ribAw68GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_ribn0a8GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRhgMK_FEeiuMpekVN9sNQ" supplier="_5NppYK8AEeiuMpekVN9sNQ" client="_l-RjEK8DEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRkjgK_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRlKka_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRlxoa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRlxo6_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRmYsa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRnm0K_FEeiuMpekVN9sNQ" supplier="_l-RjEK8DEeiuMpekVN9sNQ" client="_5NppYK8AEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRnm06_FEeiuMpekVN9sNQ" supplier="_l-RjEK8DEeiuMpekVN9sNQ" client="_5NppYK8AEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRrRMK_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRrRMq_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRr4Qa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRsfUa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_dRsfU6_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gYyzIK_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gYzaMa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gYzaM6_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gY0BQa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gY0BQ6_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gY3EkK_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gY3roa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gY3ro6_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gY4Ssa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gY4Ss6_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gaeOIK_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gae1Ma_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gae1M6_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gafcQa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_gafcQ6_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRe4YK_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRffca_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRgGga_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRgtka_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRhUoa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRmNIK_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRm0Ma_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRnbQa_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRoCUK_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sRoCUq_FEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_IfkewK_GEeiuMpekVN9sNQ" supplier="_l-RjEK8DEeiuMpekVN9sNQ" client="_5NppYK8AEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Ifm7AK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_IfniEK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_IfniEq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_IfoJIa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_IfoJI6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Ig1qEK_GEeiuMpekVN9sNQ" supplier="_l-RjEK8DEeiuMpekVN9sNQ" client="_5NppYK8AEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Ig4tYK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Ig4tYq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Ig5Uca_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Ig5Uc6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Ig57ga_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RN45wK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RN5g0a_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RN5g06_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RN6H4a_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RN6H46_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RPLTMK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RPL6Qa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RPL6Q6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RPMhUa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_RPMhU6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fOg74K_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fOhi8a_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fOiKAa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fOiKA6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fOixEa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQFCIK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQFpMa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQFpM6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQG3Ua_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQHeYa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQPaMK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQQBQK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQRPYa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQR2ca_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fQSdga_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1SLkK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1SLkq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1Syoa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1Syo6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1TZsa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z16dsK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z16dsq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z17Ewa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z17r0K_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z17r0q_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1-vIK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1_WMa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1_WM6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1_9Qa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z1_9Q6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z3bgoK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z3bgoq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z3cHsa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z3cuwa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_z3cuw6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8mKLUK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8mKLUq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8mKyYa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8mLZcK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8mLZcq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8m_RwK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8m_Rwq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8m_40a_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8m_406_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8nAf4a_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8nC8IK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8nDjMa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8nDjM6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8nEKQa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8nExUK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8olNMK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8ol0Qa_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8ol0Q6_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8ombUK_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_8ombUq_GEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XqsIoK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XqsvsK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Xqsvsq_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XqtWwa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XqtWw6_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XrbIcK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Xrbvga_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XrcWkK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XrcWkq_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XrcWlK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Xrey0K_HEeiuMpekVN9sNQ" supplier="_5NppYK8AEeiuMpekVN9sNQ" client="_l-RjEK8DEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XrhPEK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Xrh2Ia_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XridMa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XridM6_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_XrjEQa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_Xs5vIK_HEeiuMpekVN9sNQ" supplier="_5NppYK8AEeiuMpekVN9sNQ" client="_l-RjEK8DEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eLMBMK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eLMoQa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eLMoQ6_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eLNPUa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eLNPU6_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMBusK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMBusq_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMCVwa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMCVw6_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMC80a_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMFZEK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMGAIa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMGAI6_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMGAJa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_eMGnMa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_i8IAoK_HEeiuMpekVN9sNQ" supplier="_dRec4K_FEeiuMpekVN9sNQ" client="_l-RjEK8DEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_i8Insq_HEeiuMpekVN9sNQ" supplier="__Uvq0K79EeiuMpekVN9sNQ" client="_l-RjEK8DEeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_i8LD8K_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_i8LrAa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_i8MSEK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_i8MSEq_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_i8MSFK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_jvn6IK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_jvohMa_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1TeeYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_jvpIQK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1UsmYK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_jvpIQq_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1ThhsK72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_jvpIRK_HEeiuMpekVN9sNQ">
+    <supplier xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1To2ca72EeiuMpekVN9sNQ"/>
+    <client xmi:type="uml:Package" href="platform:/resource/MainProjectSoln/.repository.uml2#_1Hw9oK72EeiuMpekVN9sNQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_5jFxAK_IEeiuMpekVN9sNQ" supplier="_5NppYK8AEeiuMpekVN9sNQ" client="_1UHXkK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_PusQgK_JEeiuMpekVN9sNQ" supplier="_l9zpAK8DEeiuMpekVN9sNQ" client="_1H_nIK72EeiuMpekVN9sNQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_ZLx2AK_JEeiuMpekVN9sNQ" supplier="_l-RjEK8DEeiuMpekVN9sNQ" client="_l9zpAK8DEeiuMpekVN9sNQ"/>
+</uml:Model>

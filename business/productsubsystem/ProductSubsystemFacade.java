@@ -17,6 +17,9 @@ import business.externalinterfaces.IProductFromGui;
 import business.externalinterfaces.IProductSubsystem;
 import business.util.TwoKeyHashMap;
 
+/**
+ * @uml.dependency   supplier="business.productsubsystem.DbClassCatalog"
+ */
 public class ProductSubsystemFacade implements IProductSubsystem {
 	final String DEFAULT_PROD_DESCRIPTION = "New Product";
 	CatalogTypes types;

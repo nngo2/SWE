@@ -1,19 +1,14 @@
 package business.productsubsystem;
 
-import static business.util.StringParse.makeString;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
-
-import business.externalinterfaces.IProductFromDb;
 
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
+import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
-import middleware.externalinterfaces.DbConfigKey;
 
 /**
  * @author pcorazza

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" id="business.productsubsystem" metadata="uml2-1.0" initialized="true" scrolledX="216" scrolledY="408" tag="1000" key="3230303631303036204D61696E50726F6A656374536F6C6E2F6E6E676F32">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.2" name="DbClassCatalog" location="1059,1420" size="268,244" id="business.productsubsystem/DbClassCatalog" runTimeClassModel="saveNewCatalog(Ljava.lang.String;),buildQuery(),getDbUrl(),query,sAVE,populateEntity(Ljava.sql.ResultSet;),getQuery(),queryType,buildSaveQuery()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="120,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="query" id="business.productsubsystem/DbClassCatalog#query"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="queryType" id="business.productsubsystem/DbClassCatalog#queryType"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="sAVE" id="business.productsubsystem/DbClassCatalog#sAVE"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="245,108">
+      <children xsi:type="editmodel:MethodEditModel" name="buildQuery" id="business.productsubsystem/DbClassCatalog#buildQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="buildSaveQuery" id="business.productsubsystem/DbClassCatalog#buildSaveQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDbUrl" id="business.productsubsystem/DbClassCatalog#getDbUrl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuery" id="business.productsubsystem/DbClassCatalog#getQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="populateEntity" id="business.productsubsystem/DbClassCatalog#populateEntity(Ljava.sql.ResultSet;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="saveNewCatalog" id="business.productsubsystem/DbClassCatalog#saveNewCatalog(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.0" target="//@children.2" targetEnd="//@children.0/@sourceConnections.0/@children.1" label="//@children.0/@sourceConnections.0/@children.2" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,207" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="338,37"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,16" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.0" name="CatalogTypes" location="1610,800" size="285,190" id="business.productsubsystem/CatalogTypes" runTimeClassModel="catalogIdToName,getCatalogNames(),catalogNameToId,addCatalog(Ljava.lang.Integer;Ljava.lang.String;),getCatalogId(Ljava.lang.String;),getCatalogName(Ljava.lang.Integer;)">
+    <children xsi:type="editmodel:CompartmentEditModel">
+      <children xsi:type="editmodel:AttributeEditModel" name="catalogIdToName" id="java.util/HashMap@catalogIdToName+business.productsubsystem/CatalogTypes@|java.util/HashMap#catalogIdToName"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="catalogNameToId" id="java.util/HashMap@catalogNameToId+business.productsubsystem/CatalogTypes@|java.util/HashMap#catalogNameToId"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="262,72">
+      <children xsi:type="editmodel:MethodEditModel" name="addCatalog" id="business.productsubsystem/CatalogTypes#addCatalog(Ljava.lang.Integer;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCatalogId" id="business.productsubsystem/CatalogTypes#getCatalogId(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCatalogName" id="business.productsubsystem/CatalogTypes#getCatalogName(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCatalogNames" id="business.productsubsystem/CatalogTypes#getCatalogNames()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.0/@sourceConnections.0" name="Catalog" location="200,1590" size="338,424" id="business.productsubsystem/Catalog" runTimeClassModel="setId(Ljava.lang.String;),getProduct(),isProductEmpty(),productToArray(),product,setName(Ljava.lang.String;),setProduct(Ljava.util.Collection;),addProduct(Lbusiness.productsubsystem.Product;),productSize(),containsAllProduct(Ljava.util.Collection;),removeProduct(Lbusiness.productsubsystem.Product;),productToArray([Lbusiness.productsubsystem.Product;),catId,productIterator(),getId(),getName(),name,Catalog(Ljava.lang.String;Ljava.lang.String;),containsProduct(Lbusiness.productsubsystem.Product;),clearProduct()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="93,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="catId" id="business.productsubsystem/Catalog#catId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="business.productsubsystem/Catalog#name"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="237,90">
+      <children xsi:type="editmodel:MethodEditModel" name="Catalog" id="business.productsubsystem/Catalog#Catalog(Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getId" id="business.productsubsystem/Catalog#getId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="business.productsubsystem/Catalog#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProduct" id="business.productsubsystem/Catalog#getProduct()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="isProductEmpty" id="business.productsubsystem/Catalog#isProductEmpty()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setId" id="business.productsubsystem/Catalog#setId(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setName" id="business.productsubsystem/Catalog#setName(Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" name="has" autoLocated="true" id="business.productsubsystem/Product@product+business.productsubsystem/Catalog@catalog" source="//@children.2" target="//@children.5" targetEnd="//@children.2/@sourceConnections.0/@children.1" label="//@children.2/@sourceConnections.0/@children.2" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="catalog" location="168,0" id="business.productsubsystem/Product@product+business.productsubsystem/Catalog@catalog|business.productsubsystem/Catalog#catalog" attachSource="true" multiplicityLabel="//@children.2/@sourceConnections.0/@children.0/@children.2" roleLabel="//@children.2/@sourceConnections.0/@children.0/@children.0" orderingLabel="//@children.2/@sourceConnections.0/@children.0/@children.1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - catalog" location="375,1551" size="54,16" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="{order}" location="324,1567" size="37,16" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="375,1567" size="22,16" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="product" location="313,586" id="business.productsubsystem/Product@product+business.productsubsystem/Catalog@catalog|business.productsubsystem/Product#product" orderingLabel="//@children.2/@sourceConnections.0/@children.1/@children.0">
+        <children xsi:type="editmodel:LabelEditModel" name="{order}" location="375,1428" size="37,16" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+      </children>
+      <children xsi:type="editmodel:WireLabelEditModel" name="has" size="21,16" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.1" name="DbClassProduct" location="290,82" size="560,676" id="business.productsubsystem/DbClassProduct" runTimeClassModel="buildProdListQuery(),buildQuery(),lOG,buildReadProductByNameQuery(),getDbUrl(),productTable,getQuery(),productName,saveNewProduct(Lbusiness.externalinterfaces.IProductFromGui;Ljava.lang.Integer;Ljava.lang.String;),catalogId,refreshProductList(Ljava.lang.Integer;),readProductByName(Ljava.lang.String;),rEAD_PROD_LIST,buildProdTableQuery(),buildReadProductQuery(),dataAccessSS,product,productId,populateProdTable(Ljava.sql.ResultSet;),readProductTable(),query,refreshProductTable(),populateProdList(Ljava.sql.ResultSet;),lOAD_PROD_TABLE,queryType,readProductList(Ljava.lang.Integer;),readProduct(Ljava.lang.Integer;),rEAD_PRODUCT_BY_NAME,populateProduct(Ljava.sql.ResultSet;),prodFromGui,populateEntity(Ljava.sql.ResultSet;),rEAD_PRODUCT,productList">
+    <children xsi:type="editmodel:CompartmentEditModel" size="254,234">
+      <children xsi:type="editmodel:AttributeEditModel" name="catalogId" id="business.productsubsystem/DbClassProduct#catalogId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="dataAccessSS" id="business.productsubsystem/DbClassProduct#dataAccessSS"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lOAD_PROD_TABLE" id="business.productsubsystem/DbClassProduct#lOAD_PROD_TABLE"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="lOG" id="business.productsubsystem/DbClassProduct#lOG"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="prodFromGui" id="business.productsubsystem/DbClassProduct#prodFromGui"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="product" id="business.productsubsystem/DbClassProduct#product"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="productId" id="business.productsubsystem/DbClassProduct#productId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="productList" id="business.externalinterfaces/IProductFromDb@productList+business.productsubsystem/DbClassProduct@|business.externalinterfaces/IProductFromDb#productList"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="productName" id="business.productsubsystem/DbClassProduct#productName"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="productTable" id="business.util/TwoKeyHashMap@productTable+business.productsubsystem/DbClassProduct@|business.util/TwoKeyHashMap#productTable"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="query" id="business.productsubsystem/DbClassProduct#query"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="queryType" id="business.productsubsystem/DbClassProduct#queryType"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rEAD_PRODUCT" id="business.productsubsystem/DbClassProduct#rEAD_PRODUCT"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rEAD_PRODUCT_BY_NAME" id="business.productsubsystem/DbClassProduct#rEAD_PRODUCT_BY_NAME"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="rEAD_PROD_LIST" id="business.productsubsystem/DbClassProduct#rEAD_PROD_LIST"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="537,324">
+      <children xsi:type="editmodel:MethodEditModel" name="buildProdListQuery" id="business.productsubsystem/DbClassProduct#buildProdListQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="buildProdTableQuery" id="business.productsubsystem/DbClassProduct#buildProdTableQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="buildQuery" id="business.productsubsystem/DbClassProduct#buildQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="buildReadProductByNameQuery" id="business.productsubsystem/DbClassProduct#buildReadProductByNameQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="buildReadProductQuery" id="business.productsubsystem/DbClassProduct#buildReadProductQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDbUrl" id="business.productsubsystem/DbClassProduct#getDbUrl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuery" id="business.productsubsystem/DbClassProduct#getQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="populateEntity" id="business.productsubsystem/DbClassProduct#populateEntity(Ljava.sql.ResultSet;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="populateProdList" id="business.productsubsystem/DbClassProduct#populateProdList(Ljava.sql.ResultSet;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="populateProdTable" id="business.productsubsystem/DbClassProduct#populateProdTable(Ljava.sql.ResultSet;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="populateProduct" id="business.productsubsystem/DbClassProduct#populateProduct(Ljava.sql.ResultSet;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="readProduct" id="business.productsubsystem/DbClassProduct#readProduct(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="readProductByName" id="business.productsubsystem/DbClassProduct#readProductByName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="readProductList" id="business.productsubsystem/DbClassProduct#readProductList(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="readProductTable" id="business.productsubsystem/DbClassProduct#readProductTable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="refreshProductList" id="business.productsubsystem/DbClassProduct#refreshProductList(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="refreshProductTable" id="business.productsubsystem/DbClassProduct#refreshProductTable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="saveNewProduct" id="business.productsubsystem/DbClassProduct#saveNewProduct(Lbusiness.externalinterfaces.IProductFromGui;Ljava.lang.Integer;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.3" target="//@children.5" targetEnd="//@children.3/@sourceConnections.0/@children.1" label="//@children.3/@sourceConnections.0/@children.2" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="199,676" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="434,0"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,16" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0" name="DbClassCatalogTypes" location="1370,369" size="277,280" id="business.productsubsystem/DbClassCatalogTypes" runTimeClassModel="dataAccessSS,types,buildQuery(),getDbUrl(),query,populateEntity(Ljava.sql.ResultSet;),gET_TYPES,getQuery(),buildGetTypesQuery(),getCatalogTypes(),queryType">
+    <children xsi:type="editmodel:CompartmentEditModel" size="254,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="dataAccessSS" id="business.productsubsystem/DbClassCatalogTypes#dataAccessSS"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="gET_TYPES" id="business.productsubsystem/DbClassCatalogTypes#gET_TYPES"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="query" id="business.productsubsystem/DbClassCatalogTypes#query"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="queryType" id="business.productsubsystem/DbClassCatalogTypes#queryType"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="types" id="business.productsubsystem/DbClassCatalogTypes#types"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="213,108">
+      <children xsi:type="editmodel:MethodEditModel" name="buildGetTypesQuery" id="business.productsubsystem/DbClassCatalogTypes#buildGetTypesQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="buildQuery" id="business.productsubsystem/DbClassCatalogTypes#buildQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCatalogTypes" id="business.productsubsystem/DbClassCatalogTypes#getCatalogTypes()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDbUrl" id="business.productsubsystem/DbClassCatalogTypes#getDbUrl()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuery" id="business.productsubsystem/DbClassCatalogTypes#getQuery()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="populateEntity" id="business.productsubsystem/DbClassCatalogTypes#populateEntity(Ljava.sql.ResultSet;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.4" target="//@children.1" targetEnd="//@children.4/@sourceConnections.0/@children.1" label="//@children.4/@sourceConnections.0/@children.2" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="258,280" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="18,0"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,16" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0 //@children.3/@sourceConnections.0" name="Product" location="55,835" size="634,586" id="business.productsubsystem/Product" runTimeClassModel="unitPrice,setCatalog(Lbusiness.productsubsystem.Catalog;),getDescription(),productId,getUnitPrice(),catalog,getMfgDate(),description,productName,Product(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getCatalog(),getQuantityAvail(),catalogId,quantityAvail,getCatalogId(),Product(Ljava.lang.Integer;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.Integer;Ljava.lang.String;),getProductName(),mfgDate,getProductId()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="138,126">
+      <children xsi:type="editmodel:AttributeEditModel" name="catalogId" id="business.productsubsystem/Product#catalogId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="description" id="business.productsubsystem/Product#description"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mfgDate" id="business.productsubsystem/Product#mfgDate"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="productId" id="business.productsubsystem/Product#productId"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="productName" id="business.productsubsystem/Product#productName"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="quantityAvail" id="business.productsubsystem/Product#quantityAvail"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="unitPrice" id="business.productsubsystem/Product#unitPrice"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="611,162">
+      <children xsi:type="editmodel:MethodEditModel" name="Product" id="business.productsubsystem/Product#Product(Ljava.lang.Integer;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.Integer;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="Product" id="business.productsubsystem/Product#Product(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCatalog" id="business.productsubsystem/Product#setCatalog(Lbusiness.productsubsystem.Catalog;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCatalog" id="business.productsubsystem/Product#getCatalog()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCatalogId" id="business.productsubsystem/Product#getCatalogId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDescription" id="business.productsubsystem/Product#getDescription()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getMfgDate" id="business.productsubsystem/Product#getMfgDate()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProductId" id="business.productsubsystem/Product#getProductId()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProductName" id="business.productsubsystem/Product#getProductName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getQuantityAvail" id="business.productsubsystem/Product#getQuantityAvail()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getUnitPrice" id="business.productsubsystem/Product#getUnitPrice()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ProductSubsystemFacade" location="831,859" size="649,370" id="business.productsubsystem/ProductSubsystemFacade" runTimeClassModel="types,getCatalogNames(),refreshProductTable(),saveNewProduct(Lbusiness.externalinterfaces.IProductFromGui;Ljava.lang.String;),getProduct(Ljava.lang.String;),refreshProductList(Ljava.lang.String;),getProductIdFromName(Ljava.lang.String;),getProductList(Ljava.lang.String;),saveNewCatalogName(Ljava.lang.String;),getCatalogIdFromType(Ljava.lang.String;),readQuantityAvailable(Ljava.lang.String;Lbusiness.Quantity;),createProduct(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;),getProductTable(),refreshCatalogNames(),getProductFromId(Ljava.lang.Integer;),dEFAULT_PROD_DESCRIPTION">
+    <children xsi:type="editmodel:CompartmentEditModel" size="254,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="dEFAULT_PROD_DESCRIPTION" id="business.productsubsystem/ProductSubsystemFacade#dEFAULT_PROD_DESCRIPTION"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="types" id="business.productsubsystem/ProductSubsystemFacade#types"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="626,252">
+      <children xsi:type="editmodel:MethodEditModel" name="createProduct" id="business.productsubsystem/ProductSubsystemFacade#createProduct(Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCatalogIdFromType" id="business.productsubsystem/ProductSubsystemFacade#getCatalogIdFromType(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCatalogNames" id="business.productsubsystem/ProductSubsystemFacade#getCatalogNames()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProduct" id="business.productsubsystem/ProductSubsystemFacade#getProduct(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProductFromId" id="business.productsubsystem/ProductSubsystemFacade#getProductFromId(Ljava.lang.Integer;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProductIdFromName" id="business.productsubsystem/ProductSubsystemFacade#getProductIdFromName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProductList" id="business.productsubsystem/ProductSubsystemFacade#getProductList(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getProductTable" id="business.productsubsystem/ProductSubsystemFacade#getProductTable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="readQuantityAvailable" id="business.productsubsystem/ProductSubsystemFacade#readQuantityAvailable(Ljava.lang.String;Lbusiness.Quantity;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="refreshCatalogNames" id="business.productsubsystem/ProductSubsystemFacade#refreshCatalogNames()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="refreshProductList" id="business.productsubsystem/ProductSubsystemFacade#refreshProductList(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="refreshProductTable" id="business.productsubsystem/ProductSubsystemFacade#refreshProductTable()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="saveNewCatalogName" id="business.productsubsystem/ProductSubsystemFacade#saveNewCatalogName(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="saveNewProduct" id="business.productsubsystem/ProductSubsystemFacade#saveNewProduct(Lbusiness.externalinterfaces.IProductFromGui;Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.6" target="//@children.4" targetEnd="//@children.6/@sourceConnections.0/@children.1" label="//@children.6/@sourceConnections.0/@children.2" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="593,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="54,280"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,16" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" source="//@children.6" target="//@children.3" targetEnd="//@children.6/@sourceConnections.1/@children.1" label="//@children.6/@sourceConnections.1/@children.2" sourceEnd="//@children.6/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="326,-1" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="550,637"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,16" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" source="//@children.6" target="//@children.0" targetEnd="//@children.6/@sourceConnections.2/@children.1" label="//@children.6/@sourceConnections.2/@children.2" sourceEnd="//@children.6/@sourceConnections.2/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="361,370" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="133,0"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,16" fontInfo="Arial-8-0" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterals="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showMethodsParameterTypes="true" showMethodsReturnType="true" showMethodsParameterNames="true" showMethodsParameterKinds="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" innerClassSorter="Natural" showPrivateAttributes="true" showProtectedAttributes="true" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showProtectedMethods="true" showPublicMethods="true" showPackageMethods="true" showPrivateMethods="true" showStaticMethods="true" showProtectedInnerClasses="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showPrivateInnerClasses="true" showStaticInnerClasses="true" showInterfaceStereotype="true" showAssociationMember="true" showMethods="true" showAttributes="true" showLiterlas="true"/>
+</editmodel:ClassDiagramEditModel>

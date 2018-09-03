@@ -1,5 +1,7 @@
 package business.productsubsystem;
 
+import static business.util.StringParse.makeString;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collections;
@@ -7,18 +9,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import business.util.TwoKeyHashMap;
-import business.*;
-import business.externalinterfaces.IProductFromDb;
-import business.externalinterfaces.IProductFromGui;
-import static business.util.StringParse.*;
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
-import middleware.dataaccess.DataAccessUtil;
+import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
-import middleware.externalinterfaces.DbConfigKey;
+import business.externalinterfaces.IProductFromDb;
+import business.externalinterfaces.IProductFromGui;
+import business.util.TwoKeyHashMap;
 
 class DbClassProduct implements IDbClass {
 	private static final Logger LOG = Logger.getLogger(DbClassProduct.class
