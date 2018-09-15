@@ -1,5 +1,8 @@
 package application.gui;
 
+import application.ApplicationCleanup;
+import application.GuiUtil;
+import application.LoginControl;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -8,7 +11,6 @@ import java.awt.GridLayout;
 import java.awt.Window;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
@@ -17,16 +19,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import application.ApplicationCleanup;
-import application.GuiUtil;
-import application.LoginControl;
-
 
 /**
- * Class Description: This window provides textfields to enter
- * information for payment by credit card. If the user clicks
- * the Proceed With Checkout button, the Terms and Conditions window
- * appears before the Final Order is displayed.
+ * Class Description: This window provides textfields to enter information for payment by credit card. If the user clicks the Proceed With Checkout button, the Terms and Conditions window appears before the Final Order is displayed.
  */
 public class LoginWindow extends JInternalFrame implements ParentWindow {
 	private Component parent;
@@ -51,7 +46,9 @@ public class LoginWindow extends JInternalFrame implements ParentWindow {
 	//JPanels
 		
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	public LoginWindow(LoginControl loginControl) {
 		super(MAIN_LABEL,false,true,false,true);

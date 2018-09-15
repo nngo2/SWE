@@ -1,19 +1,5 @@
 package application;
 
-import java.awt.Component;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.List;
-import java.util.logging.Logger;
-
-import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-
-import middleware.DatabaseException;
-import middleware.EBazaarException;
 import application.gui.CartItemsWindow;
 import application.gui.CustomTableModel;
 import application.gui.DefaultData;
@@ -36,7 +22,22 @@ import business.shoppingcartsubsystem.ShoppingCartSubsystemFacade;
 import business.util.CustomerUtil;
 import business.util.ShoppingCartUtil;
 import business.util.StringParse;
+import java.awt.Component;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import middleware.DatabaseException;
+import middleware.EBazaarException;
 
+/**
+ * @author nngo2
+ */
 public class CheckoutController implements CleanupControl {
 	private static final Logger LOG = Logger.getLogger(CheckoutController.class
 			.getPackage().getName());
@@ -56,6 +57,9 @@ public class CheckoutController implements CleanupControl {
 	// ///////// EVENT HANDLERS -- new code goes here ////////////
 
 	// /// control CartItemsWindow
+	/**
+	 * @author nngo2
+	 */
 	class ProceedToCheckoutListener implements ActionListener, Controller {
 		SessionContext context = SessionContext.getInstance();
 
@@ -101,19 +105,43 @@ public class CheckoutController implements CleanupControl {
 
 		public void actionPerformed(ActionEvent evt) {
 			cartItemsWindow.setVisible(false);
+
 			/* check that cart is not empty before going to next screen */
-			Boolean loggedIn = (Boolean) context
-					.get(CustomerConstants.LOGGED_IN);
-			if (!loggedIn.booleanValue()) {
-				shippingBillingWindow = new ShippingBillingWindow();
-				LoginControl loginControl = new LoginControl(
-						shippingBillingWindow, cartItemsWindow, this);
+			boolean rulesOk = true;
+			IShoppingCartSubsystem cartSystem = ShoppingCartSubsystemFacade.getInstance();
 
-				loginControl.startLogin();
+			try {
+				cartSystem.runShoppingCartRules();
+			} catch (RuleException e) {
+				rulesOk = false;
+				System.out.println(e.getMessage());
+				JOptionPane.showMessageDialog(cartItemsWindow, e
+						.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+				cartItemsWindow.setVisible(true);
+			} catch (EBazaarException e) {
+				rulesOk = false;
+				JOptionPane
+						.showMessageDialog(
+								cartItemsWindow,
+								"An error has occurred that prevents further processing",
+								"Error", JOptionPane.ERROR_MESSAGE);
+				cartItemsWindow.setVisible(true);
+			}
 
-			} else {
-				populateScreen();
+			if (rulesOk) {
+				Boolean loggedIn = (Boolean) context
+						.get(CustomerConstants.LOGGED_IN);
+				if (!loggedIn.booleanValue()) {
+					shippingBillingWindow = new ShippingBillingWindow();
+					LoginControl loginControl = new LoginControl(
+							shippingBillingWindow, cartItemsWindow, this);
 
+					loginControl.startLogin();
+
+				} else {
+					populateScreen();
+
+				}
 			}
 		}
 	}
@@ -145,6 +173,9 @@ public class CheckoutController implements CleanupControl {
 		}
 	}
 
+	/**
+	 * @author nngo2
+	 */
 	class ProceedFromBillingCheckoutListener implements ActionListener {
 		ICustomerSubsystem cust;
 		boolean rulesOk = true;
@@ -158,6 +189,7 @@ public class CheckoutController implements CleanupControl {
 					CustomerConstants.CUSTOMER);
 			fullname = cust.getCustomerProfile().getFirstName() + " "
 					+ cust.getCustomerProfile().getLastName();
+
 			if (shippingBillingWindow.isNewShipAddress()) {
 
 				String[] addrFlds = shippingBillingWindow
@@ -202,11 +234,38 @@ public class CheckoutController implements CleanupControl {
 				}
 				IAddress shipAddr = cust.createAddress(s[0], s[1], s[2], s[3]);
 				IAddress billAddr = cust.createAddress(b[0], b[1], b[2], b[3]);
-				cust.setBillingAddressInCart(billAddr);
-				cust.setShippingAddressInCart(shipAddr);
 
-				setupPaymentWindow();
+				// last chance to validate addresses
+				rulesOk = validateAddress(shipAddr)
+						&& validateAddress(billAddr);
+
+				if (rulesOk) {
+					cust.setBillingAddressInCart(billAddr);
+					cust.setShippingAddressInCart(shipAddr);
+
+					setupPaymentWindow();
+				}
 			}
+		}
+
+		boolean validateAddress(IAddress address) {
+			try {
+				cust.runAddressRules(address);
+				return true;
+			} catch (RuleException e) {
+				System.out.println(e.getMessage());
+				JOptionPane.showMessageDialog(shipAddressesWindow, e
+						.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+				shippingBillingWindow.setVisible(true);
+			} catch (EBazaarException e) {
+				JOptionPane
+						.showMessageDialog(
+								shipAddressesWindow,
+								"An error has occurred that prevents further processing",
+								"Error", JOptionPane.ERROR_MESSAGE);
+				shippingBillingWindow.setVisible(true);
+			}
+			return false;
 		}
 
 		void setupPaymentWindow() {
@@ -276,6 +335,9 @@ public class CheckoutController implements CleanupControl {
 	}
 
 	// // control PaymentWindow
+	/**
+	 * @author nngo2
+	 */
 	class ProceedFromPaymentListener implements ActionListener {
 		ICustomerSubsystem cust = (ICustomerSubsystem) SessionContext
 				.getInstance().get(CustomerConstants.CUSTOMER);
@@ -285,24 +347,28 @@ public class CheckoutController implements CleanupControl {
 			boolean rulesOk = true;
 
 			try {
-				IAddress billedAddr = cust.getShoppingCart().getLiveCart().getBillingAddress();
+				IAddress billedAddr = cust.getShoppingCart().getLiveCart()
+						.getBillingAddress();
 				String[] cardInfo = paymentWindow.getPaymentFields();
-				ICreditCard card = cust.createCreditCard(cardInfo[0], cardInfo[1], cardInfo[2], cardInfo[3]);
+				ICreditCard card = cust.createCreditCard(cardInfo[0],
+						cardInfo[1], cardInfo[2], cardInfo[3]);
 				cust.runPaymentRules(billedAddr, card);
 			} catch (RuleException e) {
 				rulesOk = false;
 				System.out.println(e.getMessage());
-				JOptionPane.showMessageDialog(paymentWindow, e
-						.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(paymentWindow, e.getMessage(),
+						"Error", JOptionPane.ERROR_MESSAGE);
 				paymentWindow.setVisible(true);
 			} catch (EBazaarException e) {
 				rulesOk = false;
-				JOptionPane.showMessageDialog(paymentWindow,
+				JOptionPane
+						.showMessageDialog(
+								paymentWindow,
 								"An error has occurred that prevents further processing",
 								"Error", JOptionPane.ERROR_MESSAGE);
 				paymentWindow.setVisible(true);
 			}
-			
+
 			// rules passed, proceed
 			if (rulesOk) {
 				// create a credit card instance and set in shopping cart
@@ -427,26 +493,56 @@ public class CheckoutController implements CleanupControl {
 
 	// ////// PUBLIC ACCESSORS to register screens controlled by this class////
 
+	/**
+	 * @param cartItemsWindow
+	 *            the cartItemsWindow to set
+	 * @uml.property name="cartItemsWindow"
+	 */
 	public void setCartItemsWindow(CartItemsWindow w) {
 		cartItemsWindow = w;
 	}
 
+	/**
+	 * @param shippingBillingWindow
+	 *            the shippingBillingWindow to set
+	 * @uml.property name="shippingBillingWindow"
+	 */
 	public void setShippingBillingWindow(ShippingBillingWindow w) {
 		shippingBillingWindow = w;
 	}
 
+	/**
+	 * @param shipAddressesWindow
+	 *            the shipAddressesWindow to set
+	 * @uml.property name="shipAddressesWindow"
+	 */
 	public void setShipAddressesWindow(ShipAddressesWindow w) {
 		shipAddressesWindow = w;
 	}
 
+	/**
+	 * @param paymentWindow
+	 *            the paymentWindow to set
+	 * @uml.property name="paymentWindow"
+	 */
 	public void setPaymentWindow(PaymentWindow w) {
 		paymentWindow = w;
 	}
 
+	/**
+	 * @param termsWindow
+	 *            the termsWindow to set
+	 * @uml.property name="termsWindow"
+	 */
 	public void setTermsWindow(TermsWindow w) {
 		termsWindow = w;
 	}
 
+	/**
+	 * @param finalOrderWindow
+	 *            the finalOrderWindow to set
+	 * @uml.property name="finalOrderWindow"
+	 */
 	public void setFinalOrderWindow(FinalOrderWindow w) {
 		finalOrderWindow = w;
 	}
@@ -476,6 +572,10 @@ public class CheckoutController implements CleanupControl {
 	// ///// make this class a singleton
 	private static CheckoutController instance = new CheckoutController();
 
+	/**
+	 * @return the instance
+	 * @uml.property name="instance"
+	 */
 	public static CheckoutController getInstance() {
 
 		return instance;

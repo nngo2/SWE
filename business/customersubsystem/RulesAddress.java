@@ -1,11 +1,5 @@
 package business.customersubsystem;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.HashMap;
-
-import middleware.EBazaarException;
-
 import business.RuleException;
 import business.externalinterfaces.DynamicBean;
 import business.externalinterfaces.IAddress;
@@ -15,7 +9,14 @@ import business.externalinterfaces.RulesConfigKey;
 import business.externalinterfaces.RulesConfigProperties;
 import business.rulesbeans.AddressBean;
 import business.rulesubsystem.RulesSubsystemFacade;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import middleware.EBazaarException;
 
+/**
+ * @author  nngo2
+ */
 class RulesAddress implements IRules {
 	private HashMap<String,DynamicBean> table;
 	private DynamicBean bean;
@@ -40,6 +41,10 @@ class RulesAddress implements IRules {
 		table.put(deftemplate, bean);
 		
 	}
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public HashMap<String,DynamicBean> getTable(){
 		return table;
 	}

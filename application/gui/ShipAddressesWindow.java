@@ -1,4 +1,6 @@
 package application.gui;
+import application.CheckoutController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -7,25 +9,17 @@ import java.awt.Font;
 import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JButton;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JInternalFrame;
 import javax.swing.JTable;
 import javax.swing.JWindow;
 
-import application.CheckoutController;
-import application.GuiUtil;
-
 
 /**
- * Class Description: This class displays a list of all the
- * customer's addresses on record (on initial creation, just
- * one address is displayed, from fake data in DefaultData).
- * This class is invoked by ShippingBillingWindow as a means
- * to fill in the shipping address on its screen.  
+ * Class Description: This class displays a list of all the customer's addresses on record (on initial creation, just one address is displayed, from fake data in DefaultData). This class is invoked by ShippingBillingWindow as a means to fill in the shipping address on its screen.
  */
 public class ShipAddressesWindow extends JInternalFrame implements ParentWindow {
 	CheckoutController control;
@@ -37,7 +31,9 @@ public class ShipAddressesWindow extends JInternalFrame implements ParentWindow 
 	
 	//JPanels
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	//constants
 	private final boolean USE_DEFAULT_DATA = false;
@@ -75,9 +71,17 @@ public class ShipAddressesWindow extends JInternalFrame implements ParentWindow 
 		
 			
 	}
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public JTable getTable(){
 		return table;
 	}
+	/**
+	 * @return  the model
+	 * @uml.property  name="model"
+	 */
 	public CustomTableModel getModel(){
 		return model;
 	}

@@ -1,15 +1,6 @@
 
 package business.ordersubsystem;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Collections;
-import java.util.LinkedList;
-import static business.util.StringParse.*;
-
-import java.util.List;
-import java.util.logging.Logger;
-
 import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICartItem;
 import business.externalinterfaces.ICreditCard;
@@ -18,14 +9,24 @@ import business.externalinterfaces.IOrder;
 import business.externalinterfaces.IOrderItem;
 import business.externalinterfaces.IShoppingCart;
 import business.util.OrderUtil;
+import business.util.StringParse.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Logger;
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
+import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
-import middleware.externalinterfaces.DbConfigKey;
 
 
+/**
+ * @author  nngo2
+ */
 class DbClassOrder implements IDbClass {
 	private static final Logger LOG = 
 		Logger.getLogger(DbClassOrder.class.getPackage().getName());
@@ -121,11 +122,19 @@ class DbClassOrder implements IDbClass {
     	return props.getProperty(DbConfigKey.ACCOUNT_DB_URL.getVal());
         
     }
+    /**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
     public String getQuery() {
         return query;
     }
     
     
+    /**
+	 * @param orderId  the orderId to set
+	 * @uml.property  name="orderId"
+	 */
     public void setOrderId(String orderId){
         this.orderId = orderId;
         

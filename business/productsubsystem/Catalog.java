@@ -2,6 +2,9 @@ package business.productsubsystem;
 
 import business.externalinterfaces.ICatalog;
 
+/**
+ * @author  nngo2
+ */
 public class Catalog implements ICatalog {
 	private String catId;
 	private String name;
@@ -13,6 +16,10 @@ public class Catalog implements ICatalog {
 		return catId;
 	}
 
+	/**
+	 * @return  the name
+	 * @uml.property  name="name"
+	 */
 	public String getName() {
 		return name;
 	}
@@ -22,6 +29,10 @@ public class Catalog implements ICatalog {
 		
 	}
 
+	/**
+	 * @param name  the name to set
+	 * @uml.property  name="name"
+	 */
 	public void setName(String name) {
 		this.name = name;
 		

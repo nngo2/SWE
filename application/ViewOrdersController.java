@@ -1,16 +1,5 @@
 package application;
 
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.List;
-
-import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-
-import middleware.DatabaseException;
-
 import application.gui.CustomTableModel;
 import application.gui.EbazaarMainFrame;
 import application.gui.SelectOrderWindow;
@@ -21,9 +10,17 @@ import business.externalinterfaces.ICustomerSubsystem;
 import business.externalinterfaces.IOrder;
 import business.externalinterfaces.IOrderItem;
 import business.util.OrderUtil;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import middleware.DatabaseException;
 
 /**
- * @author pcorazza
+ * @author  pcorazza
  */
 public class ViewOrdersController implements CleanupControl {
 
@@ -146,14 +143,26 @@ public class ViewOrdersController implements CleanupControl {
 	}
 
 	// ////// PUBLIC ACCESSORS to register screens controlled by this class////
+	/**
+	 * @param selectOrderWindow  the selectOrderWindow to set
+	 * @uml.property  name="selectOrderWindow"
+	 */
 	public void setSelectOrderWindow(SelectOrderWindow w) {
 		selectOrderWindow = w;
 	}
 
+	/**
+	 * @param viewOrderDetailsWindow  the viewOrderDetailsWindow to set
+	 * @uml.property  name="viewOrderDetailsWindow"
+	 */
 	public void setViewOrderDetailsWindow(ViewOrderDetailsWindow w) {
 		viewOrderDetailsWindow = w;
 	}
 
+	/**
+	 * @param mainFrame  the mainFrame to set
+	 * @uml.property  name="mainFrame"
+	 */
 	public void setMainFrame(EbazaarMainFrame w) {
 		mainFrame = w;
 	}
@@ -179,6 +188,10 @@ public class ViewOrdersController implements CleanupControl {
 	// ///// make this class a singleton
 	private static ViewOrdersController instance = new ViewOrdersController();
 
+	/**
+	 * @return  the instance
+	 * @uml.property  name="instance"
+	 */
 	public static ViewOrdersController getInstance() {
 		return instance;
 	}

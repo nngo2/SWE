@@ -1,12 +1,14 @@
 package business.rulesbeans;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-
 import business.externalinterfaces.DynamicBean;
 import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICreditCard;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 
+/**
+ * @author  nngo2
+ */
 public class PaymentBean implements DynamicBean{
 	private ICreditCard cc;
 	private IAddress addr;

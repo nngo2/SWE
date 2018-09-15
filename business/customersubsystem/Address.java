@@ -6,11 +6,8 @@ import business.externalinterfaces.IAddress;
 
 
 /**
- * @author pcorazza
- * @since Nov 4, 2004
- * Class Description:
- * 
- * 
+ * @author  pcorazza
+ * @since  Nov 4, 2004  Class Description:
  */
 class Address implements IAddress{
     Address() {}
@@ -33,43 +30,83 @@ class Address implements IAddress{
     private String state;
     private String zip;
  
+    /**
+	 * @return  the city
+	 * @uml.property  name="city"
+	 */
     public String getCity() {
         return city;
     }
 
+    /**
+	 * @param city  the city to set
+	 * @uml.property  name="city"
+	 */
     public void setCity(String city) {
         this.city = city;
     }
 
  
+    /**
+	 * @return  the state
+	 * @uml.property  name="state"
+	 */
     public String getState() {
         return state;
     }
  
+    /**
+	 * @param state  the state to set
+	 * @uml.property  name="state"
+	 */
     public void setState(String state) {
         this.state = state;
     }
  
+    /**
+	 * @return  the street1
+	 * @uml.property  name="street1"
+	 */
     public String getStreet1() {
         return street1;
     }
  
+    /**
+	 * @param street1  the street1 to set
+	 * @uml.property  name="street1"
+	 */
     public void setStreet1(String street1) {
         this.street1 = street1;
     }
  
+    /**
+	 * @return  the street2
+	 * @uml.property  name="street2"
+	 */
     public String getStreet2() {
         return street2;
     }
 
+    /**
+	 * @param street2  the street2 to set
+	 * @uml.property  name="street2"
+	 */
     public void setStreet2(String street2) {
         this.street2 = street2;
     }
 
+    /**
+	 * @return  the zip
+	 * @uml.property  name="zip"
+	 */
     public String getZip() {
         return zip;
     }
 
+    /**
+	 * @param zip  the zip to set
+	 * @uml.property  name="zip"
+	 */
     public void setZip(String zip) {
         this.zip = zip;
     }

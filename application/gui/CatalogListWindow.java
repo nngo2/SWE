@@ -1,4 +1,6 @@
 package application.gui;
+import application.BrowseAndSelectController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -14,19 +16,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import application.BrowseAndSelectController;
-import application.GuiUtil;
-
 
 /**
- * Class Description: This screen presents the list of all E-Bazaar
- * catalogs. As of creation date, there were just two catalogs in the 
- * default data: Books
- * and Clothes. Clicking the Browse button when one of the catalogs
- * has been selected invokes an instance
- * of ProductListWindow, displaying the available items for the selected
- * catalog.
- * Students:  See the readdata method for where data is put into the table.
+ * Class Description: This screen presents the list of all E-Bazaar catalogs. As of creation date, there were just two catalogs in the  default data: Books and Clothes. Clicking the Browse button when one of the catalogs has been selected invokes an instance of ProductListWindow, displaying the available items for the selected catalog. Students:  See the readdata method for where data is put into the table.
  */
 public class CatalogListWindow extends JInternalFrame implements ParentWindow {
 	
@@ -195,6 +187,10 @@ public class CatalogListWindow extends JInternalFrame implements ParentWindow {
 		return parent;
 	}
 	
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public JTable getTable() {
 		return table;
 	}

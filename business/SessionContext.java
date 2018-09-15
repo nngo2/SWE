@@ -1,21 +1,20 @@
 
 package business;
 
+import business.externalinterfaces.CustomerConstants;
 import java.util.HashMap;
 
-import business.externalinterfaces.CustomerConstants;
-
 /**
- * Class Description: Stores application level data
- * during execution. In particular, caches the
- * flag indicating user has logged in and caches
- * the initial customer data in the form of an
- * Customer subsystem instance.
+ * Class Description: Stores application level data during execution. In particular, caches the flag indicating user has logged in and caches the initial customer data in the form of an Customer subsystem instance.
  */
 public class SessionContext {
     
     //public interface
     
+    /**
+	 * @return  the instance
+	 * @uml.property  name="instance"
+	 */
     public static SessionContext getInstance() {
         return instance;
         

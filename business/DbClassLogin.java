@@ -3,14 +3,16 @@ package business;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Logger;
-
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
+import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
-import middleware.externalinterfaces.DbConfigKey;
 
+/**
+ * @author  nngo2
+ */
 public class DbClassLogin implements IDbClass {
 	private static final Logger LOG = 
 		Logger.getLogger(DbClassLogin.class.getPackage().getName());
@@ -53,6 +55,10 @@ public class DbClassLogin implements IDbClass {
     	return props.getProperty(DbConfigKey.ACCOUNT_DB_URL.getVal());
     }
 
+    /**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
     public String getQuery() {
         return query;
     }

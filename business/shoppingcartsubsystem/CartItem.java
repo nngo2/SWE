@@ -1,14 +1,16 @@
 
 package business.shoppingcartsubsystem;
 
-import java.util.logging.Logger;
-
-import middleware.DatabaseException;
 import business.externalinterfaces.ICartItem;
 import business.externalinterfaces.IProductSubsystem;
 import business.productsubsystem.ProductSubsystemFacade;
+import java.util.logging.Logger;
+import middleware.DatabaseException;
 
 
+/**
+ * @author  nngo2
+ */
 public class CartItem implements ICartItem {
     Integer cartid;
     Integer productid;
@@ -62,24 +64,52 @@ public class CartItem implements ICartItem {
         buf.append("alreadySaved = <"+alreadySaved+">");
         return buf.toString();
     }
+	/**
+	 * @return  the alreadySaved
+	 * @uml.property  name="alreadySaved"
+	 */
 	public boolean isAlreadySaved() {
 		return alreadySaved;
 	}
+	/**
+	 * @return  the cartid
+	 * @uml.property  name="cartid"
+	 */
 	public Integer getCartid() {
 		return cartid;
 	}
+	/**
+	 * @return  the lineitemid
+	 * @uml.property  name="lineitemid"
+	 */
 	public Integer getLineitemid() {
 		return lineitemid;
 	}
+	/**
+	 * @return  the productid
+	 * @uml.property  name="productid"
+	 */
 	public Integer getProductid() {
 		return productid;
 	}
+	/**
+	 * @return  the productName
+	 * @uml.property  name="productName"
+	 */
 	public String getProductName() {
 		return productName;
 	}
+	/**
+	 * @return  the quantity
+	 * @uml.property  name="quantity"
+	 */
 	public String getQuantity() {
 		return quantity;
 	}
+	/**
+	 * @return  the totalprice
+	 * @uml.property  name="totalprice"
+	 */
 	public String getTotalprice() {
 		return totalprice;
 	}

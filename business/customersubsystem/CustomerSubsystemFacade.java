@@ -1,14 +1,5 @@
 package business.customersubsystem;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Queue;
-
-import middleware.DatabaseException;
-import middleware.EBazaarException;
-import middleware.creditverifcation.CreditVerificationFacade;
-import middleware.externalinterfaces.ICreditVerification;
 import business.RuleException;
 import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICartItem;
@@ -21,14 +12,24 @@ import business.externalinterfaces.IRules;
 import business.externalinterfaces.IShoppingCart;
 import business.externalinterfaces.IShoppingCartSubsystem;
 import business.ordersubsystem.OrderSubsystemFacade;
-
 import business.rulesbeans.AddressBean;
 import business.rulesbeans.PaymentBean;
 import business.rulesbeans.QuantityBean;
 import business.rulesubsystem.RulesSubsystemFacade;
 import business.shoppingcartsubsystem.ShoppingCartSubsystemFacade;
 import business.util.OrderUtil;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Queue;
+import middleware.DatabaseException;
+import middleware.EBazaarException;
+import middleware.creditverifcation.CreditVerificationFacade;
+import middleware.externalinterfaces.ICreditVerification;
 
+/**
+ * @author  nngo2
+ */
 public class CustomerSubsystemFacade implements ICustomerSubsystem {
 
 	IShoppingCartSubsystem shoppingCartSubsystem;
@@ -79,11 +80,11 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 		dbclass.readDefaultPayment(customerProfile);
 		defaultPaymentInfo = dbclass.getDefaultPayment();
 	}
-	
+
 	public void refreshAfterSubmit() throws DatabaseException {
 		loadOrderData();
 	}
-	
+
 	void loadOrderData() throws DatabaseException {
 		// retrieve the order history for the customer and store here
 		orderSubsystem = new OrderSubsystemFacade(customerProfile);
@@ -99,9 +100,9 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 
 	/**
 	 * Return an (unmodifiable) copy of the order history.
+	 * @uml.property  name="orderHistory"
 	 */
 	public List<IOrder> getOrderHistory() {
-		
 		//IMPLEMENT
 		//return Collections.unmodifiableList(new ArrayList<IOrder>());
 		return Collections.unmodifiableList(orderHistory);
@@ -123,6 +124,10 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 		return Collections.unmodifiableList(dbClass.getAddressList());
 	}
 
+	/**
+	 * @return  the customerProfile
+	 * @uml.property  name="customerProfile"
+	 */
 	public ICustomerProfile getCustomerProfile() {
 
 		return customerProfile;
@@ -146,6 +151,10 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 
 	}
 
+	/**
+	 * @return  the defaultPaymentInfo
+	 * @uml.property  name="defaultPaymentInfo"
+	 */
 	public ICreditCard getDefaultPaymentInfo() {
 		return defaultPaymentInfo;
 	}
@@ -176,7 +185,6 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 
 	// assumes array is in the form street,city,state,zip
 	public IAddress createAddress(String[] addressInfo) {
-
 		return createAddress(addressInfo[0], addressInfo[1], addressInfo[2],
 				addressInfo[3]);
 	}

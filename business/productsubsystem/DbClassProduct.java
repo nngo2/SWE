@@ -1,24 +1,25 @@
 package business.productsubsystem;
 
+import business.externalinterfaces.IProductFromDb;
+import business.externalinterfaces.IProductFromGui;
 import static business.util.StringParse.makeString;
-
+import business.util.TwoKeyHashMap;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
-
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
 import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
-import business.externalinterfaces.IProductFromDb;
-import business.externalinterfaces.IProductFromGui;
-import business.util.TwoKeyHashMap;
 
+/**
+ * @author  nngo2
+ */
 class DbClassProduct implements IDbClass {
 	private static final Logger LOG = Logger.getLogger(DbClassProduct.class
 			.getPackage().getName());
@@ -212,6 +213,10 @@ class DbClassProduct implements IDbClass {
 		return props.getProperty(DbConfigKey.PRODUCT_DB_URL.getVal());
 	}
 
+	/**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
 	public String getQuery() {
 		return query;
 	}

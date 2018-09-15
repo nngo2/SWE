@@ -1,16 +1,18 @@
 package business.ordersubsystem;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
-
-import middleware.DatabaseException;
 import business.externalinterfaces.ICustomerProfile;
 import business.externalinterfaces.IOrder;
 import business.externalinterfaces.IOrderItem;
 import business.externalinterfaces.IOrderSubsystem;
 import business.externalinterfaces.IShoppingCart;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+import middleware.DatabaseException;
 
+/**
+ * @author  nngo2
+ */
 public class OrderSubsystemFacade implements IOrderSubsystem {
 	private static final Logger LOG = Logger
 			.getLogger(OrderSubsystemFacade.class.getPackage().getName());

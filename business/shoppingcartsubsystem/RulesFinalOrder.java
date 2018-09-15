@@ -1,9 +1,5 @@
 package business.shoppingcartsubsystem;
 
-import java.util.HashMap;
-import java.util.List;
-
-import middleware.EBazaarException;
 import business.RuleException;
 import business.externalinterfaces.DynamicBean;
 import business.externalinterfaces.IRules;
@@ -13,13 +9,12 @@ import business.externalinterfaces.RulesConfigKey;
 import business.externalinterfaces.RulesConfigProperties;
 import business.rulesbeans.FinalOrderBean;
 import business.rulesubsystem.RulesSubsystemFacade;
+import java.util.HashMap;
+import java.util.List;
+import middleware.EBazaarException;
 
 /**
- * This Rules class is different from RulesShoppingCart
- * (even though it checks aspects of a Shopping Cart)
- * because it needs to execute at a different time during
- * execution of the application (namely, when final order
- * is submitted)
+ * This Rules class is different from RulesShoppingCart (even though it checks aspects of a Shopping Cart) because it needs to execute at a different time during execution of the application (namely, when final order is submitted)
  */
 public class RulesFinalOrder implements IRules {
 
@@ -53,6 +48,10 @@ public class RulesFinalOrder implements IRules {
     	IRulesSubsystem rules = new RulesSubsystemFacade();
     	rules.runRules(this);
 	}
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public HashMap<String,DynamicBean> getTable(){
 		return table;
 	}

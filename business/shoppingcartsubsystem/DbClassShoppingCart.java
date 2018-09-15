@@ -1,25 +1,26 @@
 
 package business.shoppingcartsubsystem;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List; 
-import java.util.logging.Logger;
-
-import static business.util.StringParse.*;
-
 import business.*;
 import business.externalinterfaces.ICartItem;
 import business.externalinterfaces.ICustomerProfile;
+import business.util.StringParse.*;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Logger;
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
+import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
-import middleware.externalinterfaces.DbConfigKey;
 
 
+/**
+ * @author  nngo2
+ */
 public class DbClassShoppingCart implements IDbClass {
 	private static final Logger LOG = Logger.getLogger(DbClassShoppingCart.class
 			.getPackage().getName());
@@ -102,6 +103,10 @@ public class DbClassShoppingCart implements IDbClass {
     }
 
 
+    /**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
     public String getQuery() {
         return query;
     }

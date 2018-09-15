@@ -1,4 +1,9 @@
 package application.gui;
+import application.ApplicationCleanup;
+import application.GuiUtil;
+import application.IComboObserver;
+import application.ManageProductsController;
+import business.externalinterfaces.CustomerConstants;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -8,7 +13,6 @@ import java.awt.Window;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Properties;
-
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -18,16 +22,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import business.externalinterfaces.CustomerConstants;
-
-import application.ApplicationCleanup;
-import application.GuiUtil;
-import application.IComboObserver;
-import application.ManageProductsController;
-
 /**
- * Class Description: This class is responsible for building
- * the window for adding or editing a product. 
+ * Class Description: This class is responsible for building the window for adding or editing a product.
  */
 public class AddEditProduct extends JInternalFrame implements ParentWindow, IComboObserver {
 
@@ -66,7 +62,9 @@ public class AddEditProduct extends JInternalFrame implements ParentWindow, ICom
 
 	//JPanels		
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	/**
 	 * Constructor sets instance variables and builds gui. 
@@ -237,6 +235,10 @@ public class AddEditProduct extends JInternalFrame implements ParentWindow, ICom
 	}	
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * @param catalogGroup  the catalogGroup to set
+	 * @uml.property  name="catalogGroup"
+	 */
 	public void setCatalogGroup(String catalogGroup) {
 		this.catalogGroup = catalogGroup;
 	}	

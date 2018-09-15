@@ -6,19 +6,18 @@
  */
 package business.productsubsystem;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import middleware.DatabaseException;
 import business.DbClassQuantity;
 import business.Quantity;
 import business.externalinterfaces.IProductFromDb;
 import business.externalinterfaces.IProductFromGui;
 import business.externalinterfaces.IProductSubsystem;
 import business.util.TwoKeyHashMap;
+import java.util.ArrayList;
+import java.util.List;
+import middleware.DatabaseException;
 
 /**
- * @uml.dependency   supplier="business.productsubsystem.DbClassCatalog"
+ * @uml.dependency  supplier="business.productsubsystem.DbClassCatalog"
  */
 public class ProductSubsystemFacade implements IProductSubsystem {
 	final String DEFAULT_PROD_DESCRIPTION = "New Product";
@@ -95,6 +94,7 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 	@Override
 	public Integer getProductIdFromName(String prodName)
 			throws DatabaseException {
+		/*
 		if (prodName.startsWith("Mess"))
 			return 1;
 		else if (prodName.startsWith("Gone"))
@@ -108,7 +108,13 @@ public class ProductSubsystemFacade implements IProductSubsystem {
 		if (prodName.startsWith("Skirts"))
 			return 6;
 		return 7;
-
+		*/
+		DbClassProduct dbClass = new DbClassProduct();
+		IProductFromDb product = dbClass.readProductByName(prodName);
+		if (product != null) {
+			return product.getProductId();
+		}
+		return -1;
 	}
 
 	@Override

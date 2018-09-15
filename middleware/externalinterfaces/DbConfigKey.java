@@ -1,5 +1,8 @@
 package middleware.externalinterfaces;
 
+/**
+ * @author  nngo2
+ */
 public enum DbConfigKey {
 	PRODUCT_DB_URL("product_dburl"), 
 	ACCOUNT_DB_URL("account_dburl"),
@@ -12,6 +15,10 @@ public enum DbConfigKey {
 	private DbConfigKey(String val) {
 		this.val = val;
 	}
+	/**
+	 * @return  the val
+	 * @uml.property  name="val"
+	 */
 	public String getVal() {
 		return val;
 	}

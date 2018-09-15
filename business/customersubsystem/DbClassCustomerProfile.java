@@ -2,7 +2,6 @@ package business.customersubsystem;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
@@ -10,6 +9,9 @@ import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
 
+/**
+ * @author  nngo2
+ */
 public class DbClassCustomerProfile implements IDbClass {
 	private IDataAccessSubsystem dataAccess = new DataAccessSubsystemFacade();
 	private final String READ = "Read";
@@ -31,6 +33,10 @@ public class DbClassCustomerProfile implements IDbClass {
 		return props.getProperty(DbConfigKey.ACCOUNT_DB_URL.getVal());
 	}
 
+	/**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
 	@Override
 	public String getQuery() {
 		return query;

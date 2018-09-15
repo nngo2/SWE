@@ -1,4 +1,7 @@
 package application.gui;
+import application.ApplicationCleanup;
+import application.CheckoutController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -7,7 +10,6 @@ import java.awt.GridLayout;
 import java.awt.Window;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
@@ -15,14 +17,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import application.ApplicationCleanup;
-import application.CheckoutController;
-import application.GuiUtil;
-
 /**
- * Class Description: The TermsWindow class displays the terms
- * under which products are sold and shipped. The implementation
- * is a TextArea widget containing the terms information.
+ * Class Description: The TermsWindow class displays the terms under which products are sold and shipped. The implementation is a TextArea widget containing the terms information.
  */
 public class TermsWindow extends JInternalFrame implements ParentWindow {
     CheckoutController control;
@@ -34,7 +30,9 @@ public class TermsWindow extends JInternalFrame implements ParentWindow {
 
 	//JPanels	
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	public TermsWindow() {
 		super(MAIN_LABEL,false,true,false,true);
 	    control = CheckoutController.getInstance();

@@ -3,10 +3,11 @@ package business.productsubsystem;
 
 import business.externalinterfaces.IProductFromDb;
 import business.externalinterfaces.IProductFromGui;
-import java.util.Collection;
-import java.util.Iterator;
 
 
+/**
+ * @author  nngo2
+ */
 class Product implements IProductFromDb, IProductFromGui {
 
     private Integer productId;
@@ -32,44 +33,51 @@ class Product implements IProductFromDb, IProductFromGui {
     	this(null, name, numAvail, price, date, null, null);
     }
     /**
-     * @return Returns the catalogId.
-     */
+	 * @return  Returns the catalogId.
+	 * @uml.property  name="catalogId"
+	 */
     public Integer getCatalogId() {
         return catalogId;
     }
     /**
-     * @return Returns the mfgDate.
-     */
+	 * @return  Returns the mfgDate.
+	 * @uml.property  name="mfgDate"
+	 */
     public String getMfgDate() {
         return mfgDate;
     }
     /**
-     * @return Returns the productId.
-     */
+	 * @return  Returns the productId.
+	 * @uml.property  name="productId"
+	 */
     public Integer getProductId() {
         return productId;
     }
     /**
-     * @return Returns the productName.
-     */
+	 * @return  Returns the productName.
+	 * @uml.property  name="productName"
+	 */
     public String getProductName() {
         return productName;
     }
     /**
-     * @return Returns the quantityAvail.
-     */
+	 * @return  Returns the quantityAvail.
+	 * @uml.property  name="quantityAvail"
+	 */
     public String getQuantityAvail() {
         return quantityAvail;
     }
     /**
-     * @return Returns the unitPrice.
-     */
+	 * @return  Returns the unitPrice.
+	 * @uml.property  name="unitPrice"
+	 */
     public String getUnitPrice() {
         return unitPrice;
     }
     /**
-     * @return Returns the description.
-     */
+	 * @return  Returns the description.
+	 * @uml.property  name="description"
+	 */
     public String getDescription() {
         return description;
     }

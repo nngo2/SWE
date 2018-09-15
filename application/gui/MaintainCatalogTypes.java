@@ -1,6 +1,8 @@
 package application.gui;
 
 
+import application.GuiUtil;
+import application.ManageProductsController;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -8,7 +10,6 @@ import java.awt.Font;
 import java.awt.Window;
 import java.util.List;
 import java.util.Properties;
-
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -16,14 +17,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import application.GuiUtil;
-import application.ManageProductsController;
-
 /**
- * Class Description: This class presents a table of all catalogs
- * available in the database, and allows the user to add
- * edit or delete groups. Not all functionality for these buttons
- * is implemented on initial creation of this class.
+ * Class Description: This class presents a table of all catalogs available in the database, and allows the user to add edit or delete groups. Not all functionality for these buttons is implemented on initial creation of this class.
  */
 public class MaintainCatalogTypes extends JInternalFrame implements ParentWindow {
 	ManageProductsController control;
@@ -80,9 +75,17 @@ public class MaintainCatalogTypes extends JInternalFrame implements ParentWindow
 		getContentPane().add(mainPanel);
 	}
 	
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public JTable getTable(){
 		return table;
 	}
+	/**
+	 * @return  the model
+	 * @uml.property  name="model"
+	 */
 	public CustomTableModel getModel() {
 		return model;
 	}

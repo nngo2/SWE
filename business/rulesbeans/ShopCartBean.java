@@ -1,15 +1,17 @@
 package business.rulesbeans;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.util.List;
-
 import business.externalinterfaces.DynamicBean;
 import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICartItem;
 import business.externalinterfaces.ICreditCard;
 import business.externalinterfaces.IShoppingCart;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.List;
 
+/**
+ * @author  nngo2
+ */
 public class ShopCartBean implements DynamicBean {
 	//private static Logger log = Logger.getLogger(null);
     

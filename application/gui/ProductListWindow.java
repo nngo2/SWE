@@ -1,4 +1,6 @@
 package application.gui;
+import application.BrowseAndSelectController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -8,7 +10,6 @@ import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -16,16 +17,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import application.BrowseAndSelectController;
-import application.GuiUtil;
-
 
 /**
- * Class Description: This window displays all known products belonging
- * to the selected catalog group. The catalog group is passed into
- * the constructor as  a parameter. In the final version of the
- * application, the products displayed should be all products in
- * the database having category group equal to this parameter. 
+ * Class Description: This window displays all known products belonging to the selected catalog group. The catalog group is passed into the constructor as  a parameter. In the final version of the application, the products displayed should be all products in the database having category group equal to this parameter.
  */
 public class ProductListWindow extends JInternalFrame implements ParentWindow {
 	private BrowseAndSelectController control;
@@ -228,6 +222,10 @@ public class ProductListWindow extends JInternalFrame implements ParentWindow {
 	public Component getParentWindow() {
 		return parent;
 	}
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public JTable getTable(){
 		return table;
 	}

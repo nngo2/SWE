@@ -2,7 +2,6 @@ package business.productsubsystem;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
@@ -11,9 +10,7 @@ import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
 
 /**
- * @author pcorazza
- * <p>
- * Class Description: 
+ * @author  pcorazza  <p>  Class Description:
  */
 public class DbClassCatalogTypes implements IDbClass {
 	private IDataAccessSubsystem dataAccessSS = new DataAccessSubsystemFacade();
@@ -51,6 +48,10 @@ public class DbClassCatalogTypes implements IDbClass {
 		return props.getProperty(DbConfigKey.PRODUCT_DB_URL.getVal());
 	}
 
+	/**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
 	public String getQuery() {
 		return query;
 	}

@@ -1,9 +1,5 @@
 package business.shoppingcartsubsystem;
 
-import java.util.HashMap;
-import java.util.List;
-
-import middleware.EBazaarException;
 import business.RuleException;
 import business.externalinterfaces.DynamicBean;
 import business.externalinterfaces.IAddress;
@@ -16,7 +12,13 @@ import business.externalinterfaces.RulesConfigProperties;
 import business.rulesbeans.PaymentBean;
 import business.rulesbeans.ShopCartBean;
 import business.rulesubsystem.RulesSubsystemFacade;
+import java.util.HashMap;
+import java.util.List;
+import middleware.EBazaarException;
 
+/**
+ * @author  nngo2
+ */
 public class RulesShoppingCart implements IRules{
 	
 	private HashMap<String,DynamicBean> table;
@@ -49,6 +51,10 @@ public class RulesShoppingCart implements IRules{
     	IRulesSubsystem rules = new RulesSubsystemFacade();
     	rules.runRules(this);
 	}
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public HashMap<String,DynamicBean> getTable(){
 		return table;
 	}

@@ -1,12 +1,13 @@
 package application.gui;
 
+import application.BrowseAndSelectController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Window;
-
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -14,17 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JWindow;
 
-import application.BrowseAndSelectController;
-import application.GuiUtil;
-
 /**
- * Class Description: This class provides detailed information
- * about a selected product. When the user clicks the Browse button
- * on the ProductListWindow screen, the product details for the selected
- * product appear on this screen. In this screen the user has the option
- * to add the product, whose detailed description is given here, to
- * the shopping cart (and if this option is chosen, the CartItemsWindow
- * is invoked).
+ * Class Description: This class provides detailed information about a selected product. When the user clicks the Browse button on the ProductListWindow screen, the product details for the selected product appear on this screen. In this screen the user has the option to add the product, whose detailed description is given here, to the shopping cart (and if this option is chosen, the CartItemsWindow is invoked).
  */
 public class ProductDetailsWindow extends JInternalFrame implements ParentWindow {
     private BrowseAndSelectController control;
@@ -67,10 +59,18 @@ public class ProductDetailsWindow extends JInternalFrame implements ParentWindow
 		//pack();
 			
 	}
+    /**
+	 * @return  the item
+	 * @uml.property  name="item"
+	 */
     public String getItem() {
         return item;
     }
  
+    /**
+	 * @return  the price
+	 * @uml.property  name="price"
+	 */
     public double getPrice() {
         return price;
     }

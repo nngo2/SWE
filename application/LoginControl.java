@@ -1,6 +1,14 @@
 
 package application;
 
+import application.gui.EbazaarMainFrame;
+import application.gui.LoginWindow;
+import application.gui.ParentWindow;
+import business.DbClassLogin;
+import business.Login;
+import business.SessionContext;
+import business.customersubsystem.CustomerSubsystemFacade;
+import business.externalinterfaces.*;
 import java.awt.Component;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
@@ -8,23 +16,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import middleware.DatabaseException;
 import middleware.EBazaarException;
-import business.DbClassLogin;
-import business.Login;
-import business.SessionContext;
-import business.customersubsystem.CustomerSubsystemFacade;
-import business.externalinterfaces.*;
-import application.gui.EbazaarMainFrame;
-import application.gui.LoginWindow;
-import application.gui.ParentWindow;
 
 /**
- * @author pcorazza
- * @since Nov 11, 2004
- * Class Description:
- * NOTE: LoginWindow is disposed of every time
- * it is used, so we do not require LoginControl
- * to implement CleanupControl.
- * 
+ * @author  pcorazza
+ * @since  Nov 11, 2004  Class Description:  NOTE: LoginWindow is disposed of every time  it is used, so we do not require LoginControl  to implement CleanupControl.
  */
 public class LoginControl {
     

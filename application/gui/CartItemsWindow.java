@@ -1,4 +1,7 @@
 package application.gui;
+import application.BrowseAndSelectController;
+import application.CheckoutController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -8,7 +11,6 @@ import java.awt.Toolkit;
 import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
@@ -18,13 +20,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JWindow;
 
-import application.BrowseAndSelectController;
-import application.CheckoutController;
-import application.GuiUtil;
-
 /**
- * Class Description: This window represents a user's shopping cart. 
- * Students:  See the readdata method for where data is put into the table.
+ * Class Description: This window represents a user's shopping cart.  Students:  See the readdata method for where data is put into the table.
  */
 public class CartItemsWindow extends JInternalFrame implements ParentWindow {
 	private Component parent;
@@ -39,7 +36,9 @@ public class CartItemsWindow extends JInternalFrame implements ParentWindow {
     
 	//JPanels
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	//constants
 	private final boolean USE_DEFAULT_DATA = false;
@@ -217,6 +216,10 @@ public class CartItemsWindow extends JInternalFrame implements ParentWindow {
 		
 	}
     
+    /**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
     public JTable getTable() {
     	return table;
     }

@@ -1,4 +1,7 @@
 package application.gui;
+import application.ApplicationCleanup;
+import application.GuiUtil;
+import application.ManageProductsController;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -6,21 +9,14 @@ import java.awt.Font;
 import java.awt.Window;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
-
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import application.ApplicationCleanup;
-import application.GuiUtil;
-import application.ManageProductsController;
-/** 
- * Class Description: This class is responsible for building
- * the window for adding or editing a catalog group. 
+/**
+ * Class Description: This class is responsible for building the window for adding or editing a catalog group.
  */
 public class AddEditCatalog extends JInternalFrame implements ParentWindow {
 	private Component parent;
@@ -44,7 +40,9 @@ public class AddEditCatalog extends JInternalFrame implements ParentWindow {
 	}
 	//JPanels		
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	/** 
 	 * Constructor sets addOrEdit and catalogGroup instance variables and

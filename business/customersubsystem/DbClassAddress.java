@@ -1,18 +1,19 @@
 package business.customersubsystem;
 
+import business.externalinterfaces.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
-
-import business.externalinterfaces.*;
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
-
 import middleware.externalinterfaces.*;
 
+/**
+ * @author  nngo2
+ */
 class DbClassAddress implements IDbClass {
 	private static final Logger LOG = Logger.getLogger(DbClassAddress.class
 			.getPackage().getName());
@@ -29,6 +30,7 @@ class DbClassAddress implements IDbClass {
 	private final String READ = "Read";
 	private final String READ_DEFAULT_SHIP = "ReadDefaultShip";
 	private final String READ_DEFAULT_BILL = "ReadDefaultBill";
+	private final String READ_ALL_ADDRESSES = "ReadAllAddresses";
 
 	//column names
 	private final String STREET = "street";
@@ -59,10 +61,9 @@ class DbClassAddress implements IDbClass {
 
 	void readAllAddresses(ICustomerProfile custProfile)
 			throws DatabaseException {
-		//IMPLEMENT
-		Address a = new Address("stub", "stub", "stub", "stub");
-		addressList = new LinkedList<IAddress>();
-		addressList.add(a);
+		this.custProfile = custProfile;
+		queryType = READ_ALL_ADDRESSES;
+		dataAccessSS.atomicRead(this);
 	}
 
 	public void buildQuery() throws DatabaseException {
@@ -74,25 +75,47 @@ class DbClassAddress implements IDbClass {
 			buildReadDefaultShipQuery();
 		} else if (queryType.equals(READ_DEFAULT_BILL)) {
 			buildReadDefaultBillQuery();
+		}else if (queryType.equals(READ_ALL_ADDRESSES)) {
+			buildReadAllAddressesQuery();
 		}
 	}
 
+	/**
+	 * @return  the address
+	 * @uml.property  name="address"
+	 */
 	IAddress getAddress() {
 		return address;
 	}
 
+	/**
+	 * @return  the addressList
+	 * @uml.property  name="addressList"
+	 */
 	List<IAddress> getAddressList() {
 		return addressList;
 	}
 
+	/**
+	 * @return  the defaultShipAddress
+	 * @uml.property  name="defaultShipAddress"
+	 */
 	Address getDefaultShipAddress() {
 		return this.defaultShipAddress;
 	}
 
+	/**
+	 * @return  the defaultBillAddress
+	 * @uml.property  name="defaultBillAddress"
+	 */
 	Address getDefaultBillAddress() {
 		return this.defaultBillAddress;
 	}
 
+	/**
+	 * @param address  the address to set
+	 * @uml.property  name="address"
+	 */
 	void setAddress(IAddress addr) {
 		address = addr;
 	}
@@ -111,7 +134,11 @@ class DbClassAddress implements IDbClass {
 	}
 
 	void buildReadAllAddressesQuery() {
-		//IMPLEMENT
+		query = "SELECT shipaddress1, shipaddress2, shipcity, shipstate, shipzipcode, "
+			+ " billaddress1, billaddress2, billcity, billstate, billzipcode "
+			+ "FROM Customer "
+			+ "WHERE custid = "
+			+ custProfile.getCustId();
 	}
 
 	void buildReadDefaultShipQuery() {
@@ -135,6 +162,10 @@ class DbClassAddress implements IDbClass {
 
 	}
 
+	/**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
 	public String getQuery() {
 		return query;
 
@@ -185,6 +216,23 @@ class DbClassAddress implements IDbClass {
 		}
 
 	}	
+	
+	void populateShippingAndBillingAddresses(ResultSet rs) throws DatabaseException {
+		try {
+			addressList = new LinkedList<IAddress>();
+			if (rs.next()) {
+				addressList.add(new Address(rs.getString("shipaddress1"),
+						rs.getString("shipaddress2"), rs.getString("shipcity"),
+						rs.getString("shipstate"), rs.getString("shipzipcode")));
+				addressList.add(new Address(rs.getString("billaddress1"),
+						rs.getString("billaddress2"), rs.getString("billcity"),
+						rs.getString("billstate"), rs.getString("billzipcode")));
+			}
+		} catch (SQLException e) {
+			throw new DatabaseException(e);
+		}
+
+	}
 
 	/* Used only when we read from the database
 	 */
@@ -195,6 +243,8 @@ class DbClassAddress implements IDbClass {
 			populateDefaultShipAddress(rs);
 		} else if (queryType.equals(READ_DEFAULT_BILL)) {
 			populateDefaultBillAddress(rs);
+		} else if (queryType.equals(READ_ALL_ADDRESSES)) {
+			populateShippingAndBillingAddresses(rs);
 		}
 	}
 }

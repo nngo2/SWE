@@ -1,21 +1,19 @@
 package application;
 
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.List;
-import java.util.logging.Logger;
-
-import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-
+import application.gui.CartItemsWindow;
+import application.gui.CatalogListWindow;
+import application.gui.DefaultData;
+import application.gui.EbazaarMainFrame;
+import application.gui.MaintainCatalogTypes;
+import application.gui.MaintainProductCatalog;
+import application.gui.ProductDetailsWindow;
+import application.gui.ProductListWindow;
+import application.gui.QuantityWindow;
+import application.gui.SelectOrderWindow;
 import business.Quantity;
 import business.RuleException;
 import business.RulesQuantity;
 import business.SessionContext;
-
 import business.externalinterfaces.CustomerConstants;
 import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICartItem;
@@ -32,21 +30,21 @@ import business.util.CustomerUtil;
 import business.util.ProductUtil;
 import business.util.ShoppingCartUtil;
 import business.util.StringParse;
-
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.List;
+import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import middleware.DatabaseException;
 import middleware.EBazaarException;
 
-import application.gui.CartItemsWindow;
-import application.gui.CatalogListWindow;
-import application.gui.DefaultData;
-import application.gui.EbazaarMainFrame;
-import application.gui.MaintainCatalogTypes;
-import application.gui.MaintainProductCatalog;
-import application.gui.ProductDetailsWindow;
-import application.gui.ProductListWindow;
-import application.gui.QuantityWindow;
-import application.gui.SelectOrderWindow;
-
+/**
+ * @author  nngo2
+ */
 public class BrowseAndSelectController implements CleanupControl {
 	private static final Logger LOG = Logger
 			.getLogger("BrowseAndSelectController.class.getName()");
@@ -345,34 +343,66 @@ public class BrowseAndSelectController implements CleanupControl {
 		catalogListWindow = w;
 	}
 
+	/**
+	 * @param mainFrame  the mainFrame to set
+	 * @uml.property  name="mainFrame"
+	 */
 	public void setMainFrame(EbazaarMainFrame m) {
 		mainFrame = m;
 	}
 
+	/**
+	 * @param productListWindow  the productListWindow to set
+	 * @uml.property  name="productListWindow"
+	 */
 	public void setProductListWindow(ProductListWindow p) {
 		productListWindow = p;
 	}
 
+	/**
+	 * @param productDetailsWindow  the productDetailsWindow to set
+	 * @uml.property  name="productDetailsWindow"
+	 */
 	public void setProductDetailsWindow(ProductDetailsWindow p) {
 		productDetailsWindow = p;
 	}
 
+	/**
+	 * @param cartItemsWindow  the cartItemsWindow to set
+	 * @uml.property  name="cartItemsWindow"
+	 */
 	public void setCartItemsWindow(CartItemsWindow w) {
 		cartItemsWindow = w;
 	}
 
+	/**
+	 * @param selectOrderWindow  the selectOrderWindow to set
+	 * @uml.property  name="selectOrderWindow"
+	 */
 	public void setSelectOrderWindow(SelectOrderWindow w) {
 		selectOrderWindow = w;
 	}
 
+	/**
+	 * @param maintainCatalogTypes  the maintainCatalogTypes to set
+	 * @uml.property  name="maintainCatalogTypes"
+	 */
 	public void setMaintainCatalogTypes(MaintainCatalogTypes w) {
 		maintainCatalogTypes = w;
 	}
 
+	/**
+	 * @param maintainProductCatalog  the maintainProductCatalog to set
+	 * @uml.property  name="maintainProductCatalog"
+	 */
 	public void setMaintainProductCatalog(MaintainProductCatalog w) {
 		maintainProductCatalog = w;
 	}
 
+	/**
+	 * @param quantityWindow  the quantityWindow to set
+	 * @uml.property  name="quantityWindow"
+	 */
 	public void setQuantityWindow(QuantityWindow w) {
 		quantityWindow = w;
 	}
@@ -403,6 +433,10 @@ public class BrowseAndSelectController implements CleanupControl {
 	// ///// make this class a singleton
 	private static final BrowseAndSelectController instance = new BrowseAndSelectController();
 
+	/**
+	 * @return  the instance
+	 * @uml.property  name="instance"
+	 */
 	public static BrowseAndSelectController getInstance() {
 		return instance;
 	}

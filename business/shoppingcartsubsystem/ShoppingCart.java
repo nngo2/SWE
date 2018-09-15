@@ -1,16 +1,18 @@
 package business.shoppingcartsubsystem;
 
+import business.externalinterfaces.IAddress;
+import business.externalinterfaces.ICartItem;
+import business.externalinterfaces.ICreditCard;
+import business.externalinterfaces.IShoppingCart;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import business.externalinterfaces.IAddress;
-import business.externalinterfaces.ICartItem;
-import business.externalinterfaces.ICreditCard;
-import business.externalinterfaces.IShoppingCart;
 
-
+/**
+ * @author  nngo2
+ */
 class ShoppingCart implements IShoppingCart {
     private String cartId;
     private List<ICartItem> cartItems;
@@ -24,6 +26,10 @@ class ShoppingCart implements IShoppingCart {
     ShoppingCart(){
     	cartItems = new ArrayList<ICartItem>();
     }
+    /**
+	 * @param cartId  the cartId to set
+	 * @uml.property  name="cartId"
+	 */
     void setCartId(String cartId){
         this.cartId=cartId;
     }
@@ -46,13 +52,25 @@ class ShoppingCart implements IShoppingCart {
         cartItems.add(pos, item);
     }
     
+    /**
+	 * @return  the cartItems
+	 * @uml.property  name="cartItems"
+	 */
     public List<ICartItem>getCartItems(){
         return cartItems;
     }
     
+    /**
+	 * @param shipAddress  the shipAddress to set
+	 * @uml.property  name="shipAddress"
+	 */
     void setShipAddress(IAddress addr){
         shipAddress = addr;
     }
+    /**
+	 * @param billAddress  the billAddress to set
+	 * @uml.property  name="billAddress"
+	 */
     void setBillAddress(IAddress addr){
         billAddress = addr;
     }

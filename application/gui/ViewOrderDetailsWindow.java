@@ -1,4 +1,6 @@
 package application.gui;
+import application.GuiUtil;
+import application.ViewOrdersController;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -7,7 +9,6 @@ import java.awt.Font;
 import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -16,14 +17,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JWindow;
 
-import application.GuiUtil;
-import application.ViewOrdersController;
-
 /**
- * Class Description: This class is used to display the details
- * of an order. It is invoked from SelectOrderWindow. The 
- * product name, unit price,
- * quantity,  and total price are displayed for the order.
+ * Class Description: This class is used to display the details of an order. It is invoked from SelectOrderWindow. The  product name, unit price, quantity,  and total price are displayed for the order.
  */
 public class ViewOrderDetailsWindow extends JInternalFrame implements ParentWindow {
 	private ViewOrdersController control;
@@ -34,7 +29,9 @@ public class ViewOrderDetailsWindow extends JInternalFrame implements ParentWind
 	
 	//JPanels
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	//constants
 	private final boolean USE_DEFAULT_DATA = false;

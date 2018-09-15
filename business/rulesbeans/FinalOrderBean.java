@@ -1,12 +1,5 @@
 package business.rulesbeans;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import middleware.DatabaseException;
 import business.externalinterfaces.DynamicBean;
 import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICartItem;
@@ -14,7 +7,16 @@ import business.externalinterfaces.ICreditCard;
 import business.externalinterfaces.IShoppingCart;
 import business.util.Pair;
 import business.util.ShoppingCartUtil;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import middleware.DatabaseException;
 
+/**
+ * @author  nngo2
+ */
 public class FinalOrderBean implements DynamicBean {
 	//private static Logger log = Logger.getLogger(null);
     

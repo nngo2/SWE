@@ -1,4 +1,6 @@
 package application.gui;
+import application.CheckoutController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -7,7 +9,6 @@ import java.awt.Font;
 import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -15,13 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import application.CheckoutController;
-import application.GuiUtil;
-
 /**
- * Class Description: This window represents the user's final order.
- * It consists of a table that provide detailed information about
- * each of the user's selected products.
+ * Class Description: This window represents the user's final order. It consists of a table that provide detailed information about each of the user's selected products.
  */
 public class FinalOrderWindow extends JInternalFrame implements ParentWindow {
 
@@ -55,7 +51,9 @@ public class FinalOrderWindow extends JInternalFrame implements ParentWindow {
 	//JPanels
 		
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	/**
 	 * Constructor - builds the gui.

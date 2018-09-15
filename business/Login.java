@@ -2,6 +2,9 @@
 package business;
 
 
+/**
+ * @author  nngo2
+ */
 public class Login {
 
     private Integer custId;
@@ -12,9 +15,17 @@ public class Login {
         this.password = password;
     }
     
+    /**
+	 * @return  the custId
+	 * @uml.property  name="custId"
+	 */
     public Integer getCustId(){
         return custId;
     }
+    /**
+	 * @return  the password
+	 * @uml.property  name="password"
+	 */
     public String getPassword() {
         return password;
     }

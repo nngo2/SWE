@@ -1,11 +1,13 @@
 package business.rulesbeans;
 
+import business.Quantity;
+import business.externalinterfaces.DynamicBean;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
-import business.Quantity;
-import business.externalinterfaces.DynamicBean;
-
+/**
+ * @author  nngo2
+ */
 public class QuantityBean implements DynamicBean{
 	private Quantity quantity;
 	public QuantityBean(Quantity quantity) {

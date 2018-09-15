@@ -2,11 +2,13 @@
 package middleware.dataaccess;
 
 import java.sql.ResultSet;
-
 import middleware.DatabaseException;
 import middleware.externalinterfaces.IDbClass;
 
 
+/**
+ * @author  nngo2
+ */
 class DbAction {
     protected String query;
     protected ResultSet resultSet;

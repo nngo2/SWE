@@ -1,4 +1,7 @@
 package application.gui;
+import application.ApplicationCleanup;
+import application.CheckoutController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -8,7 +11,6 @@ import java.awt.Window;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.HashMap;
-
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -19,16 +21,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import application.ApplicationCleanup;
-import application.CheckoutController;
-import application.GuiUtil;
 
 /**
- * Class Description: This class presents a screen that displays
- * shipping and billing fields. The screen provides a Select Shipping
- * Address button that permits the user to pick, from another
- * screen, one of the customer's addresses, which is then loaded
- * automatically into the shipping fields on the current screen.
+ * Class Description: This class presents a screen that displays shipping and billing fields. The screen provides a Select Shipping Address button that permits the user to pick, from another screen, one of the customer's addresses, which is then loaded automatically into the shipping fields on the current screen.
  */
 public class ShippingBillingWindow extends JInternalFrame implements ParentWindow {
 	

@@ -1,11 +1,5 @@
 package business.shoppingcartsubsystem;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.logging.Logger;
-
-import middleware.DatabaseException;
-import middleware.EBazaarException;
 import business.RuleException;
 import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICartItem;
@@ -14,7 +8,15 @@ import business.externalinterfaces.ICustomerProfile;
 import business.externalinterfaces.IRules;
 import business.externalinterfaces.IShoppingCart;
 import business.externalinterfaces.IShoppingCartSubsystem;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Logger;
+import middleware.DatabaseException;
+import middleware.EBazaarException;
 
+/**
+ * @author  nngo2
+ */
 public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 	ShoppingCart liveCart;
 	ShoppingCart savedCart;
@@ -23,6 +25,10 @@ public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 	Logger log = Logger.getLogger(this.getClass().getPackage().getName());
 
 	// interface methods
+	/**
+	 * @param customerProfile  the customerProfile to set
+	 * @uml.property  name="customerProfile"
+	 */
 	public void setCustomerProfile(ICustomerProfile customerProfile) {
 		this.customerProfile = customerProfile;
 	}
@@ -57,6 +63,10 @@ public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 	// make it a singleton
 	private static ShoppingCartSubsystemFacade instance;
 
+	/**
+	 * @return  the instance
+	 * @uml.property  name="instance"
+	 */
 	public static IShoppingCartSubsystem getInstance() {
 		if (instance == null) {
 			instance = new ShoppingCartSubsystemFacade();
@@ -121,6 +131,10 @@ public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 
 	}
 
+	/**
+	 * @return  the liveCart
+	 * @uml.property  name="liveCart"
+	 */
 	public IShoppingCart getLiveCart() {
 		return liveCart;
 	}

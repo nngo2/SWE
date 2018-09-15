@@ -1,5 +1,8 @@
 package business.externalinterfaces;
 
+/**
+ * @author  nngo2
+ */
 public enum RulesConfigKey {
 	
 	ADDRESS_MODULE("address_module"), 
@@ -22,6 +25,10 @@ public enum RulesConfigKey {
 	private RulesConfigKey(String val) {
 		this.val = val;
 	}
+	/**
+	 * @return  the val
+	 * @uml.property  name="val"
+	 */
 	public String getVal() {
 		return val;
 	}

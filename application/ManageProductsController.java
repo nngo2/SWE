@@ -1,22 +1,5 @@
 package application;
 
-import java.awt.Component;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.JComboBox;
-import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-
-import middleware.DatabaseException;
-
 import application.gui.AddEditCatalog;
 import application.gui.AddEditProduct;
 import application.gui.CustomTableModel;
@@ -28,7 +11,24 @@ import business.SessionContext;
 import business.externalinterfaces.CustomerConstants;
 import business.externalinterfaces.IProductSubsystem;
 import business.productsubsystem.ProductSubsystemFacade;
+import java.awt.Component;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JComboBox;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import middleware.DatabaseException;
 
+/**
+ * @author  nngo2
+ */
 public class ManageProductsController implements CleanupControl {
 
 	// ///////// EVENT HANDLERS -- new code goes here ////////////
@@ -303,9 +303,16 @@ public class ManageProductsController implements CleanupControl {
 		}
 	}
 
+	/**
+	 * @author  nngo2
+	 */
 	static class ComboAction extends AbstractAction {
 		private static final long serialVersionUID = -6362862518012806665L;
 		private static final ComboAction INSTANCE = new ComboAction();
+		/**
+		 * @uml.property  name="observers"
+		 * @uml.associationEnd  multiplicity="(0 -1)"
+		 */
 		IComboObserver[] observers = { maintainProductCatalog, addEditProduct };
 
 		public void actionPerformed(ActionEvent evt) {
@@ -408,22 +415,42 @@ public class ManageProductsController implements CleanupControl {
 	}
 
 	// ////// PUBLIC ACCESSORS to register screens controlled by this class////
+	/**
+	 * @param maintainCatalogTypes  the maintainCatalogTypes to set
+	 * @uml.property  name="maintainCatalogTypes"
+	 */
 	public void setMaintainCatalogTypes(MaintainCatalogTypes w) {
 		maintainCatalogTypes = w;
 	}
 
+	/**
+	 * @param maintainProductCatalog  the maintainProductCatalog to set
+	 * @uml.property  name="maintainProductCatalog"
+	 */
 	public void setMaintainProductCatalog(MaintainProductCatalog w) {
 		maintainProductCatalog = w;
 	}
 
+	/**
+	 * @param addEditCatalog  the addEditCatalog to set
+	 * @uml.property  name="addEditCatalog"
+	 */
 	public void setAddEditCatalog(AddEditCatalog w) {
 		addEditCatalog = w;
 	}
 
+	/**
+	 * @param addEditProduct  the addEditProduct to set
+	 * @uml.property  name="addEditProduct"
+	 */
 	public void setAddEditProduct(AddEditProduct w) {
 		addEditProduct = w;
 	}
 
+	/**
+	 * @param mainFrame  the mainFrame to set
+	 * @uml.property  name="mainFrame"
+	 */
 	public void setMainFrame(EbazaarMainFrame f) {
 		mainFrame = f;
 	}
@@ -448,6 +475,10 @@ public class ManageProductsController implements CleanupControl {
 	// ///// make this class a singleton
 	private static ManageProductsController instance = new ManageProductsController();
 
+	/**
+	 * @return  the instance
+	 * @uml.property  name="instance"
+	 */
 	public static ManageProductsController getInstance() {
 		return instance;
 	}

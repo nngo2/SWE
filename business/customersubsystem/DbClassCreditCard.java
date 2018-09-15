@@ -1,17 +1,19 @@
 package business.customersubsystem;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import business.externalinterfaces.ICreditCard;
 import business.externalinterfaces.ICustomerProfile;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
+import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
-import middleware.externalinterfaces.DbConfigKey;
 
+/**
+ * @author  nngo2
+ */
 class DbClassCreditCard implements IDbClass {
 	private IDataAccessSubsystem dataAccess = new DataAccessSubsystemFacade();
 	private final String READ_DEFAULT_PAYMENT = "ReadDefaultPayment";
@@ -20,6 +22,10 @@ class DbClassCreditCard implements IDbClass {
 	private String queryType;
 	private CreditCard defaultPayment;
 	
+	/**
+	 * @return  the defaultPayment
+	 * @uml.property  name="defaultPayment"
+	 */
 	CreditCard getDefaultPayment() {
 		return defaultPayment;
 	}
@@ -63,6 +69,10 @@ class DbClassCreditCard implements IDbClass {
 
 	}
 
+	/**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
 	public String getQuery() {
 		return query;
 	}

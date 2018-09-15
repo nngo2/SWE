@@ -1,12 +1,14 @@
 
 package application;
 
-import java.util.logging.Logger;
-
-import middleware.externalinterfaces.Cleanup;
 import business.BusinessCleanup;
+import java.util.logging.Logger;
+import middleware.externalinterfaces.Cleanup;
 
 
+/**
+ * @author  nngo2
+ */
 public class ApplicationCleanup implements Cleanup{
     Cleanup bc;
 	Logger log = Logger.getLogger(this.getClass().getPackage().getName());
@@ -18,6 +20,10 @@ public class ApplicationCleanup implements Cleanup{
         bc = new BusinessCleanup();
         bc.cleanup();
     }
+	/**
+	 * @uml.property  name="allCleanupControllers"
+	 * @uml.associationEnd  multiplicity="(0 -1)"
+	 */
 	private CleanupControl[] allCleanupControllers =
 		{
 			BrowseAndSelectController.getInstance(),

@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
-
 import middleware.DatabaseException;
 import middleware.externalinterfaces.Cleanup;
 import middleware.externalinterfaces.IDataAccessSubsystem;
@@ -14,11 +13,8 @@ import middleware.externalinterfaces.IDataAccessTest;
 import middleware.externalinterfaces.IDbClass;
 
 /**
- * @author pcorazza
- * @since Nov 10, 2004
- * Class Description:
- * 
- * 
+ * @author  pcorazza
+ * @since  Nov 10, 2004  Class Description:
  */
 public class DataAccessSubsystemFacade implements IDataAccessSubsystem, IDataAccessTest {
     

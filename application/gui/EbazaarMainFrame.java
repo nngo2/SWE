@@ -1,5 +1,10 @@
 package application.gui;
 
+import application.ApplicationCleanup;
+import application.BrowseAndSelectController;
+import application.GuiUtil;
+import application.ManageProductsController;
+import application.ViewOrdersController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -8,11 +13,9 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.Window;
-
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -26,18 +29,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
 import javax.swing.UIManager;
-
-import application.ApplicationCleanup;
-import application.BrowseAndSelectController;
-import application.GuiUtil;
-import application.ManageProductsController;
-import application.ViewOrdersController;
 /**
-
- * Class Description: This is the entry point into the E-Bazaar application.
- * It is implemented as a JFrame and provides a splash screen. Navigation
- * is by way of a menu bar. This class represents the starting point
- * for all use cases. <p>
+ * Class Description: This is the entry point into the E-Bazaar application. It is implemented as a JFrame and provides a splash screen. Navigation is by way of a menu bar. This class represents the starting point for all use cases. <p>
  */
 public class EbazaarMainFrame extends javax.swing.JFrame implements ParentWindow {
 	private BrowseAndSelectController control;
@@ -78,10 +71,18 @@ public class EbazaarMainFrame extends javax.swing.JFrame implements ParentWindow
 	
 	JPanel mainPanel;
 	JMenuBar menuBar;
-	JMenu menuCustomer, menuAdministrator,menuFile,menuHelp;
-    JMenuItem menuItemLogin, menuItemPurchaseOnline, menuItemMaintainProduct, 
-      menuItemMaintainCatalogTypes,menuItemExit, menuItemRevOrders,menuItemAbout,
-      menuItemRetrieveSavedCart;  
+	JMenu menuCustomer;
+	JMenu menuAdministrator;
+	JMenu menuFile;
+	JMenu menuHelp;
+    JMenuItem menuItemLogin;
+    JMenuItem menuItemPurchaseOnline;
+    JMenuItem menuItemMaintainProduct;
+    JMenuItem menuItemMaintainCatalogTypes;
+    JMenuItem menuItemExit;
+    JMenuItem menuItemRevOrders;
+    JMenuItem menuItemAbout;
+    JMenuItem menuItemRetrieveSavedCart;  
 
     
 	public EbazaarMainFrame() {
@@ -329,10 +330,18 @@ public class EbazaarMainFrame extends javax.swing.JFrame implements ParentWindow
     public void setParentWindow(Component w){
         parentWindow = null;
     }
+    /**
+	 * @return  the parentWindow
+	 * @uml.property  name="parentWindow"
+	 */
     public Component getParentWindow() {
         return parentWindow;
         
     }
+    /**
+	 * @return  the desktop
+	 * @uml.property  name="desktop"
+	 */
     public JDesktopPane getDesktop() {
     	return desktop;
     }

@@ -1,6 +1,9 @@
 package application.gui;
 
 
+import application.ApplicationCleanup;
+import application.BrowseAndSelectController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -11,17 +14,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import application.ApplicationCleanup;
-import application.BrowseAndSelectController;
-import application.GuiUtil;
+/**
+ * @author  nngo2
+ */
 public class QuantityWindow extends JInternalFrame {
 	private BrowseAndSelectController control;
 	private Component parent;
@@ -33,7 +34,9 @@ public class QuantityWindow extends JInternalFrame {
     private Integer positionOfEdit = null;
     //JPanels
     JPanel mainPanel;
-    JPanel upper, middle, lower;
+    JPanel upper;
+    JPanel middle;
+    JPanel lower;
     public QuantityWindow(boolean edit, Integer posOfEdit) {
     	this.edit = edit;
     	this.positionOfEdit = posOfEdit;

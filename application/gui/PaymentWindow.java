@@ -1,5 +1,8 @@
 package application.gui;
 
+import application.ApplicationCleanup;
+import application.CheckoutController;
+import application.GuiUtil;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -8,7 +11,6 @@ import java.awt.GridLayout;
 import java.awt.Window;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
@@ -17,19 +19,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import application.ApplicationCleanup;
-import application.CheckoutController;
-import application.GuiUtil;
-
 /**
- * Class Description: This window provides textfields to enter
- * information for payment by credit card. If the user clicks
- * the Proceed With Checkout button, the Terms and Conditions window
- * appears before the Final Order is displayed.<p>
- * <em>Reading values from the cardTypeField combo box:</em>
- * Use the following syntax to read item selected:
- * <code>String cardTypeSelected = 
- * 		(String)cardTypeField.getSelectedItem();</code>
+ * Class Description: This window provides textfields to enter information for payment by credit card. If the user clicks the Proceed With Checkout button, the Terms and Conditions window appears before the Final Order is displayed.<p> <em>Reading values from the cardTypeField combo box:</em> Use the following syntax to read item selected: <code>String cardTypeSelected =  (String)cardTypeField.getSelectedItem();</code>
  */
 public class PaymentWindow extends JInternalFrame implements ParentWindow {
 
@@ -58,7 +49,9 @@ public class PaymentWindow extends JInternalFrame implements ParentWindow {
 	//JPanels
 		
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	public PaymentWindow() {
 		super(MAIN_LABEL,false,true,false,true);

@@ -3,32 +3,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
-
 import javax.swing.table.AbstractTableModel;
 
 /**
- * 
- * @author klevi, pcorazza 
- * @since Oct 22, 2004
- * <p>
- * Class Description: This table model permits manual control over columns -- lets
- * you have different column widths, for example. The DefaultTableModel
- * requires constant-width columns.
- * <p>
- * <table border="1">
- * <tr>
- * 		<th colspan="3">Change Log</th>
- * </tr>
- * <tr>
- * 		<th>Date</th> <th>Author</th> <th>Change</th>
- * </tr>
- * <tr>
- * 		<td>Oct 22, 2004</td>
- *      <td>klevi, pcorazza</td>
- *      <td>New class file</td>
- * </tr>
- * </table>
- *
+ * @author  klevi, pcorazza 
+ * @since  Oct 22, 2004  <p>  Class Description: This table model permits manual control over columns -- lets  you have different column widths, for example. The DefaultTableModel  requires constant-width columns.  <p>  <table border="1">  <tr>  <th colspan="3">Change Log</th>  </tr>  <tr>  <th>Date</th> <th>Author</th> <th>Change</th>  </tr>  <tr>  <td>Oct 22, 2004</td>  <td>klevi, pcorazza</td>  <td>New class file</td>  </tr>  </table>
  */
 public class CustomTableModel extends AbstractTableModel {
     
@@ -48,6 +27,10 @@ public class CustomTableModel extends AbstractTableModel {
     		addRow(it.next());
     	}
     }    
+    /**
+	 * @return  the tableValues
+	 * @uml.property  name="tableValues"
+	 */
     public Object[][] getTableValues() {
         return (Object[][])tableValues.toArray();
     }

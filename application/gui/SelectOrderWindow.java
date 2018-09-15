@@ -1,4 +1,6 @@
 package application.gui;
+import application.GuiUtil;
+import application.ViewOrdersController;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -7,25 +9,15 @@ import java.awt.Font;
 import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JButton;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JInternalFrame;
 import javax.swing.JTable;
 
-import application.GuiUtil;
-import application.ViewOrdersController;
-
 /**
- * Class Description: This screen displays a table of all
- * orders currently stored in the database (on initial
- * creation of this class, fake data from DefaultData, is
- * used to fill out this table). If the user selects a row
- * in the table, and clicks the ViewDetails button, 
- * an instance of ViewOrderDetailsWindow is created, which
- * displays details of the selected order.
+ * Class Description: This screen displays a table of all orders currently stored in the database (on initial creation of this class, fake data from DefaultData, is used to fill out this table). If the user selects a row in the table, and clicks the ViewDetails button,  an instance of ViewOrderDetailsWindow is created, which displays details of the selected order.
  */
 public class SelectOrderWindow extends JInternalFrame implements ParentWindow {
 	ViewOrdersController control;
@@ -36,7 +28,9 @@ public class SelectOrderWindow extends JInternalFrame implements ParentWindow {
 	
 	//JPanels
 	JPanel mainPanel;
-	JPanel upper, middle, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel lower;
 	
 	//constants
 	private final boolean USE_DEFAULT_DATA = false;
@@ -72,9 +66,17 @@ public class SelectOrderWindow extends JInternalFrame implements ParentWindow {
 		defineMainPanel();
 		getContentPane().add(mainPanel);
 	}
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public JTable getTable() {
 		return table;
 	}
+	/**
+	 * @return  the model
+	 * @uml.property  name="model"
+	 */
 	public CustomTableModel getModel() {
 		return model;
 	}

@@ -1,4 +1,5 @@
 package application;
+import application.gui.WindowBorder;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -11,22 +12,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-
+import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable; 
+import javax.swing.JTable;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumn;
-import javax.swing.Box;
-
-import application.gui.WindowBorder;
 /**
- 
- * Class Description: This is a factory class that provides utilities
- * for creating various screen elements in a standardized way. Also,
- * all screen element constants, like color names and screen sizes,
- * are stored here. 
+ * Class Description: This is a factory class that provides utilities for creating various screen elements in a standardized way. Also, all screen element constants, like color names and screen sizes, are stored here.
  */
 public class GuiUtil {
 	private static GuiUtil control;

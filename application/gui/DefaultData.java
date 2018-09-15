@@ -2,35 +2,8 @@ package application.gui;
 import java.util.*;
 
 /**
- * 
- * @author klevi, pcorazza 
- * @since Oct 22, 2004
- * <p>
- * Class Description: This class stores "dummy data" for the Gui. In the final project,
- *  this class should not be used, but should be replaced by appropriate
- *  accesses of the real data. <br>
- *  The class is a singleton. Only one instance is ever used. Also, no
- *  writes to the class ever occur, so it is thread-safe.
- * <p>
- * <table border="1">
- * <tr>
- * 		<th colspan="3">Change Log</th>
- * </tr>
- * <tr>
- * 		<th>Date</th> <th>Author</th> <th>Change</th>
- * </tr>
- * <tr>
- * 		<td>Oct 22, 2004</td>
- *      <td>klevi, pcorazza</td>
- *      <td>New class file</td>
- * </tr>
- * <tr>
- * 		<td>19 jan 2005</td>
- *      <td>klevi</td>
- *      <td>modified class comment</td>
- * </tr>
- * </table>
- *
+ * @author  klevi, pcorazza 
+ * @since  Oct 22, 2004  <p>  Class Description: This class stores "dummy data" for the Gui. In the final project,  this class should not be used, but should be replaced by appropriate  accesses of the real data. <br>  The class is a singleton. Only one instance is ever used. Also, no  writes to the class ever occur, so it is thread-safe.  <p>  <table border="1">  <tr>  <th colspan="3">Change Log</th>  </tr>  <tr>  <th>Date</th> <th>Author</th> <th>Change</th>  </tr>  <tr>  <td>Oct 22, 2004</td>  <td>klevi, pcorazza</td>  <td>New class file</td>  </tr>  <tr>  <td>19 jan 2005</td>  <td>klevi</td>  <td>modified class comment</td>  </tr>  </table>
  */
 public class DefaultData {
 	
@@ -41,9 +14,9 @@ public class DefaultData {
 	}
 	
 	/**
-	 * This method provides the only avenue for obtaining an instance
-	 * of this singleton class.
-	 * @return DefaultData
+	 * This method provides the only avenue for obtaining an instance of this singleton class.
+	 * @return  DefaultData
+	 * @uml.property  name="instance"
 	 */
 	public static DefaultData getInstance() {
 		if(instance==null) {
@@ -82,6 +55,10 @@ public class DefaultData {
 	//private List cartItemsList = null;
 		
     	
+    /**
+	 * @return  the cartItemsData
+	 * @uml.property  name="cartItemsData"
+	 */
     public List<String[]> getCartItemsData() {
     	return Arrays.asList(cartItemsData);
     }
@@ -155,6 +132,10 @@ public class DefaultData {
 		productDetailsData.put(TSHIRTS,T_PARAMS); 
 		productDetailsData.put(SKIRTS,SKIRTS_PARAMS);
 	}
+	/**
+	 * @return  the productDetailsData
+	 * @uml.property  name="productDetailsData"
+	 */
 	public HashMap<String,String[]> getProductDetailsData() {
 		return productDetailsData;
 	}
@@ -170,6 +151,10 @@ public class DefaultData {
 		 {"ZZ13425", "May 2, 2003", "$400.00" },	
 		 {"BB13425", "May 3, 2003", "$500.00"  }};
 	
+	/**
+	 * @return  the selectOrderDefaultData
+	 * @uml.property  name="selectOrderDefaultData"
+	 */
 	public List<String[]> getSelectOrderDefaultData() {
 		return Arrays.asList(selectOrderDefaultData);
 	}
@@ -180,6 +165,10 @@ public class DefaultData {
 		 {"Belt", "18.50", "1", "18.50"},	
 		 {"Extreme Programming Guide", "22.00", "4", "88.00"}};
 	
+	/**
+	 * @return  the viewOrderDetailsDefaultData
+	 * @uml.property  name="viewOrderDetailsDefaultData"
+	 */
 	public List<String[]> getViewOrderDetailsDefaultData() {
 		return Arrays.asList(viewOrderDetailsDefaultData);
 	}
@@ -214,6 +203,10 @@ public class DefaultData {
 	private static String[][] catalogTypes = 
 		{{BOOKS},{CLOTHES}};
 		
+	/**
+	 * @return  the catalogTypes
+	 * @uml.property  name="catalogTypes"
+	 */
 	public static List<String[]> getCatalogTypes() {
 		return Arrays.asList(catalogTypes);
 	}
@@ -225,6 +218,10 @@ public class DefaultData {
  		 "Fairfield",
  		 "IA",
  		 "52556"}};
+ 	/**
+	 * @return  the shipAddresses
+	 * @uml.property  name="shipAddresses"
+	 */
  	public List<String[]> getShipAddresses() {
  		return Arrays.asList(shipAddresses);
  	}
@@ -239,6 +236,10 @@ public class DefaultData {
 	{{"Garden of Rama","2","50","100"},
 	{"Pants","1","25","25"}};
     
+    /**
+	 * @return  the finalOrderData
+	 * @uml.property  name="finalOrderData"
+	 */
     public List<String[]> getFinalOrderData() {
     	return Arrays.asList(finalOrderData);
     }
@@ -248,6 +249,10 @@ public class DefaultData {
     private String [][] mainCatalogData = {{DefaultData.BOOKS},
             {DefaultData.CLOTHES}};	
     
+    /**
+	 * @return  the mainCatalogData
+	 * @uml.property  name="mainCatalogData"
+	 */
     public String[][] getMainCatalogData() {
     	return mainCatalogData;
     

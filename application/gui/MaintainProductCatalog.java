@@ -1,5 +1,9 @@
 package application.gui; 
 
+import application.GuiUtil;
+import application.IComboObserver;
+import application.ManageProductsController;
+import business.externalinterfaces.CustomerConstants;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -10,7 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -21,18 +24,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JWindow;
 
-import business.externalinterfaces.CustomerConstants;
-
-import application.GuiUtil;
-import application.IComboObserver;
-import application.ManageProductsController;
-
 /**
- * Class Description: This class displays all available products
- * for a particular catalog group. When a catalog group is selected,
- * the table is updated to display the products in this group. 
- * The screen provides Add, Edit and Delete buttons for modifying
- * the choices of products.
+ * Class Description: This class displays all available products for a particular catalog group. When a catalog group is selected, the table is updated to display the products in this group.  The screen provides Add, Edit and Delete buttons for modifying the choices of products.
  */
 public class MaintainProductCatalog extends JInternalFrame implements ParentWindow, IComboObserver {
 	private String DEFAULT_CATALOG = "Books";
@@ -44,7 +37,10 @@ public class MaintainProductCatalog extends JInternalFrame implements ParentWind
 	
 	//JPanels
 	JPanel mainPanel;
-	JPanel upper, middle, comboPanel, lower;
+	JPanel upper;
+	JPanel middle;
+	JPanel comboPanel;
+	JPanel lower;
 	
 	//widgets
 	JComboBox catalogTypeCombo;	
@@ -90,13 +86,25 @@ public class MaintainProductCatalog extends JInternalFrame implements ParentWind
 		defineMainPanel();
 		getContentPane().add(mainPanel);
 	}
+	/**
+	 * @return  the catalogGroup
+	 * @uml.property  name="catalogGroup"
+	 */
 	public String getCatalogGroup(){
 		return catalogGroup;
 	}
+	/**
+	 * @return  the table
+	 * @uml.property  name="table"
+	 */
 	public JTable getTable() {
 		return table;
 		
 	}
+	/**
+	 * @return  the model
+	 * @uml.property  name="model"
+	 */
 	public CustomTableModel getModel() {
 		return model;
 	}
@@ -275,6 +283,10 @@ public class MaintainProductCatalog extends JInternalFrame implements ParentWind
 
 
 
+	/**
+	 * @param catalogGroup  the catalogGroup to set
+	 * @uml.property  name="catalogGroup"
+	 */
 	public void setCatalogGroup(String catalogGroup) {
 		this.catalogGroup = catalogGroup;
 	}

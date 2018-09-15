@@ -2,10 +2,12 @@ package business.rulesbeans;
 
 import business.externalinterfaces.DynamicBean;
 import business.externalinterfaces.IAddress;
-
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
+/**
+ * @author  nngo2
+ */
 public class AddressBean implements DynamicBean {
 	private IAddress addr;
 

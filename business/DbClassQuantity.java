@@ -3,16 +3,16 @@ package business;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Logger;
-
-
-
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
+import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
-import middleware.externalinterfaces.DbConfigKey;
 
+/**
+ * @author  nngo2
+ */
 public class DbClassQuantity implements IDbClass {
 	private static final Logger LOG = 
 		Logger.getLogger(DbClassQuantity.class.getPackage().getName());
@@ -27,6 +27,10 @@ public class DbClassQuantity implements IDbClass {
     
     public DbClassQuantity() {}
     
+    /**
+	 * @param quantity  the quantity to set
+	 * @uml.property  name="quantity"
+	 */
     public void setQuantity(Quantity q) {
     	quantity=q;
     }
@@ -83,6 +87,10 @@ public class DbClassQuantity implements IDbClass {
     	DbConfigProperties props = new DbConfigProperties();	
     	return props.getProperty(DbConfigKey.PRODUCT_DB_URL.getVal());
     }
+    /**
+	 * @return  the query
+	 * @uml.property  name="query"
+	 */
     public String getQuery() {
         return query;
         

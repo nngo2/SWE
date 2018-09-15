@@ -1,6 +1,6 @@
 package middleware.dataaccess;
 
-import java.util.LinkedList;
+import static business.util.StringParse.isEmptyString;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -8,10 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.logging.Logger;
-import static business.util.StringParse.*;
-
 import middleware.DatabaseException;
 import middleware.DbConfigProperties;
 import middleware.externalinterfaces.Cleanup;
@@ -21,11 +20,7 @@ import middleware.externalinterfaces.DbConfigKey;
 //import java.util.Queue;
 
 /**
- * Here is the typical way to use this class; the query variable stores the
- * necessary SQL statement: SimpleConnectionPool pool =
- * SimpleConnectionPool.getInstance(DataAccessSubsystemFacade.MAX_CONNECTIONS);
- * Connection con = pool.getConnection(dbUrl); ResultSet rs =
- * SimpleConnectionPool.doQuery(con,query); pool.returnToPool(con,dbUrl);
+ * Here is the typical way to use this class; the query variable stores the necessary SQL statement: SimpleConnectionPool pool = SimpleConnectionPool.getInstance(DataAccessSubsystemFacade.MAX_CONNECTIONS); Connection con = pool.getConnection(dbUrl); ResultSet rs = SimpleConnectionPool.doQuery(con,query); pool.returnToPool(con,dbUrl);
  */
 class SimpleConnectionPool {
 	static DbConfigProperties props = new DbConfigProperties();
