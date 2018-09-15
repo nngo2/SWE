@@ -75,12 +75,7 @@ public class BrowseAndSelectController implements CleanupControl {
 	}
 
 	class RetrieveCartActionListener implements ActionListener, Controller {
-		public void actionPerformed(ActionEvent e) {		
-//			if (cartItemsWindow == null) {
-//				cartItemsWindow = new CartItemsWindow();
-//			}
-//			EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);	
-
+		public void actionPerformed(ActionEvent e) {	
 			Boolean loggedIn = (Boolean) SessionContext.getInstance()
 				.get(CustomerConstants.LOGGED_IN);
 			

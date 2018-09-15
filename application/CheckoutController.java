@@ -14,6 +14,7 @@ import business.RuleException;
 import business.SessionContext;
 import business.externalinterfaces.CustomerConstants;
 import business.externalinterfaces.IAddress;
+import business.externalinterfaces.ICartItem;
 import business.externalinterfaces.ICreditCard;
 import business.externalinterfaces.ICustomerProfile;
 import business.externalinterfaces.ICustomerSubsystem;
@@ -400,10 +401,19 @@ public class CheckoutController implements CleanupControl {
 	class AcceptTermsListener implements ActionListener {
 		public void actionPerformed(ActionEvent evt) {
 			finalOrderWindow = new FinalOrderWindow();
+			loadCartItems(finalOrderWindow);
 			EbazaarMainFrame.getInstance().getDesktop().add(finalOrderWindow);
 			finalOrderWindow.setVisible(true);
 			termsWindow.dispose();
 
+		}
+		
+		private void loadCartItems(FinalOrderWindow finalOrderWindow) {
+			ICustomerSubsystem cust = (ICustomerSubsystem) SessionContext
+				.getInstance().get(CustomerConstants.CUSTOMER);
+			List<ICartItem> cartItems =  cust.getShoppingCart().getLiveCart().getCartItems();
+			List<String[]> items = ShoppingCartUtil.cartItemsToStringArrays(cartItems);
+			finalOrderWindow.updateModel(items);
 		}
 
 	}
