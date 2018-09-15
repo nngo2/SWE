@@ -10,6 +10,7 @@ import application.gui.ProductDetailsWindow;
 import application.gui.ProductListWindow;
 import application.gui.QuantityWindow;
 import application.gui.SelectOrderWindow;
+import application.gui.ShippingBillingWindow;
 import business.Quantity;
 import business.RuleException;
 import business.RulesQuantity;
@@ -73,12 +74,34 @@ public class BrowseAndSelectController implements CleanupControl {
 		}
 	}
 
-	class RetrieveCartActionListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			if (cartItemsWindow == null) {
+	class RetrieveCartActionListener implements ActionListener, Controller {
+		public void actionPerformed(ActionEvent e) {		
+//			if (cartItemsWindow == null) {
+//				cartItemsWindow = new CartItemsWindow();
+//			}
+//			EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);	
+
+			Boolean loggedIn = (Boolean) SessionContext.getInstance()
+				.get(CustomerConstants.LOGGED_IN);
+			
+			if (!loggedIn.booleanValue()) {
 				cartItemsWindow = new CartItemsWindow();
+				LoginControl loginControl = new LoginControl(cartItemsWindow, mainFrame, this);
+				loginControl.startLogin();
+			} else {
+				updateScreen();
 			}
-			EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);
+		}
+
+		@Override
+		public void doUpdate() {
+			updateScreen();
+		}
+		
+		private void updateScreen() {
+			cartItemsWindow = new CartItemsWindow();
+			loadSavedCartItems(cartItemsWindow);
+			EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);	
 			cartItemsWindow.setVisible(true);
 		}
 	}
@@ -514,6 +537,15 @@ public class BrowseAndSelectController implements CleanupControl {
 	private void loadCartItems(CartItemsWindow cartsWindow) {
 		IShoppingCartSubsystem cartSystem = ShoppingCartSubsystemFacade.getInstance();
 		List<ICartItem> cartItems = cartSystem.getLiveCartItems();
+		List<String[]> items = ShoppingCartUtil.cartItemsToStringArrays(cartItems);
+		cartsWindow.updateModel(items);
+	}
+	
+	private void loadSavedCartItems(CartItemsWindow cartsWindow) {
+		ICustomerSubsystem cust = (ICustomerSubsystem) SessionContext.getInstance().get(
+				CustomerConstants.CUSTOMER);
+		cust.getShoppingCart().makeSavedCartLive();
+		List<ICartItem> cartItems = cust.getShoppingCart().getLiveCartItems();
 		List<String[]> items = ShoppingCartUtil.cartItemsToStringArrays(cartItems);
 		cartsWindow.updateModel(items);
 	}

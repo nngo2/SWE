@@ -103,8 +103,6 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 	 * @uml.property  name="orderHistory"
 	 */
 	public List<IOrder> getOrderHistory() {
-		//IMPLEMENT
-		//return Collections.unmodifiableList(new ArrayList<IOrder>());
 		return Collections.unmodifiableList(orderHistory);
 	}
 

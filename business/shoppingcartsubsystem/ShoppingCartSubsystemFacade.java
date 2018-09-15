@@ -15,7 +15,7 @@ import middleware.DatabaseException;
 import middleware.EBazaarException;
 
 /**
- * @author  nngo2
+ * @author nngo2
  */
 public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 	ShoppingCart liveCart;
@@ -26,8 +26,9 @@ public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 
 	// interface methods
 	/**
-	 * @param customerProfile  the customerProfile to set
-	 * @uml.property  name="customerProfile"
+	 * @param customerProfile
+	 *            the customerProfile to set
+	 * @uml.property name="customerProfile"
 	 */
 	public void setCustomerProfile(ICustomerProfile customerProfile) {
 		this.customerProfile = customerProfile;
@@ -64,8 +65,8 @@ public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 	private static ShoppingCartSubsystemFacade instance;
 
 	/**
-	 * @return  the instance
-	 * @uml.property  name="instance"
+	 * @return the instance
+	 * @uml.property name="instance"
 	 */
 	public static IShoppingCartSubsystem getInstance() {
 		if (instance == null) {
@@ -132,8 +133,8 @@ public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 	}
 
 	/**
-	 * @return  the liveCart
-	 * @uml.property  name="liveCart"
+	 * @return the liveCart
+	 * @uml.property name="liveCart"
 	 */
 	public IShoppingCart getLiveCart() {
 		return liveCart;

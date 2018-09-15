@@ -14,6 +14,14 @@ public class CustomTableModel extends AbstractTableModel {
 	//this is a List of Object arrays
     private List<Object[]> tableValues; 
     
+    //this is a quick fix for setTableValues() 
+    // which just perform an increment update
+    public void clearTableValues() {
+    	if (tableValues != null) {
+        	tableValues.clear(); 		
+    	}
+    }
+    
     public void setTableValues(Object [][] vals) {
         tableValues = Arrays.asList(vals);
     }
@@ -27,6 +35,7 @@ public class CustomTableModel extends AbstractTableModel {
     		addRow(it.next());
     	}
     }    
+    
     /**
 	 * @return  the tableValues
 	 * @uml.property  name="tableValues"

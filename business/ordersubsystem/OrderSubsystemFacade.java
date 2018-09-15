@@ -43,14 +43,8 @@ public class OrderSubsystemFacade implements IOrderSubsystem {
 
 	@Override
 	public List<IOrder> getOrderHistory() throws DatabaseException {
-		Order order = new Order(1, "11/20/2011", "20.20");
-		List<IOrder> list = new ArrayList<IOrder>();
-		OrderItem orderItem = new OrderItem(1, 1, 1, "1", "20.20");
-		List<IOrderItem> orderItems = new ArrayList<IOrderItem>();
-		orderItems.add(orderItem);
-		order.setOrderItems(orderItems);
-		list.add(order);
-		return list;
+		DbClassOrder dbClass = new DbClassOrder();
+		return dbClass.getOrderHistory(custProfile);
 	}
 
 	@Override

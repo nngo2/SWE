@@ -86,9 +86,16 @@ public class OrderUtil {
      * are converted to Strings
      */
     public static List<String[]> extractOrderData(List<IOrder> ordersList){
-        //IMPLEMENT
-    	return new ArrayList<String[]>();
-        
+    	List<String[]> returnVal = new ArrayList<String[]>();
+    	String[] data = null;
+    	for(IOrder item : ordersList){
+    		data = new String[3];
+    		data[0] = item.getOrderId().toString();
+    		data[1] = item.getOrderDate();
+    		data[2] = item.getTotalPrice();   
+    		returnVal.add(data);
+    	}
+    	return returnVal;
     }
 
 }

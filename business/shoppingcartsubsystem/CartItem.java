@@ -19,8 +19,7 @@ public class CartItem implements ICartItem {
     String totalprice;
 	String productName;
 	Logger log = Logger.getLogger(this.getClass().getPackage().getName());
-//	this is true if this cart item is data that has come from
-    //database
+	//	this is true if this cart item is data that has come from database
     boolean alreadySaved;
     
     /** This version of constructor used when reading data from screen */
@@ -50,8 +49,8 @@ public class CartItem implements ICartItem {
         this.totalprice =totalprice;
         this.alreadySaved = alreadySaved;
         IProductSubsystem prodSS= new ProductSubsystemFacade();
-        //productName = prodSS.getProductFromId(productid).getProductName();
-        productName = "??";
+        productName = prodSS.getProductFromId(productid).getProductName();
+        //productName = "??";
     }
 
     public String toString(){
