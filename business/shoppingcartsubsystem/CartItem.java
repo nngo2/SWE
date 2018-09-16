@@ -31,8 +31,8 @@ public class CartItem implements ICartItem {
         this.totalprice =totalprice;
         alreadySaved = false;
         IProductSubsystem prodSS= new ProductSubsystemFacade();
-        //productid = prodSS.getProductIdFromName(productName);
-        productid = -1;
+        productid = prodSS.getProductIdFromName(productName);
+        //productid = -1;
     }
     
     /** This version of constructor used when reading from database */

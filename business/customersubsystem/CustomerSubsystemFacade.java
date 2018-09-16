@@ -174,7 +174,10 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 	 * to-be-processed order.
 	 */
 	public void submitOrder() throws DatabaseException {
-		//IMPLEMENT
+		IShoppingCart cart = shoppingCartSubsystem.getLiveCart();
+		IOrderSubsystem orderSys = new OrderSubsystemFacade(customerProfile);
+		orderSys.submitOrder(cart);
+		shoppingCartSubsystem.clearLiveCart();
 	}
 
 	public void saveShoppingCart() throws DatabaseException {

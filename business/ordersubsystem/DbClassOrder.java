@@ -29,11 +29,16 @@ class DbClassOrder implements IDbClass {
 	private final String GET_ORDER_IDS = "GetOrderIds";
 	private final String GET_ORDER_DATA = "GetOrderData";
 	private final String GET_ORDER_HISTORY = "GetOrderHistory";
+	private final String ADD_ORDER = "AddOrder";
+	private final String ADD_ORDER_ITEMS = "AddOrderItems";	
+	private final String ADD_ORDER_ITEM = "AddOrderItem";		
 	private ICustomerProfile customerProfile;
 	private String orderId;
 	private List<String> orderIds;
 	private List<IOrderItem> orderItems;
 	private Order orderData;
+	private IOrder savedOrderData;
+	private IOrderItem savedOrderItemData;
 	private List<IOrder> orderHistory;
 
 	public List<String> getAllOrderIds(ICustomerProfile customerProfile) throws DatabaseException {
@@ -63,6 +68,25 @@ class DbClassOrder implements IDbClass {
 		dataAccessSS.atomicRead(this);
 		return orderHistory;
 	}
+	
+	public Integer addOder(IOrder order) throws DatabaseException {
+		this.savedOrderData = order;
+		queryType = ADD_ORDER;
+		return dataAccessSS.saveWithinTransaction(this);
+	}
+	
+	public void addOderItems(IOrder order) throws DatabaseException {
+		this.savedOrderData = order;
+		this.orderItems = order.getOrderItems();
+		queryType = ADD_ORDER_ITEMS;
+		dataAccessSS.saveWithinTransaction(this);
+	}
+	
+	public void addOderItem(IOrderItem item) throws DatabaseException {
+		this.savedOrderItemData = item;
+		queryType = ADD_ORDER_ITEM;
+		dataAccessSS.saveWithinTransaction(this);
+	}
 
 	public void buildQuery() {
 		if (queryType.equals(GET_ORDER_ITEMS)) {
@@ -73,7 +97,57 @@ class DbClassOrder implements IDbClass {
 			buildGetOrderDataQuery();
 		} else if (queryType.equals(GET_ORDER_HISTORY)) {
 			buildGetOrderHistoryQuery();
+		} else if (queryType.equals(ADD_ORDER)) {
+			buildAddOrderQuery();
+		} else if (queryType.equals(ADD_ORDER_ITEMS)) {
+			buildAddOrderItemsQuery();
+		} else if (queryType.equals(ADD_ORDER_ITEM)) {
+			buildAddOrderItemQuery();
 		}
+	}
+	
+	private void buildAddOrderItemsQuery() {
+		query = "";
+		for (IOrderItem item : orderItems) {
+			query += buildAddOrderItemQuery(item);
+		}
+	}
+	
+	private String buildAddOrderItemQuery(IOrderItem item) {
+		return "INSERT into OrderItem (" 
+			+ " orderid, productid, quantity, totalprice, shipmentcost, taxamount) VALUES("
+			+ item.getOrderid() + ", " 
+			+ item.getProductid() + ", " 
+			+ item.getQuantity() + ", " 
+			+ item.getTotalPrice() + ", 0, 0); "; 
+	}
+	
+	private void buildAddOrderItemQuery() {
+		query = buildAddOrderItemQuery(savedOrderItemData);
+	}
+	
+	private void buildAddOrderQuery() {
+		query = "INSERT into Ord (" 
+			+ " custid, totalpriceamount, orderdate, "
+			+ " shipaddress1, shipaddress2, shipcity, shipstate, shipzipcode, "
+			+ " billaddress1, billaddress2, billcity, billstate, billzipcode, "
+			+ " nameoncard, expdate, cardtype, cardnum) VALUES( "
+			+ savedOrderData.getCustId() + ", " + savedOrderData.getTotalPrice() 
+			+ ", '" + savedOrderData.getOrderDate() + "'"
+			+ ", '" + savedOrderData.getShipAddress().getStreet1() + "'"
+			+ ", '" + savedOrderData.getShipAddress().getStreet2() + "'"
+			+ ", '" + savedOrderData.getShipAddress().getCity() + "'"
+			+ ", '" + savedOrderData.getShipAddress().getState() + "'"
+			+ ", '" + savedOrderData.getShipAddress().getZip() + "'"
+			+ ", '" + savedOrderData.getBillAddress().getStreet1() + "'"
+			+ ", '" + savedOrderData.getBillAddress().getStreet2() + "'"
+			+ ", '" + savedOrderData.getBillAddress().getCity() + "'"
+			+ ", '" + savedOrderData.getBillAddress().getState() + "'"
+			+ ", '" + savedOrderData.getBillAddress().getZip() + "'"
+			+ ", '" + savedOrderData.getPaymentInfo().getNameOnCard() + "'"
+			+ ", '" + savedOrderData.getPaymentInfo().getExpirationDate() + "'"
+			+ ", '" + savedOrderData.getPaymentInfo().getCardType() + "'"
+			+ ", '" + savedOrderData.getPaymentInfo().getCardNum() + "')"; 
 	}
 
 	private void buildGetOrderDataQuery() {

@@ -1,5 +1,18 @@
 package application;
 
+import java.awt.Component;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.logging.Logger;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+
+import middleware.DatabaseException;
+import middleware.EBazaarException;
 import application.gui.CartItemsWindow;
 import application.gui.CustomTableModel;
 import application.gui.DefaultData;
@@ -23,18 +36,6 @@ import business.shoppingcartsubsystem.ShoppingCartSubsystemFacade;
 import business.util.CustomerUtil;
 import business.util.ShoppingCartUtil;
 import business.util.StringParse;
-import java.awt.Component;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.List;
-import java.util.logging.Logger;
-import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import middleware.DatabaseException;
-import middleware.EBazaarException;
 
 /**
  * @author nngo2
@@ -354,6 +355,7 @@ public class CheckoutController implements CleanupControl {
 				ICreditCard card = cust.createCreditCard(cardInfo[0],
 						cardInfo[1], cardInfo[2], cardInfo[3]);
 				cust.runPaymentRules(billedAddr, card);
+				 cust.getShoppingCart().setPaymentInfo(card);
 			} catch (RuleException e) {
 				rulesOk = false;
 				System.out.println(e.getMessage());
@@ -425,12 +427,25 @@ public class CheckoutController implements CleanupControl {
 
 			try {
 				String msg = extractGoodbyeMessage();
+				
+				ICustomerSubsystem cust = (ICustomerSubsystem) SessionContext
+					.getInstance().get(CustomerConstants.CUSTOMER);
+
+				cust.submitOrder();
 
 				JOptionPane.showMessageDialog(finalOrderWindow, msg,
 						"E-Bazaar: Thank You", JOptionPane.PLAIN_MESSAGE);
 			} catch (ParseException e) {
 				LOG.severe("Unable to extract goodbye message: "
 						+ e.getMessage());
+			} catch (DatabaseException e) {
+				LOG.severe("Unable to submit order: "
+						+ e.getMessage());
+				JOptionPane
+					.showMessageDialog(
+							finalOrderWindow,
+						"An error has occurred that prevents further processing",
+						"Error", JOptionPane.ERROR_MESSAGE);
 			}
 
 		}

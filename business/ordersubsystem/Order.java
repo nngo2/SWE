@@ -12,6 +12,7 @@ import java.util.List;
  * @author  nngo2
  */
 class Order implements IOrder{
+	private Integer custId;
     private Integer orderId;
     private String orderDate;
     private String totalPrice;
@@ -26,6 +27,11 @@ class Order implements IOrder{
         this.orderDate = orderDate;
         this.totalPrice = totalPrice;
     }
+    
+    void setOrderId(Integer id) {
+    	orderId = id;
+    }
+    
     /**
 	 * @param orderItems  the orderItems to set
 	 * @uml.property  name="orderItems"
@@ -106,5 +112,13 @@ class Order implements IOrder{
  
         return creditCard;
     }
+    
+	public Integer getCustId() {
+		return custId;
+	}
+	
+	public void setCustId(Integer custId) {
+		this.custId = custId;
+	}
 
 }

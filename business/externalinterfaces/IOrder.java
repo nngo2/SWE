@@ -12,7 +12,7 @@ public interface IOrder {
     public IAddress getShipAddress();
     public IAddress getBillAddress();
     public ICreditCard getPaymentInfo();
-    
+    public Integer getCustId();
  
 	
 }
