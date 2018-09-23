@@ -26,7 +26,8 @@ public class DataAccessUtil {
         ResultSet rs = SimpleConnectionPool.doQuery(con, query);
         return rs;
     }
-	protected static SimpleConnectionPool getPool() throws DatabaseException {
+	
+	public static SimpleConnectionPool getPool() throws DatabaseException {
 		DbConfigProperties props = new DbConfigProperties();
 		return SimpleConnectionPool.getInstance(
 	            props.getProperty(DbConfigKey.DB_USER.getVal()), 
@@ -35,6 +36,7 @@ public class DataAccessUtil {
 	            Integer.parseInt(props.getProperty(DbConfigKey.MAX_CONNECTIONS.getVal())));
 	    
 	}
+	
     public static Integer runUpdate(SimpleConnectionPool pool, String dbUrl, String query) throws DatabaseException {        	
         Connection con = pool.getConnection(dbUrl);
         Integer generatedKey = SimpleConnectionPool.doUpdate(con,query);  

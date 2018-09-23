@@ -22,7 +22,7 @@ import middleware.externalinterfaces.DbConfigKey;
 /**
  * Here is the typical way to use this class; the query variable stores the necessary SQL statement: SimpleConnectionPool pool = SimpleConnectionPool.getInstance(DataAccessSubsystemFacade.MAX_CONNECTIONS); Connection con = pool.getConnection(dbUrl); ResultSet rs = SimpleConnectionPool.doQuery(con,query); pool.returnToPool(con,dbUrl);
  */
-class SimpleConnectionPool {
+public class SimpleConnectionPool {
 	static DbConfigProperties props = new DbConfigProperties();
 	// maps URI -> free connections queue
 	private HashMap<String, Queue<Connection>> freeConnectionsMap = new HashMap<String, Queue<Connection>>();
