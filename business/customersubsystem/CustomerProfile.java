@@ -2,9 +2,6 @@ package business.customersubsystem;
 
 import business.externalinterfaces.ICustomerProfile;
 
-/**
- * @author  nngo2
- */
 class CustomerProfile implements ICustomerProfile{
 	private String firstName;
 	private String lastName;

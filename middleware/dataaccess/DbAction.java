@@ -7,7 +7,7 @@ import middleware.externalinterfaces.IDbClass;
 
 
 /**
- * @author  nngo2
+ * @author  
  */
 class DbAction {
     protected String query;

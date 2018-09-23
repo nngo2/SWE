@@ -44,7 +44,7 @@ import middleware.DatabaseException;
 import middleware.EBazaarException;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class BrowseAndSelectController implements CleanupControl {
 	private static final Logger LOG = Logger

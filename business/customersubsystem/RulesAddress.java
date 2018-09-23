@@ -14,9 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import middleware.EBazaarException;
 
-/**
- * @author  nngo2
- */
+
 class RulesAddress implements IRules {
 	private HashMap<String,DynamicBean> table;
 	private DynamicBean bean;

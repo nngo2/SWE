@@ -3,7 +3,7 @@ package business.externalinterfaces;
 
 
 /**
- * @author  nngo2
+ * @author  
  */
 public interface ICustomerProfile {
     /**

@@ -11,9 +11,7 @@ import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
 
-/**
- * @author  nngo2
- */
+
 class DbClassCreditCard implements IDbClass {
 	private IDataAccessSubsystem dataAccess = new DataAccessSubsystemFacade();
 	private final String READ_DEFAULT_PAYMENT = "ReadDefaultPayment";

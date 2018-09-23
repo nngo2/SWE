@@ -11,9 +11,6 @@ import middleware.DbConfigProperties;
 import middleware.dataaccess.DataAccessSubsystemFacade;
 import middleware.externalinterfaces.*;
 
-/**
- * @author  nngo2
- */
 class DbClassAddress implements IDbClass {
 	private static final Logger LOG = Logger.getLogger(DbClassAddress.class
 			.getPackage().getName());

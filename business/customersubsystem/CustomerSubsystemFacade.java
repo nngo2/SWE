@@ -27,9 +27,7 @@ import middleware.EBazaarException;
 import middleware.creditverifcation.CreditVerificationFacade;
 import middleware.externalinterfaces.ICreditVerification;
 
-/**
- * @author  nngo2
- */
+
 public class CustomerSubsystemFacade implements ICustomerSubsystem {
 
 	IShoppingCartSubsystem shoppingCartSubsystem;

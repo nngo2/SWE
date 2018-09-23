@@ -1,7 +1,7 @@
 package middleware.externalinterfaces;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public enum DbConfigKey {
 	PRODUCT_DB_URL("product_dburl"), 

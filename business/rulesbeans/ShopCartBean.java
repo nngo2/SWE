@@ -10,7 +10,7 @@ import java.beans.PropertyChangeSupport;
 import java.util.List;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class ShopCartBean implements DynamicBean {
 	//private static Logger log = Logger.getLogger(null);

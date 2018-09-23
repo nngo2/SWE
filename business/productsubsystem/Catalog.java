@@ -3,7 +3,7 @@ package business.productsubsystem;
 import business.externalinterfaces.ICatalog;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class Catalog implements ICatalog {
 	private String catId;

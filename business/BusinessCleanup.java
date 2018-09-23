@@ -6,7 +6,7 @@ import middleware.externalinterfaces.Cleanup;
 
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class BusinessCleanup implements Cleanup {
     Cleanup mc;

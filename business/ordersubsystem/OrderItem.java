@@ -4,7 +4,7 @@ import business.externalinterfaces.IOrderItem;
 
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class OrderItem implements IOrderItem {
     Integer lineitemid;

@@ -1,7 +1,7 @@
 package business.util;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class Pair {
 	private Integer first;

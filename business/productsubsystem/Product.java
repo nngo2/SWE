@@ -6,7 +6,7 @@ import business.externalinterfaces.IProductFromGui;
 
 
 /**
- * @author  nngo2
+ * @author  
  */
 class Product implements IProductFromDb, IProductFromGui {
 

@@ -21,7 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 /**
- * @author  nngo2
+ * @author  
  */
 public class QuantityWindow extends JInternalFrame {
 	private BrowseAndSelectController control;

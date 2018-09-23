@@ -3,10 +3,6 @@ package business.customersubsystem;
 
 import business.externalinterfaces.ICreditCard;
 
-
-/**
- * @author  nngo2
- */
 class CreditCard implements ICreditCard {
     String nameOnCard;
     String expirationDate;

@@ -13,9 +13,7 @@ import business.rulesubsystem.RulesSubsystemFacade;
 import java.util.*;
 import middleware.EBazaarException;
 
-/**
- * @author nngo2
- */
+
 public class RulesPayment implements IRules {
 
 	private HashMap<String, DynamicBean> table;

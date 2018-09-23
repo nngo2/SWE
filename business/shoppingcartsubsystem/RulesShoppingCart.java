@@ -17,7 +17,7 @@ import java.util.List;
 import middleware.EBazaarException;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class RulesShoppingCart implements IRules{
 	

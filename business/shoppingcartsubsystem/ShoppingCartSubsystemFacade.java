@@ -15,7 +15,7 @@ import middleware.DatabaseException;
 import middleware.EBazaarException;
 
 /**
- * @author nngo2
+ * @author 
  */
 public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 	ShoppingCart liveCart;

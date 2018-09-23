@@ -38,7 +38,7 @@ import business.util.ShoppingCartUtil;
 import business.util.StringParse;
 
 /**
- * @author nngo2
+ * @author 
  */
 public class CheckoutController implements CleanupControl {
 	private static final Logger LOG = Logger.getLogger(CheckoutController.class
@@ -60,7 +60,7 @@ public class CheckoutController implements CleanupControl {
 
 	// /// control CartItemsWindow
 	/**
-	 * @author nngo2
+	 * @author 
 	 */
 	class ProceedToCheckoutListener implements ActionListener, Controller {
 		SessionContext context = SessionContext.getInstance();
@@ -176,7 +176,7 @@ public class CheckoutController implements CleanupControl {
 	}
 
 	/**
-	 * @author nngo2
+	 * @author 
 	 */
 	class ProceedFromBillingCheckoutListener implements ActionListener {
 		ICustomerSubsystem cust;
@@ -338,7 +338,7 @@ public class CheckoutController implements CleanupControl {
 
 	// // control PaymentWindow
 	/**
-	 * @author nngo2
+	 * @author 
 	 */
 	class ProceedFromPaymentListener implements ActionListener {
 		ICustomerSubsystem cust = (ICustomerSubsystem) SessionContext

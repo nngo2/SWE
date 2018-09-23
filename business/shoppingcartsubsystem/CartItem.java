@@ -9,7 +9,7 @@ import middleware.DatabaseException;
 
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class CartItem implements ICartItem {
     Integer cartid;

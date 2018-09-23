@@ -17,7 +17,7 @@ import business.externalinterfaces.IOrder;
 import business.externalinterfaces.IOrderItem;
 
 /**
- * @author  nngo2
+ * @author  
  */
 class DbClassOrder implements IDbClass {
 	private static final Logger LOG = Logger.getLogger(DbClassOrder.class

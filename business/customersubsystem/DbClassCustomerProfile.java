@@ -9,9 +9,7 @@ import middleware.externalinterfaces.DbConfigKey;
 import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
 
-/**
- * @author  nngo2
- */
+
 public class DbClassCustomerProfile implements IDbClass {
 	private IDataAccessSubsystem dataAccess = new DataAccessSubsystemFacade();
 	private final String READ = "Read";

@@ -15,7 +15,7 @@ import java.util.List;
 import middleware.DatabaseException;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class FinalOrderBean implements DynamicBean {
 	//private static Logger log = Logger.getLogger(null);

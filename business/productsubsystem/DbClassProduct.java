@@ -18,7 +18,7 @@ import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
 
 /**
- * @author  nngo2
+ * @author  
  */
 class DbClassProduct implements IDbClass {
 	private static final Logger LOG = Logger.getLogger(DbClassProduct.class

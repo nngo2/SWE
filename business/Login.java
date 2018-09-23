@@ -3,7 +3,7 @@ package business;
 
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class Login {
 

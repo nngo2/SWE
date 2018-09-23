@@ -6,7 +6,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class QuantityBean implements DynamicBean{
 	private Quantity quantity;

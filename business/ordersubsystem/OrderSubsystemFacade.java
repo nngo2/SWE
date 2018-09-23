@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import middleware.DatabaseException;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class OrderSubsystemFacade implements IOrderSubsystem {
 	private static final Logger LOG = Logger

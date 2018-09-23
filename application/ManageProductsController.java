@@ -27,7 +27,7 @@ import javax.swing.JTable;
 import middleware.DatabaseException;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class ManageProductsController implements CleanupControl {
 
@@ -304,7 +304,7 @@ public class ManageProductsController implements CleanupControl {
 	}
 
 	/**
-	 * @author  nngo2
+	 * @author  
 	 */
 	static class ComboAction extends AbstractAction {
 		private static final long serialVersionUID = -6362862518012806665L;

@@ -7,7 +7,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class PaymentBean implements DynamicBean{
 	private ICreditCard cc;

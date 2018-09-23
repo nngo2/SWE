@@ -16,7 +16,7 @@ import business.externalinterfaces.ICartItem;
 import business.externalinterfaces.ICustomerProfile;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class DbClassShoppingCart implements IDbClass {
 	private static final Logger LOG = Logger

@@ -11,7 +11,7 @@ import middleware.externalinterfaces.IDataAccessSubsystem;
 import middleware.externalinterfaces.IDbClass;
 
 /**
- * @author  nngo2
+ * @author  
  */
 public class DbClassQuantity implements IDbClass {
 	private static final Logger LOG = 

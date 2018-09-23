@@ -11,7 +11,7 @@ import java.util.List;
 
 
 /**
- * @author  nngo2
+ * @author  
  */
 class ShoppingCart implements IShoppingCart {
     private String cartId;
