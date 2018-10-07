@@ -33,6 +33,11 @@ class ShoppingCart implements IShoppingCart {
     void setCartId(String cartId){
         this.cartId=cartId;
     }
+    
+    String getCartId() {
+    	return cartId;
+    }
+    
     public boolean isEmpty(){
     	return cartItems == null || cartItems.isEmpty();
     }
