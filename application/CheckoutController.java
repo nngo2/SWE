@@ -110,7 +110,7 @@ public class CheckoutController implements CleanupControl {
 
 			/* check that cart is not empty before going to next screen */
 			boolean rulesOk = true;
-			IShoppingCartSubsystem cartSystem = ShoppingCartSubsystemFacade.getInstance();
+			IShoppingCartSubsystem cartSystem = ShoppingCartSubsystemFacade.getInstance();		
 
 			try {
 				cartSystem.runShoppingCartRules();

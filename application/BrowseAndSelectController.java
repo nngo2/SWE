@@ -1,5 +1,18 @@
 package application;
 
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.List;
+import java.util.logging.Logger;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+
+import middleware.DatabaseException;
+import middleware.EBazaarException;
 import application.gui.CartItemsWindow;
 import application.gui.CatalogListWindow;
 import application.gui.DefaultData;
@@ -10,38 +23,21 @@ import application.gui.ProductDetailsWindow;
 import application.gui.ProductListWindow;
 import application.gui.QuantityWindow;
 import application.gui.SelectOrderWindow;
-import application.gui.ShippingBillingWindow;
 import business.Quantity;
 import business.RuleException;
 import business.RulesQuantity;
 import business.SessionContext;
 import business.externalinterfaces.CustomerConstants;
-import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICartItem;
 import business.externalinterfaces.ICustomerSubsystem;
 import business.externalinterfaces.IProductFromDb;
 import business.externalinterfaces.IProductSubsystem;
 import business.externalinterfaces.IRules;
-import business.externalinterfaces.IShoppingCart;
 import business.externalinterfaces.IShoppingCartSubsystem;
 import business.productsubsystem.ProductSubsystemFacade;
-import business.shoppingcartsubsystem.CartItem;
 import business.shoppingcartsubsystem.ShoppingCartSubsystemFacade;
-import business.util.CustomerUtil;
 import business.util.ProductUtil;
 import business.util.ShoppingCartUtil;
-import business.util.StringParse;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.List;
-import java.util.logging.Logger;
-import javax.swing.JInternalFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
-import middleware.DatabaseException;
-import middleware.EBazaarException;
 
 /**
  * @author  
@@ -95,9 +91,15 @@ public class BrowseAndSelectController implements CleanupControl {
 		
 		private void updateScreen() {
 			cartItemsWindow = new CartItemsWindow();
-			loadSavedCartItems(cartItemsWindow);
-			EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);	
+			EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);
 			cartItemsWindow.setVisible(true);
+			try {
+				loadSavedCartItems(cartItemsWindow);
+			} catch (DatabaseException e) {
+				JOptionPane.showMessageDialog(cartItemsWindow,
+						"An error has occurred that prevents further processing",
+						"Error", JOptionPane.ERROR_MESSAGE);
+			}
 		}
 	}
 
@@ -274,7 +276,7 @@ public class BrowseAndSelectController implements CleanupControl {
 		}
 	}
 
-	class SaveCartListener implements ActionListener {
+	class SaveCartListener implements ActionListener, Controller{
 		public void actionPerformed(ActionEvent evt) {
 			// implement
 			// here's the logic:
@@ -293,7 +295,44 @@ public class BrowseAndSelectController implements CleanupControl {
 			// not-so-far-saved cart items
 			// postcondition: the live cart has a cartid
 			// and all cart items are flagged as "hasBeenSaved"
+			
+			cartItemsWindow.setVisible(false);
+				
+			Boolean loggedIn = (Boolean) SessionContext.getInstance().get(
+					CustomerConstants.LOGGED_IN);
+			
+			if (!loggedIn.booleanValue()) {	
+				LoginControl loginControl = new LoginControl(
+						cartItemsWindow, cartItemsWindow, this);
+				loginControl.startLogin();
+			} else {
+				saveCart();
+			}
+		}
 
+		@Override
+		public void doUpdate() {
+			saveCart();
+		}
+		
+		private void saveCart() {		
+			cartItemsWindow = new CartItemsWindow();
+			EbazaarMainFrame.getInstance().getDesktop().add(cartItemsWindow);
+			try {
+				ICustomerSubsystem cust = (ICustomerSubsystem) SessionContext.getInstance().get(
+						CustomerConstants.CUSTOMER);
+				cust.saveShoppingCart();
+				loadSavedCartItems(cartItemsWindow);
+				cartItemsWindow.setVisible(true);
+				String msg = "Cart items have been saved succesfully";
+				JOptionPane.showMessageDialog(cartItemsWindow, msg,
+						"E-Bazaar: Cornfirmation", JOptionPane.PLAIN_MESSAGE);
+			} catch (EBazaarException e) {
+				cartItemsWindow.setVisible(true);
+				JOptionPane.showMessageDialog(cartItemsWindow,
+					"An error has occurred that prevents further processing",
+					"Error", JOptionPane.ERROR_MESSAGE);
+			}			
 		}
 	}
 
@@ -513,7 +552,7 @@ public class BrowseAndSelectController implements CleanupControl {
 
 	private void addItemToCart(QuantityWindow quantityWin) {
 		try {
-			IShoppingCartSubsystem cartSystem = ShoppingCartSubsystemFacade.getInstance();
+			IShoppingCartSubsystem cartSystem = ShoppingCartSubsystemFacade.getInstance();	
 
 			String prodName = productDetailsWindow.getItem();
 			double itemPrice = productDetailsWindow.getPrice();
@@ -531,14 +570,16 @@ public class BrowseAndSelectController implements CleanupControl {
 
 	private void loadCartItems(CartItemsWindow cartsWindow) {
 		IShoppingCartSubsystem cartSystem = ShoppingCartSubsystemFacade.getInstance();
+		
 		List<ICartItem> cartItems = cartSystem.getLiveCartItems();
 		List<String[]> items = ShoppingCartUtil.cartItemsToStringArrays(cartItems);
 		cartsWindow.updateModel(items);
 	}
 	
-	private void loadSavedCartItems(CartItemsWindow cartsWindow) {
+	private void loadSavedCartItems(CartItemsWindow cartsWindow) throws DatabaseException {
 		ICustomerSubsystem cust = (ICustomerSubsystem) SessionContext.getInstance().get(
 				CustomerConstants.CUSTOMER);
+		cust.getShoppingCart().retrieveSavedCart();
 		cust.getShoppingCart().makeSavedCartLive();
 		List<ICartItem> cartItems = cust.getShoppingCart().getLiveCartItems();
 		List<String[]> items = ShoppingCartUtil.cartItemsToStringArrays(cartItems);

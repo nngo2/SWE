@@ -129,7 +129,6 @@ public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 
 	public void setPaymentInfo(ICreditCard cc) {
 		liveCart.setPaymentInfo(cc);
-
 	}
 
 	/**
@@ -144,9 +143,49 @@ public class ShoppingCartSubsystemFacade implements IShoppingCartSubsystem {
 		liveCart = savedCart;
 	}
 
-	public void saveLiveCart() {
+	public void saveLiveCart() throws DatabaseException {
 		// implement
+		// here's the logic:
+		// if current live cart does not have a cartid
+		// then it's new;
+		// save cart level data, read the auto-generated
+		// cart id, then loop
+		// and get lineitemid's for each line, inserting
+		// the relevant cartid, and save each
+		// line
+		// If current cart does have an id, we just save
+		// cart items that are not flagged as "hasBeenSaved"
+		// (a boolean in that class)
+		// no need to save at the cart level, just save the
+		// not-so-far-saved cart items
+		// postcondition: the live cart has a cartid
+		// and all cart items are flagged as "hasBeenSaved"
 
+		Integer val = getShoppingCartId();
+		if (val != null) {
+			shopCartId = val;
+			liveCart.setCartId(val.toString());
+			log.info("cart id: " + shopCartId);
+			saveLiveCartItems();
+		} else {
+			shopCartId = saveLiveCartInfo();
+			liveCart.setCartId(shopCartId.toString());
+			saveLiveCartItems();			
+		}
+	}
+
+	private void saveLiveCartItems() throws DatabaseException {
+		DbClassShoppingCart dbClass = new DbClassShoppingCart();
+		for (ICartItem item : liveCart.getCartItems()) {
+			if (!item.isAlreadySaved()) {
+				dbClass.saveCartItem(liveCart, item);
+			}
+		}		
+	}
+
+	private Integer saveLiveCartInfo() throws DatabaseException {
+		DbClassShoppingCart dbClass = new DbClassShoppingCart();
+		return dbClass.saveCartInfo(customerProfile, liveCart);
 	}
 
 	public void runShoppingCartRules() throws RuleException, EBazaarException {

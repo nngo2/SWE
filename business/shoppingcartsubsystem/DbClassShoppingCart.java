@@ -24,12 +24,15 @@ public class DbClassShoppingCart implements IDbClass {
 	private IDataAccessSubsystem dataAccessSS = new DataAccessSubsystemFacade();
 	IDataAccessSubsystem dataAccess;
 	ShoppingCart cart;
+	ICartItem cartItem;
 	List<ICartItem> cartItemsList;
 	ICustomerProfile custProfile;
 	Integer cartId;
 	String query;
 	final String GET_ID = "GetId";
 	final String GET_SAVED_ITEMS = "GetSavedItems";
+	final String SAVE_CART_ITEM = "SaveCartItem";
+	final String SAVE_CART_INFO = "SaveCartInfo";	
 	String queryType;
 
 	public void buildQuery() {
@@ -37,7 +40,26 @@ public class DbClassShoppingCart implements IDbClass {
 			buildGetIdQuery();
 		} else if (queryType.equals(GET_SAVED_ITEMS)) {
 			buildGetSavedItemsQuery();
+		} else if (queryType.equals(SAVE_CART_INFO)) {
+			buildSaveCartInfoQuery();
+		} else if (queryType.equals(SAVE_CART_ITEM)) {
+			buildSaveCartItemQuery();
 		}
+	}
+
+	private void buildSaveCartItemQuery() {	
+		query =  "INSERT into ShopCartItem (" 
+			+ " shopcartid, productid, quantity, totalprice, shipmentcost, taxamount) VALUES("
+			+ cart.getCartId() + ", " 
+			+ cartItem.getProductid() + ", " 
+			+ cartItem.getQuantity() + ", " 
+			+ cartItem.getTotalprice() + ", 0, 0); "; 
+	}
+
+	private void buildSaveCartInfoQuery() {
+		query =  "INSERT into ShopCartTbl (" 
+		+ " custid) VALUES("
+		+ custProfile.getCustId() + ")"; 
 	}
 
 	private void buildGetIdQuery() {
@@ -47,7 +69,22 @@ public class DbClassShoppingCart implements IDbClass {
 
 	private void buildGetSavedItemsQuery() {
 		query = "SELECT * FROM ShopCartItem WHERE shopcartid = " + cartId;
-
+	}
+	
+	public Integer saveCartItem(ShoppingCart cart, ICartItem item)
+			throws DatabaseException {
+		this.cart = cart;
+		this.cartItem = item;
+		queryType = SAVE_CART_ITEM;
+		return dataAccessSS.saveWithinTransaction(this);
+	}	
+	
+	public Integer saveCartInfo(ICustomerProfile custProfile, ShoppingCart cart)
+		throws DatabaseException {
+		this.custProfile = custProfile;
+		this.cart = cart;
+		queryType = SAVE_CART_INFO;
+		return dataAccessSS.saveWithinTransaction(this);
 	}
 
 	public Integer getShoppingCartId(ICustomerProfile custProfile)

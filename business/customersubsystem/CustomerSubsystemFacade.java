@@ -1,5 +1,12 @@
 package business.customersubsystem;
 
+import java.util.Collections;
+import java.util.List;
+
+import middleware.DatabaseException;
+import middleware.EBazaarException;
+import middleware.creditverifcation.CreditVerificationFacade;
+import middleware.externalinterfaces.ICreditVerification;
 import business.RuleException;
 import business.externalinterfaces.IAddress;
 import business.externalinterfaces.ICartItem;
@@ -12,20 +19,8 @@ import business.externalinterfaces.IRules;
 import business.externalinterfaces.IShoppingCart;
 import business.externalinterfaces.IShoppingCartSubsystem;
 import business.ordersubsystem.OrderSubsystemFacade;
-import business.rulesbeans.AddressBean;
-import business.rulesbeans.PaymentBean;
-import business.rulesbeans.QuantityBean;
-import business.rulesubsystem.RulesSubsystemFacade;
 import business.shoppingcartsubsystem.ShoppingCartSubsystemFacade;
 import business.util.OrderUtil;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Queue;
-import middleware.DatabaseException;
-import middleware.EBazaarException;
-import middleware.creditverifcation.CreditVerificationFacade;
-import middleware.externalinterfaces.ICreditVerification;
 
 
 public class CustomerSubsystemFacade implements ICustomerSubsystem {
@@ -176,10 +171,11 @@ public class CustomerSubsystemFacade implements ICustomerSubsystem {
 		IOrderSubsystem orderSys = new OrderSubsystemFacade(customerProfile);
 		orderSys.submitOrder(cart);
 		shoppingCartSubsystem.clearLiveCart();
+		refreshAfterSubmit();
 	}
 
 	public void saveShoppingCart() throws DatabaseException {
-		//IMPLEMENT
+		shoppingCartSubsystem.saveLiveCart();
 	}
 
 	// assumes array is in the form street,city,state,zip
